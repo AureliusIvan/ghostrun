@@ -2,6 +2,7 @@
   "name": "ghostrun",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://AureliusIvan.github.io/ghostrun",
   "dependencies": {
     "@chakra-ui/react": "^2.4.6",
     "@emotion/react": "^11.10.5",
