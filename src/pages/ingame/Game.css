@@ -15,7 +15,7 @@
 }
 
 .animate {
-    animation: jump 0.4s linear alternate;
+    animation: jump 0.5s linear alternate;
 }
 
 @keyframes jump {
@@ -24,7 +24,10 @@
     }
 
     50% {
-        top: -300px;
+        top: -700px;
+    }
+    60% {
+        top: -700px;
     }
 
     100% {

@@ -16,11 +16,11 @@
     border-radius: 50px;
     background: #fcfcfc;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -210px;
-    margin-left: -98px;
-
+    top: 10%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    animation: ghostdance 1s infinite alternate ease-out;
     transform-origin: bottom;
     -webkit-transform-origin: bottom;
     -webkit-transform: scale(1) translateZ(1);
@@ -126,10 +126,6 @@
     background: rgba(149, 36, 0, 0.1);
     position: absolute;
     top: 70px;
-    /* animation: grow 0.7s 2s 1 ease;
-    animation-fill-mode: forwards;
-    -webkit-animation: grow 0.7s 2s 1 ease;
-    -webkit-animation-fill-mode: forwards; */
     -webkit-transform: scale(1);
     transform: scale(1);
 }
@@ -174,10 +170,11 @@
     height: 30px;
     position: absolute;
     /* bottom: ; */
-    top: 205px;
-    transform: scale(4.89, 4.4);
+    top: 210px;
+    transform: scale(4.89, 6.4);
     fill: #ffffff;
     z-index: 1;
+    animation: footdance 2s infinite alternate;
 
 }
 
@@ -246,5 +243,32 @@
     100% {
         height: 33px;
 
+    }
+}
+
+/* ghost dance */
+
+/* @keyframes ghostdance {
+    0% {
+        left: 50px;
+        right: 0;
+    }
+
+    100% {
+        left: 0;
+        right: 50px;
+    }
+}
+ */
+
+@keyframes footdance {
+    0% {
+        top: 210px;
+        transform: scale(4.89, 6.4);
+    }
+
+    100% {
+        top: 210px;
+        transform: scale(4.89, 4.4);
     }
 }

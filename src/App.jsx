@@ -1,13 +1,12 @@
-// import logo from './logo.svg';
 import React, { useState } from 'react';
 import './App.css';
 import { AllContext } from './Value/AllContext';
 // chakra
 import { ChakraProvider, theme } from '@chakra-ui/react';
-// import AnimatedCursor from 'react-animated-cursor';
 // pages
 import Start from './pages/start/Start';
 import Ingame from './pages/ingame/Game';
+import { Box } from '@chakra-ui/react';
 
 function App() {
   const [game, setGame] = useState('start');
@@ -15,7 +14,8 @@ function App() {
     setGame(gameState);
     console.log(game);
   };
-  // value
+
+  // high-score
   const [highScore, SethighScore] = useState(0);
 
 
@@ -26,16 +26,7 @@ function App() {
           highScore,
           SethighScore
         }}>
-        {/* <AnimatedCursor
-          innerSize={12}
-          outerSize={8}
-          color='193, 11, 111'
-          outerAlpha={0.2}
-          innerScale={0.7}
-          outerScale={7}
-          trailingSpeed="12"
-        /> */}
-        <div className="App">
+        <Box className="App" h={'100vh'} pos='relative' overflow={'hidden'} scroll="no">
           {(() => {
             switch (game) {
               case 'start':
@@ -46,7 +37,7 @@ function App() {
                 return null;
             }
           })()}
-        </div>
+        </Box>
       </AllContext.Provider>
     </ChakraProvider>
   );

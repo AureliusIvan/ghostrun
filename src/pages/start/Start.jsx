@@ -46,11 +46,11 @@ function Start(props) {
                             w={['300px', '400px']}
                             textAlign="center"
                             padding="1px"
-                            bgColor={'purple'}
+                            // bgColor={'purple'}
                             // bgGradient="linear(to-l, #7928CA, #FF0080)"
                             color="white"
                             fontSize={['40px', '50px']}
-                            className="prevent-select"
+                            className="prevent-select glow"
                         >
                             GHOST RUN
                         </Text>

@@ -21,7 +21,7 @@ import restartsound from '../../asset/sound/restart.mp3'
 import { Cloud } from "./cloud";
 import woodbox from "../../asset/image/box.jpg"
 
-function Obstacle2() {
+function Obstacle() {
     return (
         <Box
             id="block"
@@ -132,7 +132,7 @@ function Ingame(props) {
     // return display
     return (<Box
         w={'100%'}
-        h='100vh'
+        h='100%'
         transition={'0.5s'}
         bgColor={Day ? "rgb(158, 211, 255)" : "rgb(21, 36, 48)"}
         onMouseDownCapture={OnMouseDown}
@@ -203,7 +203,7 @@ function Ingame(props) {
                 </Box>
                 {/* <Cloud left="70%"/> */}
                 <Ghost jump={mouseDown ? "animate head" : "head"} AnimationEnd={AnimationEnd} frown={nabrak} />
-                <Obstacle2 />
+                <Obstacle />
             </Flex>
         </Center>
         <br />

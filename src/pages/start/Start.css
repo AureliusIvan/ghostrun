@@ -6,7 +6,7 @@
 
 
 
-@keyframes ripple {
+/* @keyframes ripple {
     0% {
         box-shadow: 0 0 0 0px rgb(68, 68, 238, 0.0), 0 0 0 0px rgb(0, 0, 0), 0 0 0 0px rgb(68, 68, 238, 0.0),
             0 0 0 0px rgb(0, 0, 0), 0 0 0 0px rgb(68, 68, 238, 0.0), 0 0 0 0px rgb(0, 0, 0), 0 0 0 0px rgb(68, 68, 238, 0.0),
@@ -20,12 +20,8 @@
             0 0 0 107px rgba(255, 255, 255, 0);
     }
 
-}
+} */
 
-.whiteoutline {
-    -webkit-filter: drop-shadow(2px 2px 0 rgb(255, 255, 255)) drop-shadow(-2px -2px 0 rgb(255, 255, 255));
-    filter: drop-shadow(2px 2px 0 rgb(255, 255, 255)) drop-shadow(-2px -2px 0 rgb(255, 255, 255));
-}
 
 
 /* ghost */

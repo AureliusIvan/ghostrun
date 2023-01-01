@@ -4,7 +4,7 @@ export function Cloud(props) {
     return (<>
             <div
             style={props.style}
-                class="center">
+                className="center">
                 <Box id="cloud"></Box>
             </div>
     </>)
