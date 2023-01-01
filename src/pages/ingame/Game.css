@@ -1,0 +1,109 @@
+.game {
+    width: 500px;
+    height: 200px;
+    border: 10px solid black;
+    margin: auto;
+    overflow: hidden;
+    background-color: aqua;
+}
+
+
+#character {
+    position: relative;
+    left: 0;
+    bottom: -20px;
+}
+
+.animate {
+    animation: jump 0.4s linear alternate;
+}
+
+@keyframes jump {
+    0% {
+        top: 0px;
+    }
+
+    50% {
+        top: -300px;
+    }
+
+    100% {
+        top: 0px;
+    }
+}
+
+/*  */
+#block {
+    background-color: rgb(111, 102, 17);
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    margin: 0;
+    border: 2px solid black;
+    position: relative;
+    animation: block 1s infinite linear;
+}
+
+@keyframes block {
+    0% {
+        left: 400px
+    }
+
+    100% {
+        left: -70px
+    }
+}
+
+p {
+    text-align: center;
+}
+
+/* cloud */
+
+.center {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0.1);
+}
+
+#cloud {
+    background: rgba(255, 255, 255);
+    width: 300px;
+    height: 100px;
+    border-radius: 150px;
+    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+    animation: move 3s infinite;
+}
+
+#cloud:after {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    top: -50px;
+    left: 50px;
+}
+
+#cloud:before {
+    content: '';
+    background: rgba(255, 255, 255);
+    position: absolute;
+    width: 170px;
+    height: 150px;
+    border-radius: 50%;
+    top: -90px;
+    right: 40px;
+}
+
+@keyframes move {
+    0% {
+        transform: translatex(0);
+    }
+
+    50% {
+        transform: translatex(-40px);
+    }
+}

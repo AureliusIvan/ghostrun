@@ -1,0 +1,250 @@
+.wrapper1 {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    top: 0;
+    margin: auto;
+    display: table-cell;
+    vertical-align: middle;
+    transform: scale(1);
+}
+
+.head1 {
+    width: 196px;
+    height: 260px;
+    border-radius: 50px;
+    background: #fcfcfc;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -210px;
+    margin-left: -98px;
+
+    transform-origin: bottom;
+    -webkit-transform-origin: bottom;
+    -webkit-transform: scale(1) translateZ(1);
+    transform: scale(1) translateZ(1);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+
+.face1 {
+    width: 180px;
+    height: 0px;
+    border-radius: 48px 48px 0 0;
+    background: #a10f0f;
+    position: absolute;
+    top: 40px;
+    left: 8px;
+    animation: hair-anim 0.1s 0.8s 1 linear;
+    animation-fill-mode: forwards;
+    -webkit-animation: hair-anim 0.1s 0.8s 1 linear;
+    -webkit-animation-fill-mode: forwards;
+    z-index: 3;
+}
+
+
+
+.mouth1 {
+    width: 66px;
+    height: 33px;
+    border-radius: 0 0 33px 33px;
+    background: #334C68;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -33px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    animation: mouthhh 1s;
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+
+.mouth2 {
+    width: 66px;
+    height: 10px;
+    border-radius: 0 0 33px 33px;
+    background: #334C68;
+    position: absolute;
+    top: 100px;
+    left: 50%;
+    margin-left: -33px;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    /* animation: mouthhh 1s; */
+    animation-timing-function: ease;
+    animation-iteration-count: 1;
+}
+
+/* frown */
+#frown {
+    position: relative;
+    top: 100px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    height: 20px;
+    overflow: hidden;
+    z-index: 100;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100%;
+}
+
+#frownchild {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    margin: auto;
+    height: 150px;
+    width: 100px;
+    border: 10px solid #334C68;
+    border-radius: 50%;
+}
+
+/*  */
+
+.mouth1::after {
+    width: 66px;
+    height: 100px;
+    border: #a10f0f;
+    background-color: #a10f0f;
+    content: "";
+    top: 100px;
+    left: 50%;
+}
+
+
+.eye1-shadow1 {
+    width: 30px;
+    height: 15px;
+    border-radius: 0 0 15px 15px;
+    background: rgba(149, 36, 0, 0.1);
+    position: absolute;
+    top: 70px;
+    /* animation: grow 0.7s 2s 1 ease;
+    animation-fill-mode: forwards;
+    -webkit-animation: grow 0.7s 2s 1 ease;
+    -webkit-animation-fill-mode: forwards; */
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+
+.eye1-shadow1#left1 {
+    left: 35px;
+    z-index: 5;
+}
+
+.eye1-shadow1#right1 {
+    right: 35px;
+
+}
+
+.eye1 {
+    width: 20px;
+    height: 28px;
+    border-radius: 10px;
+    background: #334C68;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    margin-left: -10px;
+    animation: eyeee 6s infinite ease;
+}
+
+.shadow1-wrapper1 {
+    width: 98px;
+    height: 360px;
+    position: absolute;
+    left: -8px;
+    bottom: -84px;
+    z-index: 4;
+    overflow: hidden;
+}
+
+.foot1 {
+    margin: auto;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 30px;
+    position: absolute;
+    /* bottom: ; */
+    top: 205px;
+    transform: scale(4.89, 4.4);
+    fill: #ffffff;
+    z-index: 1;
+
+}
+
+/* animation */
+
+@keyframes mouthhh {
+    0% {
+        width: 66px;
+        height: 33px;
+        border-radius: 0 0 33px 33px;
+        background: #334C68;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        margin-left: -33px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        animation: mouthhh 1s 1;
+
+    }
+
+    100% {
+        width: 10px;
+        height: 33px;
+        border-radius: 0 0 33px 33px;
+        background: #334C68;
+        position: absolute;
+        top: 100px;
+        left: 50%;
+        margin-left: -33px;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        animation: mouthhh 1s 1;
+
+    }
+}
+
+@keyframes eyeee {
+    0% {
+        top: -18px;
+        height: 28px;
+    }
+
+    10% {
+        top: -7px;
+        height: 10px;
+    }
+
+    15% {
+        top: -18px;
+        height: 28px;
+    }
+
+    100% {
+        top: -18px;
+        height: 28px;
+    }
+}
+
+@-webkit-keyframes eyeee {
+    0% {
+        height: 13px;
+
+    }
+
+    100% {
+        height: 33px;
+
+    }
+}
