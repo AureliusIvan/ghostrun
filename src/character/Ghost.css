@@ -24,12 +24,6 @@
     margin-left: -98px;
 
     transform-origin: bottom;
-    /* -webkit-transform-origin: bottom;
-    -webkit-transform: scale(1) translateZ(1);
-    transform: scale(1) translateZ(1);
-    -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards; */
-    
     will-change: top;
     transition: 0.7s;
     -webkit-transition: 0.7s;

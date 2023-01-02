@@ -21,15 +21,15 @@ import restartsound from '../../asset/sound/restart.mp3'
 import { Cloud } from "./cloud";
 import woodbox from "../../asset/image/box.svg"
 
-function Obstacle() {
+function Obstacle(props) {
     return (
         <Box
             id="block"
-            // bg={woodbox}
             width="20px"
             height="20px"
             objectFit='cover'
-            className="prevent-select"
+            // className="blockmove"
+            className={props.className}
         >
             <Image src={woodbox} />
         </Box>
@@ -170,18 +170,28 @@ function Ingame(props) {
         Setanimate(true);
         setTimeout(() => {
             Setanimate(false);
-            
-        }, 1700);
-        // Setanimate(false);
-        // setMouseDown(false);
+
+        }, 400);
     };
 
 
-    // jumppp 
-    function Jump() {
+    // block run
+    const [blockrun, Setblockrun] = useState(false);
+    useEffect(() => {
+        const setDelay = delay => new Promise(resolve => {
+            Setblockrun(true);
+            setTimeout(() => {
+                resolve();
+                Setblockrun(false);
+            }, delay);
+        });
 
-    }
-
+        setDelay(1000)
+            .then(() => setDelay(1000))
+            .then(() => setDelay(1000))
+            .then(() => setDelay(1000));
+    }, [])
+    
 
     // return display
     return (<Box
@@ -239,7 +249,11 @@ function Ingame(props) {
                 w='500px'
                 h={'200px'}
                 overflow="hidden"
-                transform={['scale(0.7)', 'scale(1)', 'scale(1.2)']}
+                transform={['scale(0.7)', 'scale(1)', 'scale(1.5)']}
+                pos="relative"
+                width="500px"
+                height="200px"
+            // border="5px solid black"
             >
                 <Box
                     pos={'absolute'}
@@ -258,7 +272,7 @@ function Ingame(props) {
                 {/* <Cloud left="70%"/> */}
                 {/* <Ghost jump={mouseDown ? "animate head" : "head"} AnimationEnd={AnimationEnd} frown={nabrak} /> */}
                 <Ghost jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
-                <Obstacle />
+                <Obstacle className={blockrun ? "blockmove" : "blockstay"} />
             </Flex>
         </Center>
         <br />
@@ -270,6 +284,7 @@ function Ingame(props) {
             <b>
                 {newscore ? "NEW HIGH SCORE!" : ""}
             </b>
+            <Button onClick={()=>{Setblockrun(!blockrun)}}></Button>
         </Text>
     </Box >);
 }

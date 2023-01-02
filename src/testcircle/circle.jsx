@@ -11,7 +11,7 @@ export function Testcircle() {
             e.classList.add('loaded');
             setTimeout(e => {
                 document.querySelectorAll('.circle').forEach(e => {
-                    e.classList.remove('loaded')
+                    // e.classList.remove('loaded')
                 })
             }, 500)
 

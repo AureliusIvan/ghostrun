@@ -16,37 +16,18 @@
 
 .animate {
     /* animation: jump 0.5s linear alternate; */
-    top: -700px !important;
-    /* -webkit-transform: translateY("-700px");
-    transform: translateY("-700px"); */
-    transition: 0.7s;
-    -webkit-transition: 0.7s;
-    -moz-transition: 0.7s;
-    -ms-transition: 0.7s;
-    -o-transition: 0.7s;
+    /* top: -700px !important;
+    transform: translateY(-700px); */
+    transform: translateY(-700px);
+    -webkit-transform: translateY(-700px);
+    -moz-transform: translateY(-700px);
+    -o-transform: translateY(-700px);
+    -ms-transform: translateY(-700px);
 }
 
 .notanimate {
     /* animation: jump 0.5s linear alternate; */
     top: 0px !important;
-}
-
-@keyframes jump {
-    0% {
-        top: 0px;
-    }
-
-    50% {
-        top: -700px;
-    }
-
-    60% {
-        top: -700px;
-    }
-
-    100% {
-        top: 0px;
-    }
 }
 
 /*  */
@@ -55,13 +36,35 @@
     border-radius: 5px;
     margin: 0;
     border: 2px solid rgb(116, 94, 72);
-    position: relative;
-    /* animation: block infinite linear; */
-    /* animation-duration: 1.5s; */
-    will-change: left;
+    position: absolute;
+    transform: translateX(450px);
+    will-change: transform;
+    transition: transform 1s, opacity 0s;
+    -webkit-transition: transform 1s, opacity 0s;
+    -moz-transition: transform 1s, opacity 0s;
+    -o-transition: transform 1s, opacity 0s;
+    
 }
 
-/* @keyframes block {
+.blockstay {
+    transform: translateX(450px) !important;
+    -webkit-transform: translateX(450px) !important;
+    -moz-transform: translateX(450px) !important;
+    -o-transform: translateX(450px) !important;
+    -ms-transform: translateX(450px) !important;
+    
+}
+
+
+.blockmove {
+    transform: translateX(0px) !important;
+    -webkit-transform: translateX(0px) !important;
+    -moz-transform: translateX(0px) !important;
+    -o-transform: translateX(0px) !important;
+    -ms-transform: translateX(0px) !important;
+}
+
+@keyframes block {
     0% {
         left: 400px
     }
@@ -69,8 +72,10 @@
     100% {
         left: -70px
     }
-} */
+}
 
+
+/*  */
 p {
     text-align: center;
 }
