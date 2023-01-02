@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ghostrun/static/css/main.9563b241.css",
-    "main.js": "/ghostrun/static/js/main.610d92b9.js",
+    "main.js": "/ghostrun/static/js/main.2cda780f.js",
     "static/js/845.c97ad5eb.chunk.js": "/ghostrun/static/js/845.c97ad5eb.chunk.js",
     "static/js/787.02a092e3.chunk.js": "/ghostrun/static/js/787.02a092e3.chunk.js",
     "static/media/box.svg": "/ghostrun/static/media/box.71868cad5351b592fcdf59ada349d919.svg",
@@ -12,12 +12,12 @@
     "static/media/poin.mp3": "/ghostrun/static/media/poin.2944938830ac5d97fe17.mp3",
     "index.html": "/ghostrun/index.html",
     "main.9563b241.css.map": "/ghostrun/static/css/main.9563b241.css.map",
-    "main.610d92b9.js.map": "/ghostrun/static/js/main.610d92b9.js.map",
+    "main.2cda780f.js.map": "/ghostrun/static/js/main.2cda780f.js.map",
     "845.c97ad5eb.chunk.js.map": "/ghostrun/static/js/845.c97ad5eb.chunk.js.map",
     "787.02a092e3.chunk.js.map": "/ghostrun/static/js/787.02a092e3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.9563b241.css",
-    "static/js/main.610d92b9.js"
+    "static/js/main.2cda780f.js"
   ]
 }
