@@ -3,7 +3,7 @@ import { Button } from "@chakra-ui/button"
 import { Box } from "@chakra-ui/layout"
 import { useState } from "react"
 
-export function Testcircle() {
+function Testcircle() {
     const [animate, Setanimate] = useState(false);
 
     function Startanimate() {

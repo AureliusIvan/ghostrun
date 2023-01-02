@@ -5,6 +5,6 @@ export function getCurrentDate(separator=''){
     let month = newDate.getMonth() + 1;
     let year = newDate.getFullYear();
     
-    const Now = `${date}`+"/"+`${month}`+"/"+`${year}`; 
+    const Now = `${date}/${month}/${year}`; 
     return Now;
     }

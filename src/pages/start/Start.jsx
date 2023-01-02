@@ -5,29 +5,22 @@ import {
     Text,
     Grid,
     GridItem,
-    VStack,
     Flex
 } from '@chakra-ui/react';
 
 import './Start.css';
-import startsound from "../../asset/sound/start.mp3";
-import useSound from 'use-sound';
 import Ghostforstart from './ghostforstart';
-import AjaxGetExample from '../form/Ajaxget';
+// import AjaxGetExample from '../form/Ajaxget';
 
 function Start(props) {
-    const [play] = useSound(startsound);
     return (
         <Box
             draggable="false"
-            // bgImage={mainBG}
-            bgSize={{ md: 'cover', base: 'contain' }}
             bgColor="rgb(158, 211, 255)"
             bgPos="center"
             position="fixed"
             width="100%"
             height="100%"
-            zIndex="100"
         >
             <Grid
                 className="Grid"
@@ -39,7 +32,7 @@ function Start(props) {
                 {/* leaderboard */}
                 <GridItem rowSpan={1} colSpan={3}>
                     <Text pos='absolute' left="0" right="0" top="35%" margin="auto" zIndex="50" border="10px solid brown" bgColor="green" color="black" width="300px" height="200px" padding="10px">
-                        <AjaxGetExample/>
+                        {/* <AjaxGetExample/> */}
                     </Text>
                 </GridItem>
                 {/*  */}
@@ -82,20 +75,17 @@ function Start(props) {
                 gap={0}
             >
                 <GridItem className="gridItems" rowSpan={1} colSpan={3}>
-                    <VStack spacing={5}>
                         <Button
                             width="300px"
                             height="80px"
                             borderRadius="20px"
                             onClick={() => {
                                 props.handleClick('ingame');
-                                // play();
                             }}
                             pointerEvents="all"
                             transition="0.5s"
                             _hover={{
                                 transform: 'scale(1.2)',
-                                bgGradient: 'linear(to-r, red.400, yellow.400)',
                             }}
                             bgColor={"green.700"}
                             color="white"
@@ -103,9 +93,6 @@ function Start(props) {
                         >
                             START RUNNING!
                         </Button>
-                        <Button onClick={() => props.handleClick('form')} >credit</Button>
-                        {/* <Credit content="test" /> */}
-                    </VStack>
                 </GridItem>
             </Grid>
         </Box>

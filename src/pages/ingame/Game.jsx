@@ -6,20 +6,18 @@ import {
     Modal,
     ModalOverlay,
     ModalContent,
-    ModalHeader,
-    ModalFooter,
     ModalBody,
     useDisclosure
 } from '@chakra-ui/react'
 import { AllContext } from "../../Value/AllContext";
 import useSound from 'use-sound';
 // sound
-import jumpsound from '../../asset/sound/jump.mp3'
+// import jumpsound from '../../asset/sound/jump.mp3'
 import crashsound from '../../asset/sound/crash.mp3'
-import poinsound from '../../asset/sound/poin.mp3'
+// import poinsound from '../../asset/sound/poin.mp3'
 import restartsound from '../../asset/sound/restart.mp3'
-import { Cloud } from "./cloud";
-import woodbox from "../../asset/image/box.svg"
+// import { Cloud } from "./cloud";
+import woodbox from "../../asset/image/box.jpg"
 
 function Obstacle() {
     return (
@@ -29,7 +27,7 @@ function Obstacle() {
             height="20px"
             objectFit='cover'
         >
-            <Image src={woodbox} />
+            <Image rel="preload" src={woodbox} />
         </Box>
     );
 };
@@ -51,15 +49,13 @@ function useInterval(callback, delay) {
 }
 
 function Ingame(props) {
-    // level speed and challenge
-    const [level, SetLevel] = useState(1);
     // score
     const { highScore, SethighScore } = useContext(AllContext);
     const [newscore, Setnewscore] = useState(false);
     // all sound
-    const [play] = useSound(jumpsound);
+    // const [play] = useSound(jumpsound);
     const [playcrashsound] = useSound(crashsound);
-    const [playpoinsound] = useSound(poinsound);
+    // const [playpoinsound] = useSound(poinsound);
     const [playrestartsound] = useSound(restartsound, {
         sprite: {
             sound: [300, 3000]
@@ -75,103 +71,71 @@ function Ingame(props) {
     const [Scene, SetScene] = useState("rgb(158, 211, 255)");
 
 
-    useInterval(() => {
-        // $.ajax({
-        //     url: Blockengine(),
-        //     success: function () {
-        //         Blockengine();
-        //     }
-        // })
-        if (nabrak === false) {
-            setCounter(counter + 1);
-        }
-        // siang
-        if (counter >= 100 && counter < 200) {
-            SetDay(true);
-            SetScene("rgb(231, 237, 138)");
-        }
-        // sore
-        else if (counter >= 200 && counter < 300) {
-            SetScene("rgb(255, 131, 59)");
-        }
-        // malam
-        else if (counter >= 300 && counter < 400) {
-            SetDay(false);
-            SetScene("rgb(21, 36, 48)");
-        }
-        // pagi 
-        else {
-            SetDay(true);
-            SetScene("rgb(158, 211, 255)");
-        }
-    }, 50);
 
-    // Checks if two elements collide
+    //cek nabrak 
+    const [nabrak, setNabrak] = useState(false);
+    const [suaranabrak, Setsuaranabrak] = useState(0);
+
     const elementsColliding = function (el1, el2) {
         const a = el1.getBoundingClientRect()
         const b = el2.getBoundingClientRect()
         if (
             (((b.left) <= (a.right + 10)) && ((b.right) > (a.right)) && ((a.top) > (b.top - a.height)))) {
-            // console.log(a.left);
-            // console.log(a.right);
-            // console.log(a.width);
-            // console.log(a.height);
-            // console.log(b.left);
-            // console.log(b.right);
             return true
         }
         return false
     }
-
-
-    useEffect(() => {
-        const setDelay = delay => new Promise(resolve => {
-            // console.log(`Process running for ${delay}`);
-
-            setTimeout(() => {
-                // console.log('Process done');
-                resolve();
-            }, delay);
-        });
-
-        setDelay(3000)
-            .then(() => setDelay(100))
-            .then(() => setDelay(200))
-            .then(() => setDelay(300));
-    }, [])
     // 
-    const [nabrak, setNabrak] = useState(false);
-    useEffect(() => {
 
+    let character = document.getElementById("character");
+    let block = document.getElementById("block");
+    useInterval(() => {
+        if (nabrak === false) {
+            setCounter(counter + 1);
+            if (counter > highScore) {
+                SethighScore(counter);
+                Setnewscore(true);
+            }
+            // 
+            if (counter >= 100 && counter < 200) {
+                SetDay(true);
+                SetScene("rgb(231, 237, 138)");
+            }
+            // sore
+            else if (counter >= 200 && counter < 300) {
+                SetScene("rgb(255, 131, 59)");
+            }
+            // malam
+            else if (counter >= 300 && counter < 400) {
+                SetDay(false);
+                SetScene("rgb(21, 36, 48)");
+            }
+            // pagi 
+            else {
+                SetDay(true);
+                SetScene("rgb(158, 211, 255)");
+            }
 
-        if (counter > highScore) {
-            SethighScore(counter);
-            Setnewscore(true);
         }
-        let character = document.getElementById("character");
-        let block = document.getElementById("block");
         var colide = elementsColliding(character, block);
         if (colide === true) {
             setNabrak(true);
-            if (nabrak === true) {
+            if (suaranabrak === (0)) {
                 playcrashsound();
+                Setsuaranabrak(1);
             }
             onOpen();
-            let character = document.getElementById("character");
-            let block = document.getElementById("block");
             character.style.animationPlayState = 'paused';
             block.style.animationPlayState = 'paused';
+            return;
         }
-    });
+    }, 100);
 
-    // mouse down and up
-    const [mouseDown, setMouseDown] = useState(false);
+
+    // const [mouseDown, setMouseDown] = useState(false);
     const [animate, Setanimate] = useState(false);
     function OnMouseDown() {
-        setMouseDown(true);
-        // if (nabrak == false) {
-        //     setMouseDown(true);
-        // }
+        // setMouseDown(true);
         Setanimate(true);
         setTimeout(() => {
             Setanimate(false);
@@ -179,24 +143,9 @@ function Ingame(props) {
         }, 400);
     };
 
-
     // block run
-    const [stop, Setstop] = useState(false);
-    const [blockrun, Setblockrun] = useState(false);
-    function Blockengine() {
-        Setblockrun(true);
-        setTimeout(() => {
-            Setblockrun(false);
-        }, 1000);
-    }
-    // .then(() => setDelay(1000))
-    // .then(() => setDelay(1000))
-    // .then(() => setDelay(1000));
-    // }
-    // useInterval(() => {
-    //     Setblockrun(!blockrun);
-    // }, 1500);
-    // return display
+    // const [blockrun, Setblockrun] = useState(false);
+
     return (<Box
         w={'100%'}
         h='100%'
@@ -217,18 +166,17 @@ function Ingame(props) {
         <Modal closeOnOverlayClick={false} isOpen={isOpen} onClose={onClose}>
             <ModalOverlay />
             <ModalContent bg={'none'}>
-                <ModalHeader color={'white'}>
-                    <Center className="prevent-select">
-                        Nabrak Cok!
-                    </Center>
-                </ModalHeader>
-                {/* <ModalCloseButton /> */}
+                <Text color="white">
+                    Nabrak Cok!
+                </Text>
+                <br />
                 <ModalBody>
-                    <Center>
+                    <Center className="prevent-select">
                         <Button
                             onClick={() => {
                                 props.handleClick('start')
                                 playrestartsound({ id: 'sound' });
+                                Setsuaranabrak(0);
                             }}
                             colorScheme='blue' mr={3}
                             className="prevent-select"
@@ -237,10 +185,6 @@ function Ingame(props) {
                         </Button>
                     </Center>
                 </ModalBody>
-
-                <ModalFooter>
-
-                </ModalFooter>
             </ModalContent>
         </Modal>
         <br />
@@ -263,17 +207,17 @@ function Ingame(props) {
                     left='50%'
                     top={'30%'}
                 >
-                    <Cloud />
+                    {/* <Cloud /> */}
                 </Box>
                 <Box
                     pos={'absolute'}
                     left='20%'
                     top={'20%'}
                 >
-                    <Cloud />
+                    {/* <Cloud /> */}
                 </Box>
                 <Ghost jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
-                <Obstacle className={blockrun ? "blockmove" : "blockstay"} />
+                <Obstacle/>
             </Flex>
         </Center>
         <br />
@@ -285,7 +229,6 @@ function Ingame(props) {
             <b>
                 {newscore ? "NEW HIGH SCORE!" : ""}
             </b>
-            <Button onClick={() => { Setblockrun(!blockrun) }}></Button>
         </Text>
     </Box >);
 }

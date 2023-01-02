@@ -7,15 +7,11 @@ import { ChakraProvider, theme } from '@chakra-ui/react';
 import Start from './pages/start/Start';
 import Ingame from './pages/ingame/Game';
 import { Box } from '@chakra-ui/react';
-import AjaxGetExample from './pages/form/Ajaxget';
-import { Testcircle } from './testcircle/circle';
-
 
 function App() {
-  const [game, setGame] = useState('start');
+  const [game, setGame] = useState('ingame');
   const handleClick = gameState => {
     setGame(gameState);
-    console.log(game);
   };
 
   // high-score
@@ -34,9 +30,6 @@ function App() {
             switch (game) {
               case 'start':
                 return <Start handleClick={handleClick} />;
-              case 'form':
-                // return <Formdata handleClick={handleClick} />;
-                return <Testcircle/>
               case 'ingame':
                 return <Ingame handleClick={handleClick} />;
               default:

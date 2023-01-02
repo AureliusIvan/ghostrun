@@ -1,4 +1,4 @@
-import { Box, Grid, GridItem, Flex } from "@chakra-ui/layout";
+import { GridItem, Flex } from "@chakra-ui/layout";
 
 
 function Leaderboardcard(props) {

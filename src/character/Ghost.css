@@ -1,7 +1,6 @@
 .wrapper {
     position: absolute;
     left: 0;
-    /* right: 0; */
     bottom: -7px;
     margin: auto;
     display: table-cell;
@@ -56,18 +55,13 @@
     height: 33px;
     border-radius: 0 0 33px 33px;
     background: #334C68;
-    /* background: rgb(0, 0, 0); */
     position: absolute;
     top: 100px;
     left: 50%;
     margin-left: -33px;
-    /* animation: grow 0.7s 2.6s 1 ease;
-    animation-fill-mode: forwards;
-    -webkit-animation: grow 0.7s 2.6s 1 ease;
-    -webkit-animation-fill-mode: forwards; */
     -webkit-transform: scale(1);
     transform: scale(1);
-    animation: mouthh 1s infinite alternate ;
+    transition: 0.5s;
 }
 
 
@@ -78,10 +72,6 @@
     background: rgba(149, 36, 0, 0.1);
     position: absolute;
     top: 70px;
-    /* animation: grow 0.7s 2s 1 ease;
-    animation-fill-mode: forwards;
-    -webkit-animation: grow 0.7s 2s 1 ease;
-    -webkit-animation-fill-mode: forwards; */
     -webkit-transform: scale(1);
     transform: scale(1);
 }
@@ -156,15 +146,3 @@
     border-radius: 50%;
 }
 
-/* animation */
-
-@keyframes mouthh {
-    0%{
-        height: 13px;
-
-    }
-    100%{
-        height: 33px;
-
-    }
-}

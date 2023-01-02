@@ -41,14 +41,7 @@
     animation-duration: 1.5s;
     will-change: left;
 }
-/* 
-.blockmove {
-    transform: translateY(-700px);
-    -webkit-transform: translateY(-700px);
-    -moz-transform: translateY(-700px);
-    -o-transform: translateY(-700px);
-    -ms-transform: translateY(-700px);
-} */
+
 
 @keyframes block {
     0% {
@@ -102,14 +95,4 @@ p {
     border-radius: 50%;
     top: -90px;
     right: 40px;
-}
-
-@keyframes move {
-    0% {
-        transform: translatex(0);
-    }
-
-    50% {
-        transform: translatex(-40px);
-    }
 }
