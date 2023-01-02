@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/ghostrun/static/css/main.cc9a7cd6.css",
-    "main.js": "/ghostrun/static/js/main.679c29ed.js",
+    "main.css": "/ghostrun/static/css/main.c03625ed.css",
+    "main.js": "/ghostrun/static/js/main.50263342.js",
     "static/js/845.c97ad5eb.chunk.js": "/ghostrun/static/js/845.c97ad5eb.chunk.js",
     "static/js/787.02a092e3.chunk.js": "/ghostrun/static/js/787.02a092e3.chunk.js",
+    "static/media/box.svg": "/ghostrun/static/media/box.71868cad5351b592fcdf59ada349d919.svg",
     "static/media/start.mp3": "/ghostrun/static/media/start.31f371aa54d6099a48e0.mp3",
     "static/media/jump.mp3": "/ghostrun/static/media/jump.a2774fd0d75bdfeed2da.mp3",
     "static/media/restart.mp3": "/ghostrun/static/media/restart.778c3b691aa2aabd399d.mp3",
-    "static/media/box.jpg": "/ghostrun/static/media/box.cd760f08ab6768dbd736.jpg",
     "static/media/crash.mp3": "/ghostrun/static/media/crash.108eb864ed4a21c97387.mp3",
     "static/media/poin.mp3": "/ghostrun/static/media/poin.2944938830ac5d97fe17.mp3",
     "index.html": "/ghostrun/index.html",
-    "main.cc9a7cd6.css.map": "/ghostrun/static/css/main.cc9a7cd6.css.map",
-    "main.679c29ed.js.map": "/ghostrun/static/js/main.679c29ed.js.map",
+    "main.c03625ed.css.map": "/ghostrun/static/css/main.c03625ed.css.map",
+    "main.50263342.js.map": "/ghostrun/static/js/main.50263342.js.map",
     "845.c97ad5eb.chunk.js.map": "/ghostrun/static/js/845.c97ad5eb.chunk.js.map",
     "787.02a092e3.chunk.js.map": "/ghostrun/static/js/787.02a092e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.cc9a7cd6.css",
-    "static/js/main.679c29ed.js"
+    "static/css/main.c03625ed.css",
+    "static/js/main.50263342.js"
   ]
 }
