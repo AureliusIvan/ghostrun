@@ -1,6 +1,5 @@
 import {
     Box,
-    Image,
     Center,
     Button,
     Text,
@@ -50,21 +49,6 @@ function Start(props) {
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={3}>
                     <Center mt="30px" gap="10px">
-                        {/* <Text
-                            pos={'absolute'}
-                            top={['0%', '0%', '0%']}
-                            zIndex={'1 !important'}
-                            borderRadius="50px"
-                            w={['300px', '400px']}
-                            textAlign="center"
-                            padding="1px"
-                            bgColor={'purple'}
-                            color="white"
-                            fontSize={['40px', '50px']}
-                            className="prevent-select"
-                        >
-                            GHOST RUN!
-                        </Text> */}
                     </Center>
                 </GridItem>
             </Grid>
@@ -105,7 +89,7 @@ function Start(props) {
                             borderRadius="20px"
                             onClick={() => {
                                 props.handleClick('ingame');
-                                play();
+                                // play();
                             }}
                             pointerEvents="all"
                             transition="0.5s"

@@ -12,11 +12,23 @@
     position: relative;
     left: 0;
     bottom: -20px;
-    /* border: 10px solid black ; */
 }
 
 .animate {
-    animation: jump 0.5s linear alternate;
+    /* animation: jump 0.5s linear alternate; */
+    top: -700px !important;
+    /* -webkit-transform: translateY("-700px");
+    transform: translateY("-700px"); */
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+}
+
+.notanimate {
+    /* animation: jump 0.5s linear alternate; */
+    top: 0px !important;
 }
 
 @keyframes jump {
@@ -27,6 +39,7 @@
     50% {
         top: -700px;
     }
+
     60% {
         top: -700px;
     }
@@ -43,11 +56,12 @@
     margin: 0;
     border: 2px solid rgb(116, 94, 72);
     position: relative;
-    animation: block infinite linear;
+    /* animation: block infinite linear; */
     /* animation-duration: 1.5s; */
+    will-change: left;
 }
 
-@keyframes block {
+/* @keyframes block {
     0% {
         left: 400px
     }
@@ -55,7 +69,7 @@
     100% {
         left: -70px
     }
-}
+} */
 
 p {
     text-align: center;

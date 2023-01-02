@@ -9,6 +9,7 @@
     position: relative;
     position: absolute;
     transform: scale(0.15);
+    transition: 0.5s;
 }
 
 .head {
@@ -23,11 +24,19 @@
     margin-left: -98px;
 
     transform-origin: bottom;
-    -webkit-transform-origin: bottom;
+    /* -webkit-transform-origin: bottom;
     -webkit-transform: scale(1) translateZ(1);
     transform: scale(1) translateZ(1);
     -webkit-animation-fill-mode: forwards;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
+    
+    will-change: top;
+    transition: 0.7s;
+    -webkit-transition: 0.7s;
+    -moz-transition: 0.7s;
+    -ms-transition: 0.7s;
+    -o-transition: 0.7s;
+    
 }
 
 

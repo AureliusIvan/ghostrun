@@ -30,7 +30,6 @@ function Obstacle() {
             height="20px"
             objectFit='cover'
             className="prevent-select"
-            animationDuration="0.5"
         >
             <Image src={woodbox} />
         </Box>
@@ -107,22 +106,39 @@ function Ingame(props) {
         const a = el1.getBoundingClientRect()
         const b = el2.getBoundingClientRect()
         if (
-            (((b.left) <= (a.right + 10)) && ((b.right) > (a.right)) && ((a.top) > (b.top - a.height)))
-            // (((a.left + a.width) == (b.right)))
-        ) {
-            console.log(a.left);
-            console.log(a.right);
-            console.log(a.width);
-            console.log(a.height);
-            console.log(b.left);
-            console.log(b.right);
+            (((b.left) <= (a.right + 10)) && ((b.right) > (a.right)) && ((a.top) > (b.top - a.height)))) {
+            // console.log(a.left);
+            // console.log(a.right);
+            // console.log(a.width);
+            // console.log(a.height);
+            // console.log(b.left);
+            // console.log(b.right);
             return true
         }
         return false
     }
 
+
+    useEffect(() => {
+        const setDelay = delay => new Promise(resolve => {
+            // console.log(`Process running for ${delay}`);
+
+            setTimeout(() => {
+                // console.log('Process done');
+                resolve();
+            }, delay);
+        });
+
+        setDelay(3000)
+            .then(() => setDelay(100))
+            .then(() => setDelay(200))
+            .then(() => setDelay(300));
+    }, [])
+    // 
     const [nabrak, setNabrak] = useState(false);
     useEffect(() => {
+
+
         if (counter > highScore) {
             SethighScore(counter);
             Setnewscore(true);
@@ -145,15 +161,27 @@ function Ingame(props) {
 
     // mouse down and up
     const [mouseDown, setMouseDown] = useState(false);
+    const [animate, Setanimate] = useState(false);
     function OnMouseDown() {
         setMouseDown(true);
-        if (nabrak == false) {
-            play();
-        }
+        // if (nabrak == false) {
+        //     setMouseDown(true);
+        // }
+        Setanimate(true);
+        setTimeout(() => {
+            Setanimate(false);
+            
+        }, 1700);
+        // Setanimate(false);
+        // setMouseDown(false);
+    };
+
+
+    // jumppp 
+    function Jump() {
+
     }
-    function AnimationEnd() {
-        setMouseDown(false);
-    }
+
 
     // return display
     return (<Box
@@ -228,7 +256,8 @@ function Ingame(props) {
                     <Cloud />
                 </Box>
                 {/* <Cloud left="70%"/> */}
-                <Ghost jump={mouseDown ? "animate head" : "head"} AnimationEnd={AnimationEnd} frown={nabrak} />
+                {/* <Ghost jump={mouseDown ? "animate head" : "head"} AnimationEnd={AnimationEnd} frown={nabrak} /> */}
+                <Ghost jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
                 <Obstacle />
             </Flex>
         </Center>

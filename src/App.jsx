@@ -6,10 +6,9 @@ import { ChakraProvider, theme } from '@chakra-ui/react';
 // pages
 import Start from './pages/start/Start';
 import Ingame from './pages/ingame/Game';
-import { Formdata } from './pages/form/Formdata';
 import { Box } from '@chakra-ui/react';
-import Phptest from './phptest/Test';
 import AjaxGetExample from './pages/form/Ajaxget';
+import { Testcircle } from './testcircle/circle';
 
 
 function App() {
@@ -37,7 +36,7 @@ function App() {
                 return <Start handleClick={handleClick} />;
               case 'form':
                 // return <Formdata handleClick={handleClick} />;
-                return <AjaxGetExample/>
+                return <Testcircle/>
               case 'ingame':
                 return <Ingame handleClick={handleClick} />;
               default:
