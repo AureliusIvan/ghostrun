@@ -14,6 +14,7 @@ import './Start.css';
 import startsound from "../../asset/sound/start.mp3";
 import useSound from 'use-sound';
 import Ghostforstart from './ghostforstart';
+import AjaxGetExample from '../form/Ajaxget';
 
 function Start(props) {
     const [play] = useSound(startsound);
@@ -36,24 +37,34 @@ function Start(props) {
                 templateColumns="repeat(3, 1fr)"
                 gap={0}
             >
+                {/* leaderboard */}
+                <GridItem rowSpan={1} colSpan={3}>
+                    <Text pos='absolute' left="0" right="0" top="35%" margin="auto" zIndex="50" border="10px solid brown" bgColor="green" color="black" width="300px" height="200px" padding="10px">
+                        <AjaxGetExample/>
+                    </Text>
+                </GridItem>
+                {/*  */}
+                <GridItem rowSpan={1} colSpan={3}>
+                    {/* info */}
+                    <Text bgColor="yellow" color="black" width="200px" padding="10px" zIndex={102} >Under Development!</Text>
+                </GridItem>
                 <GridItem rowSpan={1} colSpan={3}>
                     <Center mt="30px" gap="10px">
-                        <Text
+                        {/* <Text
                             pos={'absolute'}
-                            top={['60%', '56%', '56%']}
-                            zIndex={100}
+                            top={['0%', '0%', '0%']}
+                            zIndex={'1 !important'}
                             borderRadius="50px"
                             w={['300px', '400px']}
                             textAlign="center"
                             padding="1px"
-                            // bgColor={'purple'}
-                            // bgGradient="linear(to-l, #7928CA, #FF0080)"
+                            bgColor={'purple'}
                             color="white"
                             fontSize={['40px', '50px']}
-                            className="prevent-select glow"
+                            className="prevent-select"
                         >
-                            GHOST RUN
-                        </Text>
+                            GHOST RUN!
+                        </Text> */}
                     </Center>
                 </GridItem>
             </Grid>
@@ -75,7 +86,7 @@ function Start(props) {
                         alignItems='center'
                         alignSelf={'center'}
                     >
-                        <Ghostforstart/>
+                        <Ghostforstart />
                     </Flex>
                 </GridItem>
             </Grid>
@@ -89,32 +100,26 @@ function Start(props) {
                 <GridItem className="gridItems" rowSpan={1} colSpan={3}>
                     <VStack spacing={5}>
                         <Button
-                            width="80px"
+                            width="300px"
                             height="80px"
-                            borderRadius="50%"
+                            borderRadius="20px"
                             onClick={() => {
                                 props.handleClick('ingame');
                                 play();
                             }}
-                            // onMouseDown={playActive}
                             pointerEvents="all"
                             transition="0.5s"
                             _hover={{
                                 transform: 'scale(1.2)',
                                 bgGradient: 'linear(to-r, red.400, yellow.400)',
                             }}
-                            shadow="xl"
-                            bgColor={"purple"}
-                            // bgGradient="linear(to-l, red.500, yellow.500)"
-                            filter="invert(1)"
-                            // paddingTop="200px"
-                            paddingLeft={'25px'}
-                            className="StartBTN"
+                            bgColor={"green.700"}
+                            color="white"
+                            fontSize="30px"
                         >
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                                <path d="M361 215C375.3 223.8 384 239.3 384 256C384 272.7 375.3 288.2 361 296.1L73.03 472.1C58.21 482 39.66 482.4 24.52 473.9C9.377 465.4 0 449.4 0 432V80C0 62.64 9.377 46.63 24.52 38.13C39.66 29.64 58.21 29.99 73.03 39.04L361 215z" />
-                            </svg>
+                            START RUNNING!
                         </Button>
+                        <Button onClick={() => props.handleClick('form')} >credit</Button>
                         {/* <Credit content="test" /> */}
                     </VStack>
                 </GridItem>

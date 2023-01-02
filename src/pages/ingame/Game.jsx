@@ -19,15 +19,18 @@ import crashsound from '../../asset/sound/crash.mp3'
 import poinsound from '../../asset/sound/poin.mp3'
 import restartsound from '../../asset/sound/restart.mp3'
 import { Cloud } from "./cloud";
-import woodbox from "../../asset/image/box.jpg"
+import woodbox from "../../asset/image/box.svg"
 
 function Obstacle() {
     return (
         <Box
             id="block"
-            bg={woodbox}
+            // bg={woodbox}
+            width="20px"
+            height="20px"
             objectFit='cover'
             className="prevent-select"
+            animationDuration="0.5"
         >
             <Image src={woodbox} />
         </Box>
@@ -36,7 +39,6 @@ function Obstacle() {
 
 function useInterval(callback, delay) {
     const savedCallback = useRef();
-
     // Remember the latest callback.
     useEffect(() => {
         savedCallback.current = callback;
@@ -51,9 +53,9 @@ function useInterval(callback, delay) {
     }, [delay]);
 }
 
-
-
 function Ingame(props) {
+    // level speed and challenge
+    const [level, SetLevel] = useState(1);
     // score
     const { highScore, SethighScore } = useContext(AllContext);
     const [newscore, Setnewscore] = useState(false);
@@ -73,13 +75,30 @@ function Ingame(props) {
     //counter
     const [counter, setCounter] = useState(0);
     const [Day, SetDay] = useState(true);
+    const [Scene, SetScene] = useState("rgb(158, 211, 255)");
 
     useInterval(() => {
         if (nabrak === false) {
             setCounter(counter + 1);
         }
-        if (counter >= 200) {
+        // siang
+        if (counter >= 100 && counter < 200) {
+            SetDay(true);
+            SetScene("rgb(231, 237, 138)");
+        }
+        // sore
+        else if (counter >= 200 && counter < 300) {
+            SetScene("rgb(255, 131, 59)");
+        }
+        // malam
+        else if (counter >= 300 && counter < 400) {
             SetDay(false);
+            SetScene("rgb(21, 36, 48)");
+        }
+        // pagi 
+        else {
+            SetDay(true);
+            SetScene("rgb(158, 211, 255)");
         }
     }, 50);
 
@@ -88,8 +107,15 @@ function Ingame(props) {
         const a = el1.getBoundingClientRect()
         const b = el2.getBoundingClientRect()
         if (
-            (((b.right) < (a.right + a.width)) && ((b.right) > (a.right)) && (a.bottom >= b.top))
+            (((b.left) <= (a.right + 10)) && ((b.right) > (a.right)) && ((a.top) > (b.top - a.height)))
+            // (((a.left + a.width) == (b.right)))
         ) {
+            console.log(a.left);
+            console.log(a.right);
+            console.log(a.width);
+            console.log(a.height);
+            console.log(b.left);
+            console.log(b.right);
             return true
         }
         return false
@@ -134,7 +160,7 @@ function Ingame(props) {
         w={'100%'}
         h='100%'
         transition={'0.5s'}
-        bgColor={Day ? "rgb(158, 211, 255)" : "rgb(21, 36, 48)"}
+        bgColor={Scene}
         onMouseDownCapture={OnMouseDown}
         className='prevent-select'
     >
