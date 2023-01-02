@@ -36,33 +36,19 @@
     border-radius: 5px;
     margin: 0;
     border: 2px solid rgb(116, 94, 72);
-    position: absolute;
-    transform: translateX(450px);
-    will-change: transform;
-    transition: transform 1s, opacity 0s;
-    -webkit-transition: transform 1s, opacity 0s;
-    -moz-transition: transform 1s, opacity 0s;
-    -o-transition: transform 1s, opacity 0s;
-    
+    position: relative;
+    animation: block infinite linear;
+    animation-duration: 1.5s;
+    will-change: left;
 }
-
-.blockstay {
-    transform: translateX(450px) !important;
-    -webkit-transform: translateX(450px) !important;
-    -moz-transform: translateX(450px) !important;
-    -o-transform: translateX(450px) !important;
-    -ms-transform: translateX(450px) !important;
-    
-}
-
-
+/* 
 .blockmove {
-    transform: translateX(0px) !important;
-    -webkit-transform: translateX(0px) !important;
-    -moz-transform: translateX(0px) !important;
-    -o-transform: translateX(0px) !important;
-    -ms-transform: translateX(0px) !important;
-}
+    transform: translateY(-700px);
+    -webkit-transform: translateY(-700px);
+    -moz-transform: translateY(-700px);
+    -o-transform: translateY(-700px);
+    -ms-transform: translateY(-700px);
+} */
 
 @keyframes block {
     0% {
@@ -74,8 +60,6 @@
     }
 }
 
-
-/*  */
 p {
     text-align: center;
 }

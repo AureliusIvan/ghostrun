@@ -21,15 +21,13 @@ import restartsound from '../../asset/sound/restart.mp3'
 import { Cloud } from "./cloud";
 import woodbox from "../../asset/image/box.svg"
 
-function Obstacle(props) {
+function Obstacle() {
     return (
         <Box
             id="block"
             width="20px"
             height="20px"
             objectFit='cover'
-            // className="blockmove"
-            className={props.className}
         >
             <Image src={woodbox} />
         </Box>
@@ -76,7 +74,14 @@ function Ingame(props) {
     const [Day, SetDay] = useState(true);
     const [Scene, SetScene] = useState("rgb(158, 211, 255)");
 
+
     useInterval(() => {
+        // $.ajax({
+        //     url: Blockengine(),
+        //     success: function () {
+        //         Blockengine();
+        //     }
+        // })
         if (nabrak === false) {
             setCounter(counter + 1);
         }
@@ -176,23 +181,21 @@ function Ingame(props) {
 
 
     // block run
+    const [stop, Setstop] = useState(false);
     const [blockrun, Setblockrun] = useState(false);
-    useEffect(() => {
-        const setDelay = delay => new Promise(resolve => {
-            Setblockrun(true);
-            setTimeout(() => {
-                resolve();
-                Setblockrun(false);
-            }, delay);
-        });
-
-        setDelay(1000)
-            .then(() => setDelay(1000))
-            .then(() => setDelay(1000))
-            .then(() => setDelay(1000));
-    }, [])
-    
-
+    function Blockengine() {
+        Setblockrun(true);
+        setTimeout(() => {
+            Setblockrun(false);
+        }, 1000);
+    }
+    // .then(() => setDelay(1000))
+    // .then(() => setDelay(1000))
+    // .then(() => setDelay(1000));
+    // }
+    // useInterval(() => {
+    //     Setblockrun(!blockrun);
+    // }, 1500);
     // return display
     return (<Box
         w={'100%'}
@@ -269,8 +272,6 @@ function Ingame(props) {
                 >
                     <Cloud />
                 </Box>
-                {/* <Cloud left="70%"/> */}
-                {/* <Ghost jump={mouseDown ? "animate head" : "head"} AnimationEnd={AnimationEnd} frown={nabrak} /> */}
                 <Ghost jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
                 <Obstacle className={blockrun ? "blockmove" : "blockstay"} />
             </Flex>
@@ -284,7 +285,7 @@ function Ingame(props) {
             <b>
                 {newscore ? "NEW HIGH SCORE!" : ""}
             </b>
-            <Button onClick={()=>{Setblockrun(!blockrun)}}></Button>
+            <Button onClick={() => { Setblockrun(!blockrun) }}></Button>
         </Text>
     </Box >);
 }
