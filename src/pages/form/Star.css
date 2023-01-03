@@ -99,3 +99,11 @@ input.star:checked ~ .rev-box{
   overflow: visible;
 }
 
+
+/* three dot */
+.dot {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+ /* some width */
+}

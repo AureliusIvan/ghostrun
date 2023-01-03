@@ -31,7 +31,7 @@
 }
 
 /*  */
-#block {
+.obstacle {
     background-color: rgb(111, 102, 17);
     border-radius: 5px;
     margin: 0;
@@ -53,9 +53,6 @@
     }
 }
 
-p {
-    text-align: center;
-}
 
 /* cloud */
 
@@ -66,33 +63,31 @@ p {
     transform: translate(-50%, -50%) scale(0.1);
 }
 
-#cloud {
+.cloud {
     background: rgba(255, 255, 255);
     width: 300px;
     height: 100px;
     border-radius: 150px;
     box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
     animation: move 3s infinite;
+    /* transform: scale(0.2) translateY(700px) translateX(-400px); */
 }
 
-#cloud:after {
+.cloud:after {
     content: '';
     background: rgba(255, 255, 255);
     position: absolute;
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    top: -50px;
-    left: 50px;
 }
 
-#cloud:before {
+.cloud:before {
     content: '';
     background: rgba(255, 255, 255);
     position: absolute;
-    width: 170px;
+    width: 150px;
     height: 150px;
     border-radius: 50%;
-    top: -90px;
-    right: 40px;
+    transform: translate(-90px, -60px);
 }

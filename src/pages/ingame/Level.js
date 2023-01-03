@@ -1,0 +1,39 @@
+const Level = [
+    {
+        id:0,
+        width:"40px",
+        height:"40px",
+        transform:"",
+        src:""
+    }, 
+    {
+        id:1,
+        width:"50px",
+        height:"50px",
+        transform:"",
+        src:""
+    }, 
+    {
+        id:2,
+        width:"60px",
+        height:"60px",
+        transform:"",
+        src:""
+    },
+    {
+        id:3,
+        width:"70px",
+        height:"70px",
+        transform:"",
+        src:""
+    },
+    {
+        id:4,
+        width:"80px",
+        height:"80px",
+        transform:"",
+        src:""
+    }
+]
+
+export default Level;

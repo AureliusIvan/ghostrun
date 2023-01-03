@@ -9,13 +9,17 @@ import Ingame from './pages/ingame/Game';
 import { Box } from '@chakra-ui/react';
 
 function App() {
-  const [game, setGame] = useState('ingame');
+  const [game, setGame] = useState('start');
   const handleClick = gameState => {
     setGame(gameState);
   };
 
   // high-score
   const [highScore, SethighScore] = useState(0);
+  const [size, Setsize] = useState(1);
+  const [playername, Setplayername] = useState("Player");
+  const [playerid, Setplayerid] = useState(0);
+
 
 
   return (
@@ -23,7 +27,13 @@ function App() {
       <AllContext.Provider
         value={{
           highScore,
-          SethighScore
+          SethighScore,
+          size,
+          Setsize,
+          playername,
+          Setplayername,
+          playerid,
+          Setplayerid
         }}>
         <Box className="App" h={'100vh'} pos='relative' overflow={'hidden'} scroll="no">
           {(() => {

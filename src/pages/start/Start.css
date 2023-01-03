@@ -5,24 +5,28 @@
 }
 
 
+/* SCROLL BAR */
+::-webkit-scrollbar {
+    width: 20px;
+    background-color: aliceblue;
+}
 
-/* @keyframes ripple {
-    0% {
-        box-shadow: 0 0 0 0px rgb(68, 68, 238, 0.0), 0 0 0 0px rgb(0, 0, 0), 0 0 0 0px rgb(68, 68, 238, 0.0),
-            0 0 0 0px rgb(0, 0, 0), 0 0 0 0px rgb(68, 68, 238, 0.0), 0 0 0 0px rgb(0, 0, 0), 0 0 0 0px rgb(68, 68, 238, 0.0),
-            0 0 0 0px rgb(0, 0, 0);
-    }
+/* Track */
+::-webkit-scrollbar-track {
+    /* box-shadow: inset 0 0 5px grey; */
+    border-radius: 10px;
+}
 
-    100% {
-        box-shadow: 0 0 0 15px rgb(68, 68, 238, 0.0), 0 0 0 17px rgba(255, 255, 255, 0),
-            0 0 0 40px rgb(68, 68, 238, 0.0), 0 0 0 42px rgba(255, 255, 255, 0), 0 0 0 70px rgb(68, 68, 238, 0.0),
-            0 0 0 72px rgba(255, 255, 255, 0), 0 0 0 105px rgb(68, 68, 238, 0.0),
-            0 0 0 107px rgba(255, 255, 255, 0);
-    }
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: 1px solid rgb(167, 165, 165);
+}
 
-} */
-
-
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #a7a7a7;
+}
 
 /* ghost */
-

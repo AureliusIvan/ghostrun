@@ -5,14 +5,23 @@ import {
     Text,
     Grid,
     GridItem,
-    Flex
+    Flex,
+    Input
 } from '@chakra-ui/react';
-
+import { useContext } from 'react';
+import { AllContext } from '../../Value/AllContext';
+import supabase from '../../supabaseconfig/supabaseClient';
 import './Start.css';
 import Ghostforstart from './ghostforstart';
-// import AjaxGetExample from '../form/Ajaxget';
+import AjaxGetExample from '../form/Leaderboard';
 
 function Start(props) {
+    const { playername, Setplayername } = useContext(AllContext);
+    function namehandler(e){
+        Setplayername(e.target.value);
+        console.log(playername);
+    }
+    
     return (
         <Box
             draggable="false"
@@ -31,14 +40,18 @@ function Start(props) {
             >
                 {/* leaderboard */}
                 <GridItem rowSpan={1} colSpan={3}>
-                    <Text pos='absolute' left="0" right="0" top="35%" margin="auto" zIndex="50" border="10px solid brown" bgColor="green" color="black" width="300px" height="200px" padding="10px">
-                        {/* <AjaxGetExample/> */}
+                    <Text overflowY={'scroll'} pos='absolute' left="0" right="0" top="35%" margin="auto" zIndex="50" border="10px solid brown" borderRadius={"10px"} bgColor="green" color="black" width="300px" height="200px" padding="10px">
+                        <AjaxGetExample />
                     </Text>
                 </GridItem>
                 {/*  */}
                 <GridItem rowSpan={1} colSpan={3}>
                     {/* info */}
                     <Text bgColor="yellow" color="black" width="200px" padding="10px" zIndex={102} >Under Development!</Text>
+                </GridItem>
+                {/* {input name} */}
+                <GridItem rowSpan={1} colSpan={3}>
+                    <Input value={playername} marginTop={"1px"} htmlSize={4} width='200px' zIndex={100} variant='filled' placeholder='INPUT PLAYER NAME' onChangeCapture={namehandler} />
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={3}>
                     <Center mt="30px" gap="10px">
@@ -75,24 +88,29 @@ function Start(props) {
                 gap={0}
             >
                 <GridItem className="gridItems" rowSpan={1} colSpan={3}>
-                        <Button
-                            width="300px"
-                            height="80px"
-                            borderRadius="20px"
-                            onClick={() => {
-                                props.handleClick('ingame');
-                            }}
-                            pointerEvents="all"
-                            transition="0.5s"
-                            _hover={{
-                                transform: 'scale(1.2)',
-                            }}
-                            bgColor={"green.700"}
-                            color="white"
-                            fontSize="30px"
-                        >
-                            START RUNNING!
-                        </Button>
+                    <Button
+                        width="300px"
+                        height="80px"
+                        borderRadius="20px"
+                        onClick={() => {
+                            props.handleClick('ingame');
+                            // fetchnama();
+                        }}
+                        pointerEvents="all"
+                        transition="0.5s"
+                        _hover={{
+                            transform: 'scale(1.2)',
+                        }}
+                        bgColor={"green.700"}
+                        color="white"
+                        fontSize="30px"
+                    >
+                        START RUNNING!
+                    </Button>
+                </GridItem>
+                <GridItem className="gridItems" rowSpan={1} colSpan={3}>
+                    <Button>Leaderboard</Button>
+                    <Button>Credit</Button>
                 </GridItem>
             </Grid>
         </Box>

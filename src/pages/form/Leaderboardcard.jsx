@@ -1,5 +1,5 @@
 import { GridItem, Flex } from "@chakra-ui/layout";
-
+import "./Star.css"
 
 function Leaderboardcard(props) {
     return (<>
@@ -10,13 +10,13 @@ function Leaderboardcard(props) {
             overflow={'hidden'}
         >
             <Flex>
-                <Flex justifyContent={'center'} alignItems='center' fontSize="15px" width={'10%'} height="40px" border={'1px solid white'}>
+                <Flex  justifyContent={'center'} alignItems='center' fontSize="15px" width={'15%'} height="40px" border={'1px solid white'}>
                     {props.id}
                 </Flex>
-                <Flex alignItems='center' padding={'10px'} fontSize="20px" width={'70%'} height="40px" textAlign={'left'} border={'1px solid white'}>
+                <Flex className="dot" alignItems='center' padding={'10px'} fontSize="15px" width={'65%'} height="40px" textAlign={'left'} border={'1px solid white'}>
                     {props.name}
                 </Flex>
-                <Flex alignItems='center' padding={'10px'} fontSize="20px" width={'20%'} height="40px" textAlign={'left'} border={'1px solid white'}>
+                <Flex alignItems='center' padding={'10px'} fontSize="15px" width={'20%'} height="40px" textAlign={'left'} border={'1px solid white'}>
                     {props.score}
                 </Flex>
             </Flex>
