@@ -32,20 +32,20 @@
 
 /*  */
 .obstacle {
+    /* border:5px solid #fbd3ab; */
     background-color: rgb(111, 102, 17);
-    border-radius: 5px;
+    border-radius: 0px;
     margin: 0;
-    border: 2px solid rgb(116, 94, 72);
     position: relative;
     animation: block infinite linear;
-    animation-duration: 1.5s;
+    animation-duration: 2s;
     will-change: left;
 }
 
 
 @keyframes block {
     0% {
-        left: 400px
+        left: 550px
     }
 
     100% {

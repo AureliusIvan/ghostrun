@@ -8,7 +8,7 @@
 /* SCROLL BAR */
 ::-webkit-scrollbar {
     width: 20px;
-    background-color: aliceblue;
+    background-color: #f0f8ff;
 }
 
 /* Track */

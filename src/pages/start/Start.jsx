@@ -1,7 +1,6 @@
 import {
     Box,
     Center,
-    Button,
     Text,
     Grid,
     GridItem,
@@ -10,18 +9,19 @@ import {
 } from '@chakra-ui/react';
 import { useContext } from 'react';
 import { AllContext } from '../../Value/AllContext';
-import supabase from '../../supabaseconfig/supabaseClient';
+// import supabase from '../../supabaseconfig/supabaseClient';
 import './Start.css';
 import Ghostforstart from './ghostforstart';
-import AjaxGetExample from '../form/Leaderboard';
+import { ButtonTemplate1 } from './Button';
+import Leaderboard from '../form/Leaderboard';
 
 function Start(props) {
     const { playername, Setplayername } = useContext(AllContext);
-    function namehandler(e){
+    function namehandler(e) {
         Setplayername(e.target.value);
         console.log(playername);
     }
-    
+
     return (
         <Box
             draggable="false"
@@ -38,21 +38,12 @@ function Start(props) {
                 templateColumns="repeat(3, 1fr)"
                 gap={0}
             >
-                {/* leaderboard */}
-                <GridItem rowSpan={1} colSpan={3}>
-                    <Text overflowY={'scroll'} pos='absolute' left="0" right="0" top="35%" margin="auto" zIndex="50" border="10px solid brown" borderRadius={"10px"} bgColor="green" color="black" width="300px" height="200px" padding="10px">
-                        <AjaxGetExample />
-                    </Text>
-                </GridItem>
                 {/*  */}
                 <GridItem rowSpan={1} colSpan={3}>
                     {/* info */}
-                    <Text bgColor="yellow" color="black" width="200px" padding="10px" zIndex={102} >Under Development!</Text>
+                    <Text bgColor="yellow.500" color="white" width="200px" padding="10px" zIndex={102} >Under Development!</Text>
                 </GridItem>
-                {/* {input name} */}
-                <GridItem rowSpan={1} colSpan={3}>
-                    <Input value={playername} marginTop={"1px"} htmlSize={4} width='200px' zIndex={100} variant='filled' placeholder='INPUT PLAYER NAME' onChangeCapture={namehandler} />
-                </GridItem>
+
                 <GridItem rowSpan={1} colSpan={3}>
                     <Center mt="30px" gap="10px">
                     </Center>
@@ -87,30 +78,38 @@ function Start(props) {
                 templateColumns="repeat(3, 1fr)"
                 gap={0}
             >
-                <GridItem className="gridItems" rowSpan={1} colSpan={3}>
-                    <Button
-                        width="300px"
-                        height="80px"
-                        borderRadius="20px"
-                        onClick={() => {
-                            props.handleClick('ingame');
-                            // fetchnama();
-                        }}
-                        pointerEvents="all"
-                        transition="0.5s"
-                        _hover={{
-                            transform: 'scale(1.2)',
-                        }}
-                        bgColor={"green.700"}
-                        color="white"
-                        fontSize="30px"
-                    >
-                        START RUNNING!
-                    </Button>
+                {/* {input name} */}
+                <GridItem rowSpan={1} colSpan={3}>
+                    <Input defaultValue={"player"} marginTop={"1px"} htmlSize={4} width='240px' zIndex={100} variant='filled' placeholder='INPUT PLAYER NAME' onChangeCapture={namehandler} />
                 </GridItem>
                 <GridItem className="gridItems" rowSpan={1} colSpan={3}>
-                    <Button>Leaderboard</Button>
-                    <Button>Credit</Button>
+                    <ButtonTemplate1
+                        height="60px"
+                        width="240px"
+                        fontSize="20px"
+                        bgColor="yellow.400"
+                        content="START RUNNING!"
+                        onClick={() => {
+                            props.handleClick('ingame');
+                        }}
+                    />
+                </GridItem>
+                <GridItem className="gridItems" rowSpan={1} colSpan={3}>
+                    <ButtonTemplate1
+                        height="60px"
+                        width="125px"
+                        bgColor="gray.700"
+                        content="Leaderboard"
+                        onClick={() => {
+                            props.handleClick('leaderboard');
+                        }}
+                    />
+                    <ButtonTemplate1
+                        height="60px"
+                        width="100px"
+                        bgColor="gray.700"
+                        content="Credit"
+                    />
                 </GridItem>
             </Grid>
         </Box>

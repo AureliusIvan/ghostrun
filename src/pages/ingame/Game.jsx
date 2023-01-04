@@ -26,10 +26,12 @@ import woodbox from "../../asset/image/box.jpg"
 // context
 import supabase from "../../supabaseconfig/supabaseClient";
 import Level from "./Level";
+import { Customtext } from "../utils/Customtext";
+import { getRandomInt } from "../utils/ramdom";
 
 function Obstacle() {
-    const { size, Setsize } = useContext(AllContext);
-    const [size2, Setsize2] = useState(0);
+    // const { size, Setsize } = useContext(AllContext);
+    // const { levellenght, Setlevellenght } = useContext(AllContext);
     const [attr, Setattr] = useState({
         transform: "",
         width: "40px",
@@ -37,21 +39,29 @@ function Obstacle() {
         src: woodbox
     });
     function onIterationend() {
+        // set Delay
+        const delay = getRandomInt(1000);
+        console.log(delay);
+        let element = document.getElementById("block");
+        element.style.animationPlayState = 'paused';
+        setTimeout(() => {
+            element.style.animationPlayState = 'running';
+        }, delay);
         // maks iterattion
-        if (size2 === 3) {
-            // maks level
-            if(size <= 4 ){
-                Setsize(size + 1);
-            }
-            Setattr({
-                transform: Level[size].transform,
-                width: Level[size].width,
-                height: Level[size].height
-            })
-            Setsize2(0);
-        } else {
-            Setsize2(size2 + 1);
-        }
+        const value = getRandomInt(4);
+        // if (levellenght === 3) {
+        // maks level
+        console.log(value);
+        // Setsize(size + 1);
+        Setattr({
+            transform: Level[value].transform,
+            width: Level[value].width,
+            height: Level[value].height
+        })
+        // Setlevellenght(0);
+        // } else {
+        //     Setlevellenght(levellenght + 1);
+        // }
         console.log("dor");
 
     }
@@ -64,8 +74,7 @@ function Obstacle() {
             objectFit='cover'
             overflow={'hidden'}
             transform={attr.transform}
-            bgColor="brown.100"
-            border="2px solid black"
+            // bgColor="brown.100"
             onAnimationIterationCapture={() => {
                 console.log("ended");
                 onIterationend();
@@ -96,6 +105,7 @@ function useInterval(callback, delay) {
 function Ingame(props) {
     const { playername, Setplayername } = useContext(AllContext);
     const { highScore, SethighScore } = useContext(AllContext);
+    const { levellenght, Setlevellenght } = useContext(AllContext);
     const fetchnama = async () => {
         const { data, error } = await supabase
             .from('Leaderboard')
@@ -129,8 +139,8 @@ function Ingame(props) {
     const [animate, Setanimate] = useState(false);
 
     function elementsColliding(el1, el2) {
-        const a = el1.getBoundingClientRect();
-        const b = el2.getBoundingClientRect();
+        const a = el1.getBoundingClientRect("");
+        const b = el2.getBoundingClientRect("");
         if (
             // (((b.left) <= (a.right + 10)) && ((b.right) > (a.right)) && ((a.top) > (b.top - a.height)) && (a.top) > (b.bottom))
 
@@ -161,19 +171,20 @@ function Ingame(props) {
                 Setnewscore(true);
             }
             // 
-            if (counter >= 100 && counter < 200) {
-                SetDay(true);
-                SetScene("rgb(231, 237, 138)");
-            }
-            // sore
-            else if (counter >= 200 && counter < 300) {
-                SetScene("rgb(255, 131, 59)");
-            }
-            // malam
-            else if (counter >= 300 && counter < 400) {
+            if (counter % 1000 >= 500) {
                 SetDay(false);
+                // SetScene("rgb(231, 237, 138)");
                 SetScene("rgb(21, 36, 48)");
             }
+            // sore
+            // else if (counter >= 200 && counter < 300) {
+            //     SetScene("rgb(255, 131, 59)");
+            // }
+            // // malam
+            // else if (counter >= 300 && counter < 400) {
+            //     SetDay(false);
+            //     SetScene("rgb(21, 36, 48)");
+            // }
             // pagi 
             else {
                 SetDay(true);
@@ -246,7 +257,8 @@ function Ingame(props) {
                                 props.handleClick('start')
                                 playrestartsound({ id: 'sound' });
                                 Setsuaranabrak(0);
-                                Setsize(40);
+                                Setlevellenght(0);
+                                Setsize(0);
                                 if (playername)
                                     fetchnama();
                             }}
@@ -279,15 +291,7 @@ function Ingame(props) {
         </Center>
         <br />
         <br />
-        <Text
-            fontStyle={'bold'}
-            color={Day ? "black" : "white"}
-            className="prevent-select"
-        >
-            <b>
-                {newscore ? "NEW HIGH SCORE!" : ""}
-            </b>
-        </Text>
+        <Customtext content={newscore ? "NEW HIGH SCORE!" : ""} />
     </Box >);
 }
 

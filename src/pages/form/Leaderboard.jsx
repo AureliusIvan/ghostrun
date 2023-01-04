@@ -1,13 +1,13 @@
 import React, { Fragment, useEffect } from 'react'
 import { useState } from 'react';
 import {
-    Box
+    Button
 } from '@chakra-ui/react'
 import { Center, Flex, GridItem } from '@chakra-ui/layout';
 import supabase from '../../supabaseconfig/supabaseClient';
 import Leaderboardcard from './Leaderboardcard';
-
-function AjaxGetExample() {
+import { Customtext } from '../utils/Customtext';
+function Leaderboard(props) {
     const [namee, Setnamee] = useState(null);
 
     useEffect(() => {
@@ -30,6 +30,11 @@ function AjaxGetExample() {
     return (<Fragment>
         {namee &&
             (<Fragment>
+                <Button onClick={() => {
+                    props.handleClick('start');
+                }}>
+                    <Customtext content="back"/>
+                </Button>
                 <Center fontSize="20px" color={'white'}>Leaderboard</Center>
                 <GridItem
                     color={'white'}
@@ -62,4 +67,4 @@ function AjaxGetExample() {
 
 }
 
-export default AjaxGetExample;
+export default Leaderboard;

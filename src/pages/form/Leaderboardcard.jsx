@@ -10,7 +10,7 @@ function Leaderboardcard(props) {
             overflow={'hidden'}
         >
             <Flex>
-                <Flex  justifyContent={'center'} alignItems='center' fontSize="15px" width={'15%'} height="40px" border={'1px solid white'}>
+                <Flex justifyContent={'center'} alignItems='center' fontSize="15px" width={'15%'} height="40px" border={'1px solid white'}>
                     {props.id}
                 </Flex>
                 <Flex className="dot" alignItems='center' padding={'10px'} fontSize="15px" width={'65%'} height="40px" textAlign={'left'} border={'1px solid white'}>

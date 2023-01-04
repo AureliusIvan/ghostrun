@@ -7,6 +7,7 @@ import { ChakraProvider, theme } from '@chakra-ui/react';
 import Start from './pages/start/Start';
 import Ingame from './pages/ingame/Game';
 import { Box } from '@chakra-ui/react';
+import Leaderboard from './pages/form/Leaderboard';
 
 function App() {
   const [game, setGame] = useState('start');
@@ -19,8 +20,7 @@ function App() {
   const [size, Setsize] = useState(1);
   const [playername, Setplayername] = useState("Player");
   const [playerid, Setplayerid] = useState(0);
-
-
+  const [levellenght, Setlevellenght] = useState(0);
 
   return (
     <ChakraProvider theme={theme}>
@@ -33,7 +33,9 @@ function App() {
           playername,
           Setplayername,
           playerid,
-          Setplayerid
+          Setplayerid,
+          levellenght,
+          Setlevellenght
         }}>
         <Box className="App" h={'100vh'} pos='relative' overflow={'hidden'} scroll="no">
           {(() => {
@@ -42,6 +44,8 @@ function App() {
                 return <Start handleClick={handleClick} />;
               case 'ingame':
                 return <Ingame handleClick={handleClick} />;
+              case 'leaderboard':
+                return <Leaderboard handleClick={handleClick} />;
               default:
                 return null;
             }
