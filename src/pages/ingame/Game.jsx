@@ -11,8 +11,7 @@ import {
     Box,
     Center,
     Text,
-    Button,
-    Image
+    Button
 } from '@chakra-ui/react';
 import { AllContext } from "../../Value/AllContext";
 import useSound from 'use-sound';
@@ -22,68 +21,11 @@ import crashsound from '../../asset/sound/crash.mp3'
 import restartsound from '../../asset/sound/restart.mp3'
 // asset
 import { Cloud } from "./cloud";
-import woodbox from "../../asset/image/box.jpg"
 // context
 import supabase from "../../supabaseconfig/supabaseClient";
-import Level from "./Level";
 import { Customtext } from "../utils/Customtext";
-import { getRandomInt } from "../utils/ramdom";
-
-function Obstacle() {
-    // const { size, Setsize } = useContext(AllContext);
-    // const { levellenght, Setlevellenght } = useContext(AllContext);
-    const [attr, Setattr] = useState({
-        transform: "",
-        width: "40px",
-        height: "40px",
-        src: woodbox
-    });
-    function onIterationend() {
-        // set Delay
-        const delay = getRandomInt(1000);
-        console.log(delay);
-        let element = document.getElementById("block");
-        element.style.animationPlayState = 'paused';
-        setTimeout(() => {
-            element.style.animationPlayState = 'running';
-        }, delay);
-        // maks iterattion
-        const value = getRandomInt(4);
-        // if (levellenght === 3) {
-        // maks level
-        console.log(value);
-        // Setsize(size + 1);
-        Setattr({
-            transform: Level[value].transform,
-            width: Level[value].width,
-            height: Level[value].height
-        })
-        // Setlevellenght(0);
-        // } else {
-        //     Setlevellenght(levellenght + 1);
-        // }
-        console.log("dor");
-
-    }
-    return (
-        <Box
-            id={'block'}
-            className="obstacle"
-            width={attr.width}
-            height={attr.height}
-            objectFit='cover'
-            overflow={'hidden'}
-            transform={attr.transform}
-            // bgColor="brown.100"
-            onAnimationIterationCapture={() => {
-                console.log("ended");
-                onIterationend();
-            }}
-        >
-            <Image rel="preload" scale={1.2} src={woodbox} />
-        </Box>
-    );
-};
+import { useCookies } from 'react-cookie';
+import Obstacle from "./object";
 
 
 function useInterval(callback, delay) {
@@ -103,19 +45,18 @@ function useInterval(callback, delay) {
 }
 
 function Ingame(props) {
-    const { playername, Setplayername } = useContext(AllContext);
+    const [cookies, setCookie] = useCookies(['user']);
     const { highScore, SethighScore } = useContext(AllContext);
-    const { levellenght, Setlevellenght } = useContext(AllContext);
+    const { Setlevellenght } = useContext(AllContext);
+
     const fetchnama = async () => {
-        const { data, error } = await supabase
+        const { } = await supabase
             .from('Leaderboard')
-            .insert({ name: playername, score: highScore })
+            .update({ name: cookies.Name, score: highScore+1 })
+            .eq('id', cookies.id)
     }
-    // // bigger obstacle
-    const { size, Setsize } = useContext(AllContext);
 
     // score
-
     const [newscore, Setnewscore] = useState(false);
     // all sound
     // const [play] = useSound(jumpsound);
@@ -141,12 +82,8 @@ function Ingame(props) {
     function elementsColliding(el1, el2) {
         const a = el1.getBoundingClientRect("");
         const b = el2.getBoundingClientRect("");
-        if (
-            // (((b.left) <= (a.right + 10)) && ((b.right) > (a.right)) && ((a.top) > (b.top - a.height)) && (a.top) > (b.bottom))
-
-            (
+        if ((
                 ((b.right) > (a.right)) &&
-                // (a.left + a.width) > (b.right) &&
                 a.top < b.bottom &&
                 (b.left) <= (a.right + 10) &&
                 a.bottom > b.top
@@ -162,30 +99,19 @@ function Ingame(props) {
     let character = document.getElementById("character");
     let block = document.getElementById("block");
     // intervall
-
     useInterval(() => {
         if (nabrak === false) {
             setCounter(counter + 1);
             if (counter > highScore) {
+                setCookie('highScore', counter, { path: '/' });
                 SethighScore(counter);
                 Setnewscore(true);
             }
             // 
             if (counter % 1000 >= 500) {
                 SetDay(false);
-                // SetScene("rgb(231, 237, 138)");
                 SetScene("rgb(21, 36, 48)");
             }
-            // sore
-            // else if (counter >= 200 && counter < 300) {
-            //     SetScene("rgb(255, 131, 59)");
-            // }
-            // // malam
-            // else if (counter >= 300 && counter < 400) {
-            //     SetDay(false);
-            //     SetScene("rgb(21, 36, 48)");
-            // }
-            // pagi 
             else {
                 SetDay(true);
                 SetScene("rgb(158, 211, 255)");
@@ -201,20 +127,18 @@ function Ingame(props) {
                 Setsuaranabrak(1);
             }
             onOpen();
-            character.style.animationPlayState = 'paused';
             block.style.animationPlayState = 'paused';
             return;
         }
     }, 100);
 
-
-
-
     function OnMouseDown() {
-        Setanimate(true);
-        setTimeout(() => {
-            Setanimate(false);
-        }, 400);
+        if(nabrak !== true){
+            Setanimate(true);
+            setTimeout(() => {
+                Setanimate(false);
+            }, 400);
+        }
     };
 
 
@@ -225,6 +149,7 @@ function Ingame(props) {
         transition={'0.5s'}
         bgColor={Scene}
         onMouseDownCapture={OnMouseDown}
+        onTouchStart={OnMouseDown}
         className='prevent-select'
     >
         <Center>
@@ -247,7 +172,7 @@ function Ingame(props) {
             <ModalOverlay />
             <ModalContent bg={'none'} width="300px" padding={'10px'}>
                 <Text color="white">
-                    Nabrak Cok!
+                    Nabrak Cuy!
                 </Text>
                 <br />
                 <ModalBody>
@@ -258,9 +183,8 @@ function Ingame(props) {
                                 playrestartsound({ id: 'sound' });
                                 Setsuaranabrak(0);
                                 Setlevellenght(0);
-                                Setsize(0);
-                                if (playername)
-                                    fetchnama();
+                                setCookie('highScore', highScore, { path: '/' });
+                                fetchnama();
                             }}
                             colorScheme='blue' mr={3}
                             className="prevent-select"
@@ -289,7 +213,6 @@ function Ingame(props) {
                 <Obstacle id="block" />
             </Flex>
         </Center>
-        <br />
         <br />
         <Customtext content={newscore ? "NEW HIGH SCORE!" : ""} />
     </Box >);

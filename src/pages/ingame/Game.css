@@ -15,9 +15,6 @@
 }
 
 .animate {
-    /* animation: jump 0.5s linear alternate; */
-    /* top: -700px !important;
-    transform: translateY(-700px); */
     transform: translateY(-700px);
     -webkit-transform: translateY(-700px);
     -moz-transform: translateY(-700px);
@@ -26,7 +23,6 @@
 }
 
 .notanimate {
-    /* animation: jump 0.5s linear alternate; */
     top: 0px !important;
 }
 

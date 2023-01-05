@@ -7,21 +7,53 @@ import {
     Flex,
     Input
 } from '@chakra-ui/react';
-import { useContext } from 'react';
-import { AllContext } from '../../Value/AllContext';
-// import supabase from '../../supabaseconfig/supabaseClient';
+import { useEffect, useState } from 'react';
 import './Start.css';
 import Ghostforstart from './ghostforstart';
 import { ButtonTemplate1 } from './Button';
-import Leaderboard from '../form/Leaderboard';
+import { useCookies } from 'react-cookie';
+// import { Customtext } from '../utils/Customtext';
+import supabase from '../../supabaseconfig/supabaseClient';
+
+
 
 function Start(props) {
-    const { playername, Setplayername } = useContext(AllContext);
-    function namehandler(e) {
-        Setplayername(e.target.value);
-        console.log(playername);
+    const [playername2, Setplayername2] = useState('');
+    const [cookies, setCookie] = useCookies(['user']);
+    const [id, Setid] = useState("");
+
+
+    // 
+    function namehandler() {
+        setCookie('Name', playername2, { path: '/' });
+    }
+    const createnama = async () => {
+        const { data, error } = await supabase
+            .from('Leaderboard')
+            .insert({ name: null })
+    }
+    const fetchnama = async () => {
+        const { data, error } = await supabase
+            .from('Leaderboard')
+            .select('id')
+            .order('id', { ascending: false })
+            .limit(1)
+        if (error) {
+            Setid(null);
+        }
+        if (data) {
+            setCookie('id', data[0].id, { path: '/' });
+
+        }
     }
 
+    useEffect(() => {
+        Setplayername2(cookies.Name);
+        if (!cookies.id ) {         
+            fetchnama();
+            createnama();
+        }
+    }, [])
     return (
         <Box
             draggable="false"
@@ -80,7 +112,12 @@ function Start(props) {
             >
                 {/* {input name} */}
                 <GridItem rowSpan={1} colSpan={3}>
-                    <Input defaultValue={"player"} marginTop={"1px"} htmlSize={4} width='240px' zIndex={100} variant='filled' placeholder='INPUT PLAYER NAME' onChangeCapture={namehandler} />
+                    <Text>Masukin nama kamu </Text>
+                    <Input marginTop={"1px"} htmlSize={4} width='240px' zIndex={100} variant='filled' placeholder='INPUT PLAYER NAME' defaultValue={playername2} onInputCapture={e => {
+                        Setplayername2(e.target.value);
+                        // console.log(playername2);
+                    }} />
+                    <br />
                 </GridItem>
                 <GridItem className="gridItems" rowSpan={1} colSpan={3}>
                     <ButtonTemplate1
@@ -91,6 +128,7 @@ function Start(props) {
                         content="START RUNNING!"
                         onClick={() => {
                             props.handleClick('ingame');
+                            namehandler();
                         }}
                     />
                 </GridItem>
@@ -102,6 +140,7 @@ function Start(props) {
                         content="Leaderboard"
                         onClick={() => {
                             props.handleClick('leaderboard');
+
                         }}
                     />
                     <ButtonTemplate1

@@ -1,0 +1,8 @@
+/* playing state */
+
+.running{
+animation-play-state: running;
+}
+.paused{
+animation-play-state: paused;
+}

@@ -104,6 +104,6 @@ input.star:checked ~ .rev-box{
 .dot {
   text-overflow: ellipsis;
   white-space: nowrap;
-  overflow: hidden;
+  /* overflow: hidden; */
  /* some width */
 }
