@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/ghostrun/static/css/main.dee4481c.css",
+    "main.css": "/ghostrun/static/css/main.2fb0f744.css",
     "main.js": "/ghostrun/static/js/main.a5bb9bb8.js",
     "static/js/845.c97ad5eb.chunk.js": "/ghostrun/static/js/845.c97ad5eb.chunk.js",
     "static/js/787.02a092e3.chunk.js": "/ghostrun/static/js/787.02a092e3.chunk.js",
@@ -12,13 +12,13 @@
     "static/media/crash.mp3": "/ghostrun/static/media/crash.108eb864ed4a21c97387.mp3",
     "static/media/NineTsukiRegular.ttf": "/ghostrun/static/media/NineTsukiRegular.9f39748805c15ef054ea.ttf",
     "index.html": "/ghostrun/index.html",
-    "main.dee4481c.css.map": "/ghostrun/static/css/main.dee4481c.css.map",
+    "main.2fb0f744.css.map": "/ghostrun/static/css/main.2fb0f744.css.map",
     "main.a5bb9bb8.js.map": "/ghostrun/static/js/main.a5bb9bb8.js.map",
     "845.c97ad5eb.chunk.js.map": "/ghostrun/static/js/845.c97ad5eb.chunk.js.map",
     "787.02a092e3.chunk.js.map": "/ghostrun/static/js/787.02a092e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dee4481c.css",
+    "static/css/main.2fb0f744.css",
     "static/js/main.a5bb9bb8.js"
   ]
 }
