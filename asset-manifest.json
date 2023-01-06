@@ -1,23 +1,24 @@
 {
   "files": {
-    "main.css": "/ghostrun/static/css/main.af8807b4.css",
-    "main.js": "/ghostrun/static/js/main.227b1bcb.js",
+    "main.css": "/ghostrun/static/css/main.dee4481c.css",
+    "main.js": "/ghostrun/static/js/main.a5bb9bb8.js",
     "static/js/845.c97ad5eb.chunk.js": "/ghostrun/static/js/845.c97ad5eb.chunk.js",
     "static/js/787.02a092e3.chunk.js": "/ghostrun/static/js/787.02a092e3.chunk.js",
     "static/media/Wonder Night.ttf": "/ghostrun/static/media/Wonder Night.9e6862cf63b1a063d0ff.ttf",
+    "static/media/mixue.png": "/ghostrun/static/media/mixue.c21b3691b2ee44720ee5.png",
     "static/media/Guava Candy.ttf": "/ghostrun/static/media/Guava Candy.c31f55823c28185ee4ff.ttf",
     "static/media/restart.mp3": "/ghostrun/static/media/restart.778c3b691aa2aabd399d.mp3",
     "static/media/box.jpg": "/ghostrun/static/media/box.cd760f08ab6768dbd736.jpg",
     "static/media/crash.mp3": "/ghostrun/static/media/crash.108eb864ed4a21c97387.mp3",
     "static/media/NineTsukiRegular.ttf": "/ghostrun/static/media/NineTsukiRegular.9f39748805c15ef054ea.ttf",
     "index.html": "/ghostrun/index.html",
-    "main.af8807b4.css.map": "/ghostrun/static/css/main.af8807b4.css.map",
-    "main.227b1bcb.js.map": "/ghostrun/static/js/main.227b1bcb.js.map",
+    "main.dee4481c.css.map": "/ghostrun/static/css/main.dee4481c.css.map",
+    "main.a5bb9bb8.js.map": "/ghostrun/static/js/main.a5bb9bb8.js.map",
     "845.c97ad5eb.chunk.js.map": "/ghostrun/static/js/845.c97ad5eb.chunk.js.map",
     "787.02a092e3.chunk.js.map": "/ghostrun/static/js/787.02a092e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.af8807b4.css",
-    "static/js/main.227b1bcb.js"
+    "static/css/main.dee4481c.css",
+    "static/js/main.a5bb9bb8.js"
   ]
 }
