@@ -174,7 +174,7 @@
     transform: scale(4.89, 6.4);
     fill: #ffffff;
     z-index: 1;
-    animation: footdance 2s infinite alternate;
+    /* animation: footdance 2s infinite alternate; */
 
 }
 
@@ -261,7 +261,7 @@
 }
  */
 
-@keyframes footdance {
+/* @keyframes footdance {
     0% {
         top: 210px;
         transform: scale(4.89, 6.4);
@@ -271,4 +271,4 @@
         top: 210px;
         transform: scale(4.89, 4.4);
     }
-}
+} */

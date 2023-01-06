@@ -4,6 +4,7 @@ const Level = [
         width:"40px",
         height:"40px",
         transform:"",
+        obj:0,
         src:""
     }, 
     {
@@ -11,6 +12,7 @@ const Level = [
         width:"50px",
         height:"50px",
         transform:"",
+        obj:1,
         src:""
     }, 
     {
@@ -18,20 +20,24 @@ const Level = [
         width:"60px",
         height:"60px",
         transform:"",
-        src:""
+        obj:2 ,
+        src:"",
+        borderTopRadius:"40px"
     },
     {
         id:3,
-        width:"70px",
-        height:"70px",
+        width:"55px",
+        height:"65px",
         transform:"",
+        obj:3,
         src:""
     },
     {
         id:4,
-        width:"80px",
-        height:"80px",
-        transform:"",
+        width:"120px",
+        height:"50px",
+        transform:"translateY(-100px)",
+        obj:4,
         src:""
     }
 ]

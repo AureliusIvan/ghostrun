@@ -14,7 +14,7 @@ import { ButtonTemplate1 } from './Button';
 import { useCookies } from 'react-cookie';
 // import { Customtext } from '../utils/Customtext';
 import supabase from '../../supabaseconfig/supabaseClient';
-
+import Credit from './credit';
 
 
 function Start(props) {
@@ -62,6 +62,7 @@ function Start(props) {
             position="fixed"
             width="100%"
             height="100%"
+            id='startbody'
         >
             <Grid
                 className="Grid"
@@ -140,15 +141,9 @@ function Start(props) {
                         content="Leaderboard"
                         onClick={() => {
                             props.handleClick('leaderboard');
-
                         }}
                     />
-                    <ButtonTemplate1
-                        height="60px"
-                        width="100px"
-                        bgColor="gray.700"
-                        content="Credit"
-                    />
+                    <Credit/>
                 </GridItem>
             </Grid>
         </Box>

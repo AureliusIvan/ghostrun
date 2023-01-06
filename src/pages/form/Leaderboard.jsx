@@ -31,7 +31,7 @@ function Leaderboard(props) {
     }, [])
 
     return (<Fragment>
-        {namee &&
+        {namee ?
             (<Box
                 className="Leaderboardpage"
             >
@@ -66,7 +66,9 @@ function Leaderboard(props) {
                     )
                 }
             </Box>
-            )
+            ) : (<Fragment>
+            loading...
+            </Fragment>)
 
         }
     </Fragment>)

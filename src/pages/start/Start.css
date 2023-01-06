@@ -1,9 +1,12 @@
+#startbody{
+    height: 100vh;
+}
+
 .StartBTN {
     animation: ripple 2s infinite !important;
     border: none;
     box-shadow: none;
 }
-
 
 /* SCROLL BAR */
 ::-webkit-scrollbar {

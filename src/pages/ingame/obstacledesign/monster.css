@@ -1,0 +1,285 @@
+span {
+    display: block;
+}
+
+.little-dude {
+    text-align: center;
+    position: absolute;
+    top: 10px;
+    /* left:-45px; */
+    transform: translateX(-52px) translateY(-10px);
+}
+
+
+.dude-body {
+    background: #48ACE0;
+    margin: 0 auto;
+    width: 155px;
+    height: 200px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    position: relative;
+    z-index: 4;
+}
+
+.dudeface {
+    width: 105px;
+    position: relative;
+}
+
+.dudeeyes {
+    width: 155px;
+    height: 40px;
+    position: relative;
+    /* transform: translateX(9px); */
+}
+
+.dudeeyes .dudeeye {
+    position: absolute;
+    width: 15px;
+    height: 40px;
+    background: black;
+    top: 25px;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+}
+
+.dudeeyes .dudeeye:after {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 4px;
+    background: white;
+    position: absolute;
+    left: 4px;
+    top: 4px;
+    border-radius: 50%;
+}
+
+.dudeeyes .dudeeye.dudeeye-left {
+    left: 30%;
+}
+
+.dudeeyes .dudeeye.dudeeye-right {
+    right: 30%;
+}
+
+.dudemouth {
+    width: 35px;
+    height: 10px;
+    background: black;
+    position: relative;
+    top: 30px;
+    /* transform: translateX(31px); */
+    left: 60px;
+    border-radius: 70% 70% 0% 0% / 140% 140% 0% 0%;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.dudemouth:after {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 4px;
+    background: #C6563D;
+    position: absolute;
+    bottom: 0;
+    left: 12px;
+    border-radius: 70% 70% 0% 0%;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.dudeears .dudeear {
+    border: 5px solid #48ACE0;
+    width: 4px;
+    height: 45px;
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    position: absolute;
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    transform-origin: center;
+}
+
+.dudeears .dudeear.dudeear-left {
+    left: 0px;
+    -webkit-transform: rotateZ(120deg);
+    -moz-transform: rotateZ(120deg);
+    -ms-transform: rotateZ(120deg);
+    -o-transform: rotateZ(120deg);
+    transform: rotateZ(120deg);
+}
+
+.dudeears .dudeear.dudeear-right {
+    left: 140px;
+    -webkit-transform: rotateZ(60deg);
+    -moz-transform: rotateZ(60deg);
+    -ms-transform: rotateZ(60deg);
+    -o-transform: rotateZ(60deg);
+    transform: rotateZ(60deg);
+}
+
+.dudeears .dudeear.dudeear.top {
+    top: 35px;
+}
+
+.dudeears .dudeear.dudeear.middle {
+    top: 50px;
+    -webkit-transform: rotateZ(90deg);
+    -moz-transform: rotateZ(90deg);
+    -ms-transform: rotateZ(90deg);
+    -o-transform: rotateZ(90deg);
+    transform: rotateZ(90deg);
+}
+
+.dudeears .dudeear.dudeear.bottom {
+    top: 60px;
+    -webkit-transform: rotateZ(60deg);
+    -moz-transform: rotateZ(60deg);
+    -ms-transform: rotateZ(60deg);
+    -o-transform: rotateZ(60deg);
+    transform: rotateZ(60deg);
+}
+
+.dudeears .dudeear.dudeear.bottom.dudeear-right {
+    -webkit-transform: rotateZ(110deg);
+    -moz-transform: rotateZ(110deg);
+    -ms-transform: rotateZ(110deg);
+    -o-transform: rotateZ(110deg);
+    transform: rotateZ(110deg);
+}
+
+.dudelegs {
+    position: relative;
+    z-index: 2;
+}
+
+.dudelegs>* {
+    width: 45px;
+    height: 25px;
+    border-radius: 50%;
+    background: #3585AD;
+    position: absolute;
+    -webkit-transform-origin: center;
+    -moz-transform-origin: center;
+    -ms-transform-origin: center;
+    -o-transform-origin: center;
+    transform-origin: center;
+}
+
+.dudelegs .dudeleg-left {
+    bottom: 5px;
+    left: 23px;
+    -webkit-transform: rotateZ(-105deg);
+    -moz-transform: rotateZ(-105deg);
+    -ms-transform: rotateZ(-105deg);
+    -o-transform: rotateZ(-105deg);
+    transform: rotateZ(-105deg);
+}
+
+.dudelegs .dudeleg-right {
+    bottom: 5px;
+    left: 88px;
+    -webkit-transform: rotateZ(105deg);
+    -moz-transform: rotateZ(105deg);
+    -ms-transform: rotateZ(105deg);
+    -o-transform: rotateZ(105deg);
+    transform: rotateZ(105deg);
+}
+
+
+/*  */
+/* Reset */
+
+.monsterBmain {
+    transform: translateX(-23px) translateY(-210px) scale(0.14);
+}
+.monsterBmonster {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 370px;
+    height: 490px;
+    border-top-left-radius: 200px;
+    border-top-right-radius: 200px;
+    background-color: #3c47d7;
+}
+.monsterBmonster__face {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 19%;
+    width: 75%;
+    height: 200px;
+}
+.monsterBmonster__eyes {
+    display: flex;
+    justify-content: space-between;
+    width: 28%;
+    height: auto;
+    margin-bottom: 10px;
+}
+.monsterBmonster__eye {
+    width: 17px;
+    height: 30px;
+    border-radius: 20px;
+    background: #000;
+}
+.monsterBmonster__mouth {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    height: 0%;
+    overflow: hidden;
+    border: 25px solid #ffc333;
+    border-radius: 100px;
+    background-color: #810332;
+    animation: mouth 1.75s infinite;
+}
+.monsterBmonster__mouth::before {
+    content: '';
+    position: absolute;
+    width: 150px;
+    height: 80px;
+    border-radius: 100px;
+    background-color: #400018;
+}
+
+.monsterBmonster__top {
+    position: absolute;
+    top: -30px;
+    width: 170px;
+    height: 30px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: #fff;
+    z-index: 100;
+    animation: t 1.75s infinite;
+}
+.monsterBmonster__bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100px;
+    height: 30px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    background-color: #fff;
+    z-index: 100;
+    animation: b 1.75s infinite;
+}
+/**/
+

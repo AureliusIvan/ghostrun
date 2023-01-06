@@ -1,8 +1,70 @@
 /* playing state */
 
-.running{
-animation-play-state: running;
+.running {
+    animation-play-state: running;
 }
-.paused{
-animation-play-state: paused;
+
+.paused {
+    animation-play-state: paused;
+}
+
+/* object */
+
+#obstacle {
+    border-radius: 0px;
+    margin: 0;
+    position: relative;
+    will-change: transfrom;
+    border: 2px solid black;
+}
+
+#obstacle.rocket {
+    animation: rocket infinite linear;
+    animation-duration: 1.5s;
+}
+
+#obstacle.block {
+    animation: block infinite linear;
+    animation-duration: 2s;
+}
+
+#obstacle.monsterb {
+    animation: MonsterB infinite linear;
+    animation-duration: 3s;
+}
+
+
+/* animation */
+@keyframes rocket {
+    0% {
+        transform: translateX(550px) translateY(-10px);
+    }
+
+    100% {
+        transform: translateX(-170px) translateY(-10px);
+    }
+}
+
+@keyframes block {
+    0% {
+        transform: translateX(550px);
+    }
+
+    100% {
+        transform: translateX(-70px);
+    }
+}
+
+
+@keyframes MonsterB {
+    0% {
+        transform: translateX(420px) translateY(40px);
+    }
+
+    10% {
+        transform: translateX(420px) translateY(20px);
+    }
+    100% {
+        transform: translateX(-170px) translateY(20px);
+    }
 }

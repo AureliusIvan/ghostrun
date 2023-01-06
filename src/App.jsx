@@ -9,9 +9,13 @@ import Start from './pages/start/Start';
 import Ingame from './pages/ingame/Game';
 import { Box } from '@chakra-ui/react';
 import Leaderboard from './pages/form/Leaderboard';
+import { Ghost } from './character/Ghost';
 // cookies
 import { CookiesProvider } from "react-cookie";
-
+// testing
+import { Rocket } from './pages/ingame/obstacledesign/rocket';
+import { MonsterB } from './pages/ingame/obstacledesign/monster';
+import { LayoutGroup } from 'framer-motion';
 
 function App() {
   const [game, setGame] = useState('start');
@@ -59,7 +63,7 @@ function App() {
                 case 'ingame':
                   return <Ingame handleClick={handleClick} />;
                 case 'leaderboard':
-                  return <Leaderboard handleClick={handleClick} />;
+                  return <Leaderboard handleClick={handleClick}/>
                 default:
                   return null;
               }

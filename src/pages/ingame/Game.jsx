@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import "./Game.css";
-import Ghost from "../../character/Ghost";
+import { Ghost, Mixue } from "../../character/Ghost";
 import {
     Modal,
     ModalOverlay,
@@ -52,7 +52,7 @@ function Ingame(props) {
     const fetchnama = async () => {
         const { } = await supabase
             .from('Leaderboard')
-            .update({ name: cookies.Name, score: highScore+1 })
+            .update({ name: cookies.Name, score: highScore + 1 })
             .eq('id', cookies.id)
     }
 
@@ -83,11 +83,11 @@ function Ingame(props) {
         const a = el1.getBoundingClientRect("");
         const b = el2.getBoundingClientRect("");
         if ((
-                ((b.right) > (a.right)) &&
-                a.top < b.bottom &&
-                (b.left) <= (a.right + 10) &&
-                a.bottom > b.top
-            )
+            ((b.right) > (a.right)) &&
+            a.top < b.bottom &&
+            (b.left) <= (a.right + 10) &&
+            a.bottom > b.top
+        )
         ) {
             return true;
         }
@@ -97,7 +97,7 @@ function Ingame(props) {
 
     // character
     let character = document.getElementById("character");
-    let block = document.getElementById("block");
+    let obstacle = document.getElementById("obstacle");
     // intervall
     useInterval(() => {
         if (nabrak === false) {
@@ -119,7 +119,7 @@ function Ingame(props) {
 
         }
         if (
-            elementsColliding(character, block) === true
+            elementsColliding(character, obstacle) === true
         ) {
             setNabrak(true);
             if (suaranabrak === (0)) {
@@ -127,17 +127,22 @@ function Ingame(props) {
                 Setsuaranabrak(1);
             }
             onOpen();
-            block.style.animationPlayState = 'paused';
+            obstacle.style.animationPlayState = 'paused';
             return;
         }
     }, 100);
 
+    const [mouseup, setmouseup] = useState(false);
     function OnMouseDown() {
-        if(nabrak !== true){
-            Setanimate(true);
+        if (nabrak !== true) {
+            if (mouseup === false) {
+                Setanimate(true);
+                setmouseup(true);
+            }
             setTimeout(() => {
                 Setanimate(false);
-            }, 400);
+            }, 400)
+            setTimeout(function () { setmouseup(false) }, 800);
         }
     };
 
@@ -208,9 +213,10 @@ function Ingame(props) {
                 pos="relative"
                 width="500px"
                 height="200px"
+
             >
                 <Ghost jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
-                <Obstacle id="block" />
+                <Obstacle id="obstacle"/>
             </Flex>
         </Center>
         <br />
