@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/ghostrun/static/css/main.7df6c8d3.css",
-    "main.js": "/ghostrun/static/js/main.1981c5f7.js",
+    "main.js": "/ghostrun/static/js/main.4b036d9c.js",
     "static/js/845.c97ad5eb.chunk.js": "/ghostrun/static/js/845.c97ad5eb.chunk.js",
     "static/js/787.02a092e3.chunk.js": "/ghostrun/static/js/787.02a092e3.chunk.js",
     "static/media/Wonder Night.ttf": "/ghostrun/static/media/Wonder Night.9e6862cf63b1a063d0ff.ttf",
@@ -13,12 +13,12 @@
     "static/media/NineTsukiRegular.ttf": "/ghostrun/static/media/NineTsukiRegular.9f39748805c15ef054ea.ttf",
     "index.html": "/ghostrun/index.html",
     "main.7df6c8d3.css.map": "/ghostrun/static/css/main.7df6c8d3.css.map",
-    "main.1981c5f7.js.map": "/ghostrun/static/js/main.1981c5f7.js.map",
+    "main.4b036d9c.js.map": "/ghostrun/static/js/main.4b036d9c.js.map",
     "845.c97ad5eb.chunk.js.map": "/ghostrun/static/js/845.c97ad5eb.chunk.js.map",
     "787.02a092e3.chunk.js.map": "/ghostrun/static/js/787.02a092e3.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.7df6c8d3.css",
-    "static/js/main.1981c5f7.js"
+    "static/js/main.4b036d9c.js"
   ]
 }
