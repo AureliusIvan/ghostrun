@@ -68,9 +68,9 @@ function App() {
                 case 'leaderboard':
                   // return <IceCream/>;
                   // return <Meteor/>;
-                  return <Leaderboard/>;
-                  // return <BurgerDevil/>;
-                  // return <Burger/>
+                  return <Leaderboard handleClick={handleClick} />;
+                // return <BurgerDevil/>;
+                // return <Burger/>
                 default:
                   return null;
               }

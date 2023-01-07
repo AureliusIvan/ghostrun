@@ -24,6 +24,8 @@ export function Burger() {
 }
 
 
+
+
 export function BurgerDevil() {
     return (<>
         <div className="burgerdevil">
@@ -34,7 +36,7 @@ export function BurgerDevil() {
                     <div className="burgerdevilburgereye left"></div>
                     <div className="burgerdevilburgereye right"></div>
                 </div>
-                <div className></div>
+
                 <div className="burgerdevilsesame-seed one"></div>
                 <div className="burgerdevilsesame-seed two"></div>
                 <div className="burgerdevilsesame-seed three"></div>
@@ -43,18 +45,17 @@ export function BurgerDevil() {
             </div> */}
             <div className="burgerdevilmouth">
                 <Box className="burgerdevilteeth">
-                    <Image className="burgerdeviltooth tooth1" src="https://svgsilh.com/svg/150717.svg" filter={"invert(1)"} alt="" />
-                    <Image className="burgerdeviltooth tooth2" src="https://svgsilh.com/svg/150717.svg" filter={"invert(1)"} alt="" />
-                    <Image className="burgerdeviltooth tooth3" src="https://svgsilh.com/svg/150717.svg" filter={"invert(1)"} alt="" />
-                    <Image className="burgerdeviltooth tooth4" src="https://svgsilh.com/svg/150717.svg" filter={"invert(1)"} alt="" />
+                    <Box className="burgerdeviltooth tooth1" />
+                    <Box className="burgerdeviltooth tooth2" />
+                    <Box className="burgerdeviltooth tooth3" />
+                    <Box className="burgerdeviltooth tooth4" />
                 </Box>
-                
-                <div className="burgerdevilteeth2">
-                    <Image className="burgerdeviltooth tooth1" src="https://svgsilh.com/svg/150717.svg" filter={"invert(1)"} alt="" />
-                    <Image className="burgerdeviltooth tooth2" src="https://svgsilh.com/svg/150717.svg" filter={"invert(1)"} alt="" />
-                    <Image className="burgerdeviltooth tooth3" src="https://svgsilh.com/svg/150717.svg" filter={"invert(1)"} alt="" />
-                    <Image className="burgerdeviltooth tooth4" src="https://svgsilh.com/svg/150717.svg" filter={"invert(1)"} alt="" />
 
+                <div className="burgerdevilteeth2">
+                    <Box className="burgerdeviltooth tooth1" />
+                    <Box className="burgerdeviltooth tooth2" />
+                    <Box className="burgerdeviltooth tooth3" />
+                    <Box className="burgerdeviltooth tooth4" />
                 </div>
             </div>
             <div className="burgerdevilbun bottom"></div>

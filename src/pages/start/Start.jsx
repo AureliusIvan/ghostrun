@@ -80,6 +80,9 @@ function Start(props) {
                     <Center pointerEvents="all">
                         <Achievment />
                     </Center>
+                    <Center pointerEvents="all">
+                        <Achievment />
+                    </Center>
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={3}>
 

@@ -235,8 +235,7 @@
     width: 100%;
     background-color: hsl(0, 0%, 0%);
     display: flex;
-    transform: rotate(180deg);
-    animation: burgerdevilmouth 1.3s infinite;
+    animation: burgerdevilmouth2 1.3s infinite;
 }
 
 .burgerdevil .burgerdevilteeth2 {
@@ -244,11 +243,15 @@
     width: 100%;
     background-color: hsl(0, 0%, 0%);
     display: flex;
-    animation: burgerdevilmouth2 1.2s infinite;
+    animation: burgerdevilmouth 1.3s infinite;
 }
 
 .burgerdevil .burgerdeviltooth {
     height: 40px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 40px solid rgb(255, 255, 255);
+
 }
 
 .burgerdevil .burgerdevilcosmic-fill {
