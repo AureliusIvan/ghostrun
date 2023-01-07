@@ -53,3 +53,42 @@ export function MonsterB() {
         </div>
     </>);
 }
+
+export function MonsterC() {
+    return (<>
+        <div class="MonsterCcontainer">
+            <div class="MonsterCmonster">
+                <div class="MonsterCball">
+                    <div class="MonsterCbelly"></div>
+                </div>
+                <div class="MonsterCleft-arm"></div>
+                <div class="MonsterCright-arm"></div>
+                <div class="MonsterCleft-foot"></div>
+                <div class="MonsterCright-foot"></div>
+                <div class="MonsterCmiddle-eye eye">
+                    <div class="MonsterCiris"></div>
+                </div>
+                <div class="MonsterCleft-eye eye">
+                    <div class="MonsterCiris MonsterCiris-small"></div>
+                </div>
+                <div class="MonsterCright-eye MonsterCeye">
+                    <div class="MonsterCiris MonsterCiris-small"></div>
+                </div>
+                <div class="MonsterCmouth">
+                    <div class="MonsterCteeth"></div>
+                    <div class="MonsterCtongue"></div>
+                </div>
+                <div class="MonsterCleft-ears">
+                    <div class="MonsterClarge"></div>
+                    <div class="MonsterCsmall"></div>
+                </div>
+                <div class="MonsterCright-ears">
+                    <div class="MonsterClarge"></div>
+                    <div class="MonsterCsmall"></div>
+                </div>
+            </div>
+            <div class="MonsterCshadow"></div>
+        </div>
+
+    </>)
+}

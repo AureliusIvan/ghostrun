@@ -1,5 +1,5 @@
 import "./burger.css"
-import { Image, Box } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
 
 export function Burger() {
     return (<>

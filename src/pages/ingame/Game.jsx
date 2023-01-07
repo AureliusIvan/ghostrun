@@ -16,9 +16,9 @@ import {
 } from '@chakra-ui/react';
 import { AllContext } from "../../Value/AllContext";
 import useSound from 'use-sound';
-// import jumpsound from '../../asset/sound/jump.mp3'
+import jumpsound from '../../asset/sound/jump.mp3'
 import crashsound from '../../asset/sound/crash.mp3'
-// import poinsound from '../../asset/sound/poin.mp3'
+import poinsound from '../../asset/sound/poin.mp3'
 import restartsound from '../../asset/sound/restart.mp3'
 // asset
 import { Cloud } from "./cloud";
@@ -61,7 +61,7 @@ function Ingame(props) {
     // score
     const [newscore, Setnewscore] = useState(false);
     // all sound
-    // const [play] = useSound(jumpsound);
+    const [playjumpsound] = useSound(jumpsound);
     const [playcrashsound] = useSound(crashsound);
     // const [playpoinsound] = useSound(poinsound);
     const [playrestartsound] = useSound(restartsound, {
@@ -144,6 +144,7 @@ function Ingame(props) {
             if (mouseup === false) {
                 Setanimate(true);
                 setmouseup(true);
+                playjumpsound();
             }
             setTimeout(() => {
                 Setanimate(false);

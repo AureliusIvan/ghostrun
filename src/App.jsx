@@ -14,11 +14,12 @@ import { Ghost } from './character/Ghost';
 import { CookiesProvider } from "react-cookie";
 // testing
 import { Rocket } from './pages/ingame/obstacledesign/rocket';
-import { MonsterB } from './pages/ingame/obstacledesign/monster';
+import { MonsterB, MonsterC } from './pages/ingame/obstacledesign/monster';
 import { LayoutGroup } from 'framer-motion';
 import { IceCream, Meteor } from './pages/ingame/obstacledesign/meteor';
 import { Mountain } from './bg/Mountain';
 import { Burger, BurgerDevil } from './pages/ingame/obstacledesign/burger';
+import { Lolipop } from './pages/ingame/obstacledesign/lolipop';
 
 function App() {
   const [game, setGame] = useState('start');
@@ -68,7 +69,9 @@ function App() {
                 case 'leaderboard':
                   // return <IceCream/>;
                   // return <Meteor/>;
-                  return <Leaderboard handleClick={handleClick} />;
+                  // return <Leaderboard handleClick={handleClick} />;
+                  return <MonsterC />;
+                // return <Lolipop/>
                 // return <BurgerDevil/>;
                 // return <Burger/>
                 default:

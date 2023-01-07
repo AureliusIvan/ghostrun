@@ -80,9 +80,9 @@ function Start(props) {
                     <Center pointerEvents="all">
                         <Achievment />
                     </Center>
-                    <Center pointerEvents="all">
+                    {/* <Center pointerEvents="all">
                         <Achievment />
-                    </Center>
+                    </Center> */}
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={3}>
 
@@ -90,10 +90,9 @@ function Start(props) {
             </Grid>
             <Grid
                 className="Grid"
-                h="60vh"
+                h="51vh"
                 templateRows="repeat(1, 1fr)"
                 templateColumns="repeat(3, 1fr)"
-                gap={0}
                 justifyContent='center'
                 alignContent={'center'}
                 textAlign='center'

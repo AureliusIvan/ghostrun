@@ -26,16 +26,16 @@ function Credit() {
             />
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
-                <ModalContent>
+                <ModalContent width={"300px"}>
                     <ModalHeader bgColor={"gray.700"}>
-                        <Customtext content="Credit"/>
+                        <Customtext content="Credit" />
                     </ModalHeader>
                     <ModalCloseButton color={"white"} />
-                    <ModalBody>
-                        Aurelius Ivan Wijaya (creator)
+                    <ModalBody padding={"10px"} bgColor="gray.700">
+                        <Customtext content="Aurelius Ivan Wijaya (Creator)" />
                     </ModalBody>
-
                     <ModalFooter>
+                        "Yang punya project datang lah kepada sayaaaaaaaa!!!"
                     </ModalFooter>
                 </ModalContent>
             </Modal>

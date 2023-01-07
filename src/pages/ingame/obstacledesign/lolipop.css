@@ -1,0 +1,74 @@
+
+main .pop {
+    position: fixed;
+    height: 200px;
+    width: 200px;
+    border-radius: 100px;
+    background: pink;
+    z-index: 1;
+    
+    
+}
+
+main .lip {
+    position: fixed;
+    top: 80px;
+    width: 200px;
+    height: 5px;
+    border-radius: 100px;
+    background: #ff1493;
+    opacity: .2;
+    
+}
+
+main .lip2 {
+    position: fixed;
+    top: 110px;
+    width: 200px;
+    height: 5px;
+    border-radius: 100px;
+    background: #ff1493;
+    opacity: .2;
+    
+}
+
+main .lip:after {
+    content: "";
+    /* position: fixed; */
+    top: 110px;
+    height: 5px;
+    width: 200px;
+    border-radius: 100px;
+    background: #ff1493;
+}
+
+main .shadow {
+    position: fixed;
+    left: 20px;
+    height: 200px;
+    width: 200px;
+    border-radius: 200px;
+    background: #ff1493;
+    opacity: .1;
+    z-index: 2;
+}
+
+main .stick {
+    position: absolute;
+    top: 180px;
+    left: 90px;
+    height: 300px;
+    width: 20px;
+    background: #FEFEFD;
+    z-index: 0;
+}
+
+main .stick:after {
+    content: "";
+    position: fixed;
+    left: 100px;
+    height: 300px;
+    width: 20px;
+    background: grey;
+    opacity: .1;
+}
