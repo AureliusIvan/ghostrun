@@ -1,7 +1,4 @@
 import "./Ghost.css"
-import mixue from "./../asset/image/mixue.png"
-import { Img, Box } from "@chakra-ui/react";
-import Chefhat from "./costume/Hat";
 
 export function Ghost(props) {
 
@@ -9,11 +6,14 @@ export function Ghost(props) {
         <div
             className="wrapper"
         >
+
             <div
                 id="character"
                 className={props.jump}
                 onAnimationEnd={props.AnimationEnd}
             >
+                {/* <div className="spark"></div>
+                <div className="spark2"></div> */}
                 <div className="face">
                     {/* <Chefhat /> */}
                     <div className="eye-shadow" id="left">

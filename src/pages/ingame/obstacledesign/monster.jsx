@@ -6,27 +6,27 @@ export function MonsterA() {
         <Box transform={"scale(0.3)"}
             position="relative"
         >
-            <div class="little-dude">
-                <div class="dude-body">
-                    <span class="dudeface">
-                        <span class="dudeeyes">
-                            <span class="dudeeye dudeeye-left"></span>
-                            <span class="dudeeye dudeeye-right"></span>
+            <div className="little-dude">
+                <div className="dude-body">
+                    <span className="dudeface">
+                        <span className="dudeeyes">
+                            <span className="dudeeye dudeeye-left"></span>
+                            <span className="dudeeye dudeeye-right"></span>
                         </span>
-                        <span class="dudemouth"></span>
+                        <span className="dudemouth"></span>
                     </span>
                 </div>
-                <div class="dudeears">
-                    <span class="dudeear dudeear-left top"></span>
-                    <span class="dudeear dudeear-left middle"></span>
-                    <span class="dudeear dudeear-left bottom"></span>
-                    <span class="dudeear dudeear-right top"></span>
-                    <span class="dudeear dudeear-right middle"></span>
-                    <span class="dudeear dudeear-right bottom"></span>
+                <div className="dudeears">
+                    <span className="dudeear dudeear-left top"></span>
+                    <span className="dudeear dudeear-left middle"></span>
+                    <span className="dudeear dudeear-left bottom"></span>
+                    <span className="dudeear dudeear-right top"></span>
+                    <span className="dudeear dudeear-right middle"></span>
+                    <span className="dudeear dudeear-right bottom"></span>
                 </div>
-                <div class="dudelegs">
-                    <span class="dudeleg-left"></span>
-                    <span class="dudeleg-right"></span>
+                <div className="dudelegs">
+                    <span className="dudeleg-left"></span>
+                    <span className="dudeleg-right"></span>
                 </div>
             </div>
         </Box>
@@ -37,16 +37,16 @@ export function MonsterA() {
 
 export function MonsterB() {
     return (<>
-        <div class="monsterBmain">
-            <div class="monsterBmonster">
-                <div class="monsterBmonster__face">
-                    <div class="monsterBmonster__eyes">
-                        <div class="monsterBmonster__eye"></div>
-                        <div class="monsterBmonster__eye"></div>
+        <div className="monsterBmain">
+            <div className="monsterBmonster">
+                <div className="monsterBmonster__face">
+                    <div className="monsterBmonster__eyes">
+                        <div className="monsterBmonster__eye"></div>
+                        <div className="monsterBmonster__eye"></div>
                     </div>
-                    <div class="monsterBmonster__mouth">
-                        <div class="monsterBmonster__top"></div>
-                        <div class="monsterBmonster__bottom"></div>
+                    <div className="monsterBmonster__mouth">
+                        <div className="monsterBmonster__top"></div>
+                        <div className="monsterBmonster__bottom"></div>
                     </div>
                 </div>
             </div>

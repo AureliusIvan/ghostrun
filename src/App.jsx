@@ -16,6 +16,9 @@ import { CookiesProvider } from "react-cookie";
 import { Rocket } from './pages/ingame/obstacledesign/rocket';
 import { MonsterB } from './pages/ingame/obstacledesign/monster';
 import { LayoutGroup } from 'framer-motion';
+import { IceCream, Meteor } from './pages/ingame/obstacledesign/meteor';
+import { Mountain } from './bg/Mountain';
+import { Burger, BurgerDevil } from './pages/ingame/obstacledesign/burger';
 
 function App() {
   const [game, setGame] = useState('start');
@@ -63,7 +66,11 @@ function App() {
                 case 'ingame':
                   return <Ingame handleClick={handleClick} />;
                 case 'leaderboard':
-                  return <Leaderboard handleClick={handleClick}/>
+                  // return <IceCream/>;
+                  // return <Meteor/>;
+                  return <Leaderboard/>;
+                  // return <BurgerDevil/>;
+                  // return <Burger/>
                 default:
                   return null;
               }

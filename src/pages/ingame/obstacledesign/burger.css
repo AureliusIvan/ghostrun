@@ -1,0 +1,366 @@
+.burgereye {
+    position: absolute;
+    background: #ffffff;
+    height: 40px;
+    width: 30px;
+    border-radius: 100%;
+    z-index: 3;
+}
+
+
+.burgereyebrow {
+    position: absolute;
+    background: #000000;
+    height: 10px;
+    width: 40px;
+    /* border-radius: 100%; */
+    z-index: 5;
+    top: -7px;
+    animation: burgereyebrow 0.3s alternate infinite;
+}
+
+
+
+.burgereyebrow.left {
+    left: 50px;
+    transform: rotate(25deg);
+}
+
+.burgereyebrow.right {
+    left: 78px;
+
+    transform: rotate(-25deg);
+}
+
+.burgereye::after {
+    position: absolute;
+    background: #000000;
+    height: 20px;
+    width: 20px;
+    left: 0;
+    top: 11px;
+    border-radius: 50%;
+    z-index: 4;
+    content: '.';
+}
+
+.burgereye.left {
+    left: 60px;
+}
+
+.burgereye.right {
+    left: 90px;
+}
+
+.sesame-seed {
+    position: absolute;
+    background: #ffe3ca;
+    height: 8px;
+    width: 20px;
+    border-radius: 100%;
+    z-index: 2;
+}
+
+.sesame-seed.one {
+    transform: rotate(-10deg);
+    top: 10px;
+    left: 30%;
+}
+
+.sesame-seed.two {
+    transform: rotate(8deg);
+    left: 45%;
+    top: 20px;
+}
+
+.sesame-seed.three {
+    transform: rotate(4deg);
+    left: 60%;
+    top: 10px;
+}
+
+.burger {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    transform: scale(0.3) translateX(-250px) translateY(-240px);
+    -webkit-filter: drop-shadow(10px 10px 0 rgb(255, 255, 255)) drop-shadow(-10px -10px 0 rgb(255, 255, 255));
+    filter: drop-shadow(10px 2px 0 rgb(255, 255, 255)) drop-shadow(-10px -2px 0 rgb(255, 255, 255));
+}
+
+.burger .bun {
+    height: 80px;
+    width: 180px;
+    border-radius: 100px 100px 0 0;
+    background: #f4a864;
+}
+
+.burger .bun.bottom {
+    border-radius: 0 0 100px 100px;
+    height: 40px;
+}
+
+.burger .cosmic-fill {
+    height: 70px;
+    width: 100%;
+    overflow: hidden;
+    background: url(https://res.cloudinary.com/ddbxzcb7k/image/upload/v1564751401/fill-01_vgkaj7.svg);
+    background-repeat: round;
+}
+
+
+
+/* burger devil */
+
+.burgerdevilburgereye {
+    position: absolute;
+    background: #ffadad;
+    height: 70px;
+    width: 40px;
+    border-radius: 100%;
+    z-index: 3;
+    border: 3px solid rgb(0, 0, 0);
+}
+
+
+.burgerdevilburgereyebrow {
+    position: absolute;
+    background: #000000;
+    height: 10px;
+    width: 40px;
+    /* border-radius: 100%; */
+    z-index: 5;
+    top: -7px;
+    animation: burgereyebrow 0.3s alternate infinite;
+}
+
+
+
+.burgerdevilburgereyebrow.left {
+    left: 50px;
+    transform: rotate(25deg);
+}
+
+.burgerdevilburgereyebrow.right {
+    left: 78px;
+
+    transform: rotate(-25deg);
+}
+
+.burgerdevilburgereye::after {
+    position: absolute;
+    background: #000000;
+    height: 20px;
+    width: 20px;
+    left: 0;
+    top: 27px;
+    border-radius: 50%;
+    z-index: 4;
+    content: '.';
+}
+
+.burgerdevilburgereye.left {
+    left: 60px;
+}
+
+.burgerdevilburgereye.right {
+    left: 90px;
+}
+
+.burgerdevilsesame-seed {
+    position: absolute;
+    background: #ffe3ca;
+    height: 8px;
+    width: 20px;
+    border-radius: 100%;
+    z-index: 2;
+}
+
+.burgerdevilsesame-seed.one {
+    transform: rotate(-10deg);
+    top: 10px;
+    left: 30%;
+}
+
+.burgerdevilsesame-seed.two {
+    transform: rotate(8deg);
+    left: 45%;
+    top: 20px;
+}
+
+.burgerdevilsesame-seed.three {
+    transform: rotate(4deg);
+    left: 60%;
+    top: 10px;
+}
+
+.burgerdevil {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 200px;
+    transform: scale(0.3) translateX(-250px) translateY(-270px);
+    -webkit-filter: drop-shadow(10px 10px 0 rgb(255, 255, 255)) drop-shadow(-10px -10px 0 rgb(255, 255, 255));
+    filter: drop-shadow(10px 2px 0 rgb(255, 255, 255)) drop-shadow(-10px -2px 0 rgb(255, 255, 255));
+}
+
+.burgerdevil .burgerdevilbun {
+    height: 80px;
+    width: 180px;
+    border-radius: 100px 100px 0 0;
+    background: #f04141;
+}
+
+.burgerdevil .burgerdevilbun.bottom {
+    border-radius: 0 0 100px 100px;
+    height: 40px;
+}
+
+.burgerdevilmouth {
+    background-color: #000000;
+    height: 100%;
+    width: 100%;
+    border: 10px solid #f04141;
+    background: #000000;
+    padding: 0;
+}
+
+.burgerdevil .burgerdevilteeth {
+    height: 100%;
+    width: 100%;
+    background-color: hsl(0, 0%, 0%);
+    display: flex;
+    transform: rotate(180deg);
+    animation: burgerdevilmouth 1.3s infinite;
+}
+
+.burgerdevil .burgerdevilteeth2 {
+    height: 100%;
+    width: 100%;
+    background-color: hsl(0, 0%, 0%);
+    display: flex;
+    animation: burgerdevilmouth2 1.2s infinite;
+}
+
+.burgerdevil .burgerdeviltooth {
+    height: 40px;
+}
+
+.burgerdevil .burgerdevilcosmic-fill {
+    height: 70px;
+    width: 100%;
+    overflow: hidden;
+    background: url(https://res.cloudinary.com/ddbxzcb7k/image/upload/v1564751401/fill-01_vgkaj7.svg);
+    background-repeat: round;
+}
+
+@keyframes burgerdevilmouth {
+    1% {
+        /* margin-top: 20px; */
+        transform: rotate(180deg) translateY(-20px);
+    }
+
+    10% {
+        /* margin-top: 20px; */
+        transform: rotate(180deg) translateY(10px);
+    }
+
+    20% {
+        /* margin-top: 20px; */
+        transform: rotate(180deg) translateY(-20px);
+    }
+
+    30% {
+        /* margin-top: 20px; */
+        transform: rotate(180deg) translateY(10px);
+    }
+
+    40% {
+        /* margin-top: 20px; */
+        transform: rotate(180deg) translateY(-20px);
+    }
+
+    50% {
+        /* margin-top: 20px; */
+        transform: rotate(180deg) translateY(10px);
+    }
+
+    60% {
+        /* margin-top: 20px; */
+        transform: rotate(180deg) translateY(-20px);
+    }
+
+    70% {
+        /* margin-top: 20px; */
+        transform: rotate(180deg) translateY(10px);
+    }
+
+    80% {
+        /* margin-top: 20px; */
+        transform: rotate(180deg) translateY(-20px);
+    }
+
+    99% {
+        /* margin-top: 0px; */
+        transform: rotate(180deg) translateY(10px);
+
+    }
+}
+
+@keyframes burgerdevilmouth2 {
+    1% {
+        /* margin-top: 20px; */
+        transform: translateY(0px);
+    }
+
+    10% {
+        /* margin-top: 20px; */
+        transform: translateY(10px);
+    }
+
+    20% {
+        /* margin-top: 20px; */
+        transform: translateY(0px);
+    }
+
+    30% {
+        /* margin-top: 20px; */
+        transform: translateY(20px);
+    }
+
+    40% {
+        /* margin-top: 20px; */
+        transform: translateY(0px);
+    }
+
+    50% {
+        /* margin-top: 20px; */
+        transform: translateY(20px);
+    }
+
+    60% {
+        /* margin-top: 20px; */
+        transform: translateY(0px);
+    }
+
+    70% {
+        /* margin-top: 20px; */
+        transform: translateY(20px);
+    }
+
+    80% {
+        /* margin-top: 20px; */
+        transform: translateY(0px);
+    }
+
+    99% {
+        /* margin-top: 0px; */
+        transform: translateY(20px);
+
+    }
+}

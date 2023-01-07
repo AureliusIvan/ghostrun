@@ -13,6 +13,8 @@ export function ButtonTemplate1(props) {
             _hover={{
                 transform:'skeWX(0) scale(0.9)',
             }}
+            zIndex="100"
+            borderRadius={props.borderRadius}
             bgColor={props.bgColor}
             color={"white"}
             fontSize={props.fontSize}

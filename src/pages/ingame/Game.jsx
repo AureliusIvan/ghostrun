@@ -11,7 +11,8 @@ import {
     Box,
     Center,
     Text,
-    Button
+    Button,
+    ModalHeader
 } from '@chakra-ui/react';
 import { AllContext } from "../../Value/AllContext";
 import useSound from 'use-sound';
@@ -26,6 +27,7 @@ import supabase from "../../supabaseconfig/supabaseClient";
 import { Customtext } from "../utils/Customtext";
 import { useCookies } from 'react-cookie';
 import Obstacle from "./object";
+import { Mountain } from "../../bg/Mountain";
 
 
 function useInterval(callback, delay) {
@@ -108,13 +110,15 @@ function Ingame(props) {
                 Setnewscore(true);
             }
             // 
-            if (counter % 1000 >= 500) {
+            if (counter % 1000 > 500) {
                 SetDay(false);
                 SetScene("rgb(21, 36, 48)");
+                // SetScene("linear-gradient(to bottom, #94c5f8 1%,#a6e6ff 70%,#b1b5ea 100%)");
             }
             else {
                 SetDay(true);
-                SetScene("rgb(158, 211, 255)");
+                SetScene("#94c5f8")
+                // SetScene("linear-gradient(to bottom, #94c5f8 1%,#a6e6ff 70%,#b1b5ea 100%)");
             }
 
         }
@@ -133,7 +137,9 @@ function Ingame(props) {
     }, 100);
 
     const [mouseup, setmouseup] = useState(false);
+    const [tap, setTap] = useState(false);
     function OnMouseDown() {
+        setTap(true);
         if (nabrak !== true) {
             if (mouseup === false) {
                 Setanimate(true);
@@ -151,8 +157,11 @@ function Ingame(props) {
     return (<Box
         w={'100%'}
         h='100%'
-        transition={'0.5s'}
-        bgColor={Scene}
+        // transition={'0.5s'}
+        transitionDuration="2s"
+        // background={Mountain}
+        background={Scene}
+        // bgColor={Scene}
         onMouseDownCapture={OnMouseDown}
         onTouchStart={OnMouseDown}
         className='prevent-select'
@@ -175,12 +184,14 @@ function Ingame(props) {
         {/* modal */}
         <Modal closeOnOverlayClick={false} isOpen={isOpen}>
             <ModalOverlay />
-            <ModalContent bg={'none'} width="300px" padding={'10px'}>
-                <Text color="white">
-                    Nabrak Cuy!
-                </Text>
-                <br />
-                <ModalBody>
+            <ModalContent>
+                <ModalHeader bgColor={"gray.700"}>
+                    <Customtext content="Nabrak Cuy!" />
+                </ModalHeader>
+                <ModalBody bgColor={"gray.500"}>
+                    <Customtext content={"Your Score : " + counter} />
+                    <br />
+                    <br />
                     <Center className="prevent-select">
                         <Button
                             onClick={() => {
@@ -191,10 +202,11 @@ function Ingame(props) {
                                 setCookie('highScore', highScore, { path: '/' });
                                 fetchnama();
                             }}
+                            border="5px solid white"
                             colorScheme='blue' mr={3}
                             className="prevent-select"
                         >
-                            Restart
+                            <Customtext content="Restart!" />
                         </Button>
                     </Center>
                 </ModalBody>
@@ -216,11 +228,13 @@ function Ingame(props) {
 
             >
                 <Ghost jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
-                <Obstacle id="obstacle"/>
+                <Obstacle id="obstacle" />
             </Flex>
         </Center>
         <br />
         <Customtext content={newscore ? "NEW HIGH SCORE!" : ""} />
+        {tap === false && <Customtext content={"TAP or Click to Jump!"} />}
+        <Mountain />
     </Box >);
 }
 

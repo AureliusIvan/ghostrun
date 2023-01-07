@@ -1,0 +1,157 @@
+
+.ghost2ghost {
+    position: relative;
+    height: 50px;
+    width: 70px;
+    transform: translateX(-100px);
+    animation: float 1.5s ease-in-out infinite;
+}
+
+.ghost2head {
+    height: 90%;
+    width: 100%;
+    background: white;
+    border-radius: 50% 50% 0 0;
+}
+
+.ghost2head .ghost2eye {
+    position: absolute;
+    background: black;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.ghost2head .ghost2eye-left {
+    left: 30%;
+}
+
+.ghost2head .ghost2eye-right {
+    right: 20%;
+}
+
+.ghost2head .ghost2mouth {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: red;
+    width: 40px;
+    height: 10px;
+    border-radius: 0 0 50% 50%;
+    display: none;
+}
+
+.ghost2head .ghost2tooth {
+    position: absolute;
+    height: 0;
+    width: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 7px solid white;
+}
+
+.ghost2head .ghost2tooth-bottom {
+    border-top: 0;
+    border-bottom: 7px solid white;
+    top: 3px;
+}
+
+.ghost2head .ghost2tooth-two {
+    left: 11px;
+}
+
+.ghost2head .ghost2tooth-three {
+    right: 11px;
+}
+
+.ghost2head .ghost2tooth-four {
+    right: 0;
+}
+
+.ghost2head .ghost2tooth-five {
+    left: 5px;
+}
+
+.ghost2head .ghost2tooth-six {
+    left: 16px;
+}
+
+.ghost2head .ghost2tooth-seven {
+    right: 5px;
+}
+
+.ghost2ghost:hover .ghost2eye {
+    background: red;
+}
+
+.ghost2ghost:hover .ghost2eye-left {
+    border-radius: 0 70% 0 70%;
+}
+
+.ghost2ghost:hover .ghost2eye-right {
+    border-radius: 70% 0 70% 0;
+}
+
+.ghost2ghost:hover .ghost2mouth {
+    display: block;
+}
+
+.ghost2tail {
+    position: absolute;
+    background: white;
+    height: 20%;
+    width: 20%;
+    border-radius: 50%;
+    bottom: 0;
+}
+
+.ghost2tail-two {
+    left: 20%;
+}
+
+.ghost2tail-three {
+    left: 40%;
+}
+
+.ghost2tail-four {
+    left: 60%;
+}
+
+.ghost2tail-five {
+    left: 80%;
+}
+
+/* animations ----------------------------------*/
+@keyframes float {
+    0% {
+        transform: translateY(-30px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-30px);
+    }
+}
+
+@keyframes shadow {
+    0% {
+        width: 50px;
+        height: 15px;
+    }
+
+    50% {
+        width: 75px;
+        height: 20px;
+    }
+
+    100% {
+        width: 50px;
+        height: 15px;
+    }
+}

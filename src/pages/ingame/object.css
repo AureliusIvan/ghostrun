@@ -15,12 +15,19 @@
     margin: 0;
     position: relative;
     will-change: transfrom;
-    border: 2px solid black;
+    /* border: 2px solid black; */
+    /* transform: rotate(50deg); */
+    overflow: visible !important;
 }
 
 #obstacle.rocket {
     animation: rocket infinite linear;
     animation-duration: 1.5s;
+}
+
+#obstacle.hyperrocket {
+    animation: hyperrocket infinite linear;
+    animation-duration: 2s;
 }
 
 #obstacle.block {
@@ -33,8 +40,33 @@
     animation-duration: 3s;
 }
 
+#obstacle.meteor {
+    animation: meteor infinite linear;
+    animation-duration: 1.5s;
+}
+
+#obstacle.burgerdevilmove {
+    animation: burgerdevilmove infinite linear;
+    animation-duration: 1.4s;
+}
+
 
 /* animation */
+@keyframes burgerdevilmove {
+    0% {
+        transform: translateX(350px) translateY(-100px);
+    }
+
+    30% {
+        transform: translateX(350px) translateY(10px);
+    }
+
+    100% {
+        transform: translateX(-170px);
+    }
+}
+
+
 @keyframes rocket {
     0% {
         transform: translateX(550px) translateY(-10px);
@@ -44,6 +76,21 @@
         transform: translateX(-170px) translateY(-10px);
     }
 }
+
+@keyframes hyperrocket {
+    0% {
+        transform: translateX(550px) translateY(-20px);
+    }
+
+    50% {
+        transform: translateX(150px) translateY(-20px);
+    }
+
+    100% {
+        transform: translateX(-170px) translateY(-210px);
+    }
+}
+
 
 @keyframes block {
     0% {
@@ -58,13 +105,20 @@
 
 @keyframes MonsterB {
     0% {
-        transform: translateX(420px) translateY(40px);
+        transform: translateX(550px) translateY(20px);
     }
 
-    10% {
-        transform: translateX(420px) translateY(20px);
-    }
     100% {
         transform: translateX(-170px) translateY(20px);
+    }
+}
+
+@keyframes meteor {
+    0% {
+        transform: translateX(550px) translateY(-80px);
+    }
+
+    100% {
+        transform: translateX(-170px) translateY(13px);
     }
 }

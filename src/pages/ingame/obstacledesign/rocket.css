@@ -1,4 +1,9 @@
 /* rocketobj */
+
+.draw-container{
+    -webkit-filter: drop-shadow(2px 2px 0 rgb(255, 255, 255)) drop-shadow(-2px -2px 0 rgb(255, 255, 255));
+    filter: drop-shadow(2px 2px 0 rgb(255, 255, 255)) drop-shadow(-2px -2px 0 rgb(255, 255, 255));
+}
 .draw-container .rocketobj {
     /* position: absolute; */
     height: 180px;
@@ -20,6 +25,7 @@
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
+    
 }
 
 .draw-container .rocketobjobj::before {
@@ -33,7 +39,7 @@
 .draw-container .rocketobj:after {
     height: 55px;
     width: 155%;
-    background-color: #9e554f;
+    background-color: #ca2b1c;
     bottom: 0;
     z-index: -10;
     transform: translateX(-50%) translateZ(-1px);

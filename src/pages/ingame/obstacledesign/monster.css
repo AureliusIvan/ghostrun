@@ -8,6 +8,8 @@ span {
     top: 10px;
     /* left:-45px; */
     transform: translateX(-52px) translateY(-10px);
+    -webkit-filter: drop-shadow(10px 10px 0 rgb(255, 255, 255)) drop-shadow(-10px -10px 0 rgb(255, 255, 255));
+    filter: drop-shadow(10px 2px 0 rgb(255, 255, 255)) drop-shadow(-10px -2px 0 rgb(255, 255, 255));
 }
 
 
@@ -202,18 +204,22 @@ span {
 /* Reset */
 
 .monsterBmain {
-    transform: translateX(-23px) translateY(-210px) scale(0.14);
+    transform: translateX(-27px) translateY(-210px) scale(0.14);
+    -webkit-filter: drop-shadow(10px 10px 0 rgb(255, 255, 255)) drop-shadow(-10px -10px 0 rgb(255, 255, 255));
+    filter: drop-shadow(10px 2px 0 rgb(255, 255, 255)) drop-shadow(-10px -2px 0 rgb(255, 255, 255));
 }
+
 .monsterBmonster {
     display: flex;
     justify-content: center;
     position: relative;
-    width: 370px;
+    width: 425px;
     height: 490px;
     border-top-left-radius: 200px;
     border-top-right-radius: 200px;
-    background-color: #3c47d7;
+    background-color: #3cb5d7;
 }
+
 .monsterBmonster__face {
     display: flex;
     justify-content: center;
@@ -224,32 +230,37 @@ span {
     width: 75%;
     height: 200px;
 }
+
 .monsterBmonster__eyes {
     display: flex;
     justify-content: space-between;
     width: 28%;
     height: auto;
     margin-bottom: 10px;
+
 }
+
 .monsterBmonster__eye {
     width: 17px;
     height: 30px;
     border-radius: 20px;
     background: #000;
 }
+
 .monsterBmonster__mouth {
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
-    height: 0%;
+    height: 10%;
     overflow: hidden;
     border: 25px solid #ffc333;
     border-radius: 100px;
     background-color: #810332;
     animation: mouth 1.75s infinite;
 }
+
 .monsterBmonster__mouth::before {
     content: '';
     position: absolute;
@@ -270,6 +281,7 @@ span {
     z-index: 100;
     animation: t 1.75s infinite;
 }
+
 .monsterBmonster__bottom {
     position: absolute;
     bottom: 0;
@@ -281,5 +293,5 @@ span {
     z-index: 100;
     animation: b 1.75s infinite;
 }
-/**/
 
+/**/

@@ -10,10 +10,12 @@
     transform: scale(0.15);
     transition: 0.5s;
 }
+
 .head {
     width: 196px;
     height: 260px;
-    border-radius: 50px;
+    /* border-radius: 50px; */
+    border-radius: 40% 40% 0 0;
     background: #fcfcfc;
     position: absolute;
     top: 50%;
@@ -28,7 +30,7 @@
     -moz-transition: 0.7s;
     -ms-transition: 0.7s;
     -o-transition: 0.7s;
-    
+
 }
 
 
@@ -84,7 +86,7 @@
     right: 35px;
 }
 
-.eye{
+.eye {
     width: 20px;
     height: 28px;
     border-radius: 10px;
@@ -93,8 +95,8 @@
     top: -18px;
     left: 50%;
     margin-left: -10px;
-  
-  }
+
+}
 
 .shadow-wrapper {
     width: 98px;
@@ -106,7 +108,7 @@
     overflow: hidden;
 }
 
-.foot{
+.foot {
     margin: auto;
     left: 0;
     right: 0;
@@ -145,3 +147,80 @@
     border-radius: 50%;
 }
 
+/* sparkle */
+
+.spark {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    transform: translateX(-100px);
+    background-color: rgb(253, 253, 253);
+    animation: sparkling 1s infinite linear;
+}
+
+.spark2 {
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    transform: translateX(-100px);
+    background-color: rgb(253, 253, 253);
+    animation: sparkling 1s infinite linear;
+    animation-delay: 0.1s;
+}
+
+@keyframes sparkling {
+    0% {
+        opacity: 0;
+        transform: rotate(0deg) translateX(-100px);
+    }
+
+    10% {
+        opacity: 1;
+        transform: rotate(-20deg) translateX(-100px) translateY(-10px);
+    }
+
+    20% {
+        opacity: 0;
+        transform: rotate(-40deg) translateX(-100px);
+    }
+
+    30% {
+        opacity: 1;
+        transform: rotate(-60deg) translateX(-100px);
+    }
+
+    40% {
+        opacity: 0;
+        transform: rotate(-40deg) translateX(-100px);
+    }
+
+    50% {
+        opacity: 1;
+        transform: rotate(-40deg) translateX(-100px);
+    }
+
+    60% {
+        opacity: 0;
+        transform: rotate(-40deg) translateX(-100px);
+    }
+
+    70% {
+        opacity: 1;
+        transform: rotate(-40deg) translateX(-100px);
+    }
+
+    80% {
+        opacity: 0;
+        transform: rotate(-40deg) translateX(-100px);
+    }
+
+    90% {
+        opacity: 1;
+        transform: rotate(-40deg) translateX(-100px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: rotate(-40deg) translateX(-100px);
+    }
+}

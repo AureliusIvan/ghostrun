@@ -5,7 +5,8 @@ import {
     Grid,
     GridItem,
     Flex,
-    Input
+    Input,
+    Button
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import './Start.css';
@@ -15,6 +16,7 @@ import { useCookies } from 'react-cookie';
 // import { Customtext } from '../utils/Customtext';
 import supabase from '../../supabaseconfig/supabaseClient';
 import Credit from './credit';
+import Achievment from './achievment/Achievment';
 
 
 function Start(props) {
@@ -49,7 +51,7 @@ function Start(props) {
 
     useEffect(() => {
         Setplayername2(cookies.Name);
-        if (!cookies.id ) {         
+        if (!cookies.id) {
             fetchnama();
             createnama();
         }
@@ -57,7 +59,7 @@ function Start(props) {
     return (
         <Box
             draggable="false"
-            bgColor="rgb(158, 211, 255)"
+            background="linear-gradient(to bottom, #94c5f8 1%,#a6e6ff 70%,#b1b5ea 100%)"
             bgPos="center"
             position="fixed"
             width="100%"
@@ -75,11 +77,12 @@ function Start(props) {
                 <GridItem rowSpan={1} colSpan={3}>
                     {/* info */}
                     <Text bgColor="yellow.500" color="white" width="200px" padding="10px" zIndex={102} >Under Development!</Text>
-                </GridItem>
-
-                <GridItem rowSpan={1} colSpan={3}>
-                    <Center mt="30px" gap="10px">
+                    <Center pointerEvents="all">
+                        <Achievment />
                     </Center>
+                </GridItem>
+                <GridItem rowSpan={1} colSpan={3}>
+
                 </GridItem>
             </Grid>
             <Grid
@@ -116,7 +119,6 @@ function Start(props) {
                     <Text>Masukin nama kamu </Text>
                     <Input marginTop={"1px"} htmlSize={4} width='240px' zIndex={100} variant='filled' placeholder='INPUT PLAYER NAME' defaultValue={playername2} onInputCapture={e => {
                         Setplayername2(e.target.value);
-                        // console.log(playername2);
                     }} />
                     <br />
                 </GridItem>
@@ -143,7 +145,7 @@ function Start(props) {
                             props.handleClick('leaderboard');
                         }}
                     />
-                    <Credit/>
+                    <Credit />
                 </GridItem>
             </Grid>
         </Box>

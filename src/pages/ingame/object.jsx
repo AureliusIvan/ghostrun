@@ -6,14 +6,16 @@ import { Box, Image } from "@chakra-ui/react";
 import "./object.css";
 import { Rocket } from "./obstacledesign/rocket";
 import { MonsterA, MonsterB } from "./obstacledesign/monster";
+import { IceCream, Meteor } from "./obstacledesign/meteor";
+import { Burger, BurgerDevil } from "./obstacledesign/burger";
 
 function Obstacle() {
     const [attr, Setattr] = useState({
-        id: "1",
+        id: "0",
         transform: "",
-        width: "20px",
-        height: "20px",
-        obj: 1,
+        width: "50px",
+        height: "50px",
+        obj: 0,
         src: ""
     });
 
@@ -29,8 +31,8 @@ function Obstacle() {
             // work on this
             Setobjstate(true);
         }, delay);
-        const value = getRandomInt(5);
-        // const value = 2;
+        const value = getRandomInt(7);
+        // const value = 6;
         Setattr({
             id: Level[value].id,
             transform: Level[value].transform,
@@ -44,17 +46,20 @@ function Obstacle() {
             case 0:
                 return Setname("block");
             case 1:
-                return Setname("block");
+                return Setname("burgerdevilmove");
             case 2:
                 return Setname("monsterb");
             case 3:
                 return Setname("block");
             case 4:
-                return Setname("rocket")
+                return Setname("rocket");
+            case 5:
+                return Setname("meteor");
+            case 6:
+                return Setname("hyperrocket");
             default:
                 break;
         }
-        console.log(value);
     }
 
     return (
@@ -65,32 +70,35 @@ function Obstacle() {
             height={attr.height}
             objectFit='cover'
             overflow={'hidden'}
+            transform="rotate(45deg)"
             animationPlayState={objstate ? "running" : "paused"}
-            onAnimationIterationCapture={() => {
-                onIterationend();
-            }
-            }
+            onanimationi
+            onAnimationIterationCapture={onIterationend}
+
         >
 
-            {/* <Image rel="preload" scale={1.2} src={woodbox} /> */}
-            {(function(){
+
+            {(function () {
                 switch (attr.obj) {
                     case 0:
-                        return <Image rel="preload" scale={1.2} src={woodbox} />;
+                        return <Burger />
                     case 1:
-                        return <Image rel="preload" scale={1.2} src={woodbox} />;
+                        return <BurgerDevil />
                     case 2:
-                        return <MonsterB/>
-                        // return <Image rel="preload" scale={1.2} src={woodbox} />;
+                        return <MonsterB />
                     case 3:
-                        return <MonsterA/>;
+                        return <MonsterA />;
                     case 4:
+                        return <Rocket />;
+                    case 5:
+                        return <IceCream />;
+                    case 6:
                         return <Rocket />;
                     default:
                         return null;
                 }
             })()}
-            
+
         </Box >
     );
 };
