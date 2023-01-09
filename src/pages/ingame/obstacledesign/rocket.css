@@ -5,7 +5,7 @@
     filter: drop-shadow(2px 2px 0 rgb(255, 255, 255)) drop-shadow(-2px -2px 0 rgb(255, 255, 255));
 }
 .draw-container .rocketobj {
-    /* position: absolute; */
+
     height: 180px;
     width: 80px;
     top: 80px;
@@ -16,7 +16,6 @@
     box-shadow: 0 -3px 0 #FFF;
     transform-style: preserve-3d;
     z-index: 2;
-    /* animation: animaterocketobj 1s linear alternate infinite; */
 }
 
 .draw-container .rocketobj::before,
@@ -63,27 +62,3 @@
     animation: smoke 0.5s linear alternate infinite;
 }
 
-
-/* 
-@keyframes smoke {
-    from {
-        transform: translateX(-50%);
-        width: 32px;
-
-    }
-
-    to {
-        width: 42px;
-
-    }
-} */
-
-/* 
-@keyframes animateSmoke {
-    to {
-        opacity: 1;
-        transform: scale(.98) translate(1px);
-    }
-} */
-
-/* Stars */

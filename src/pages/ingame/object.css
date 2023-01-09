@@ -15,8 +15,7 @@
     margin: 0;
     position: relative;
     will-change: transfrom;
-    /* border: 2px solid black; */
-    /* transform: rotate(50deg); */
+    border: 2px solid black;
     overflow: visible !important;
 }
 
@@ -35,6 +34,11 @@
     animation-duration: 2s;
 }
 
+#obstacle.MonsterCMove {
+    animation: MonsterC infinite linear;
+    animation-duration: 3s;
+}
+
 #obstacle.monsterb {
     animation: MonsterB infinite linear;
     animation-duration: 3s;
@@ -49,6 +53,7 @@
     animation: burgerdevilmove infinite linear;
     animation-duration: 1.4s;
 }
+
 
 
 /* animation */
@@ -82,12 +87,12 @@
         transform: translateX(550px) translateY(-20px);
     }
 
-    50% {
-        transform: translateX(150px) translateY(-20px);
+    20% {
+        transform: translateX(350px) translateY(-20px);
     }
 
     100% {
-        transform: translateX(-170px) translateY(-210px);
+        transform: translateX(-170px) translateY(-110px);
     }
 }
 
@@ -101,6 +106,32 @@
         transform: translateX(-70px);
     }
 }
+
+
+@keyframes MonsterC {
+    0% {
+        transform: translate(550px, 0px);
+    }
+
+    25% {
+        transform: translate(450px,-40px);
+    }
+
+    40% {
+        transform: translate(350px,0px);
+    }
+
+    55% {
+        transform: translate(250px,-40px);
+    }
+    75% {
+        transform: translate(0px,0px);
+    }
+    100% {
+        transform: translate(-50px,-30px);
+    }
+}
+
 
 
 @keyframes MonsterB {

@@ -84,9 +84,9 @@ function Achievment() {
             position="relative"
         >
             <Image />
-            <Box bgColor={props.Done === true ? "green" : "red"}
+            <Box
+                bgColor={props.Done === true ? "green" : "red"}
                 borderRadius="50%"
-                // borderRightRadius={"50%"}
                 width={"40px"}
                 height="40px"
                 position={"absolute"}
@@ -108,15 +108,11 @@ function Achievment() {
     return (
         <Fragment>
             <Button
-                marginInline={"5px"}
                 width='40px'
                 height='40px'
                 onClick={onOpen}
                 pointerEvents="all"
                 transition="0.5s"
-                _hover={{
-                    transform: 'skeWX(0) scale(0.9)',
-                }}
                 zIndex="100"
                 borderRadius={'50%'}
                 bgColor={'black'}
@@ -124,8 +120,7 @@ function Achievment() {
                 fontSize={'20px'}
                 fontWeight={"light"}
                 textShadow={"1px 3px 1px black, 0 0 1px black, 0 0 1px black"}
-                boxShadow={"0px 8px 15px rgba(0, 0, 0, 0.1)"}
-                border="5px solid white"
+                border="3px solid white"
             >
                 🏆
             </Button>

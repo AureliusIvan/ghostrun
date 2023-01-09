@@ -6,6 +6,7 @@
     left: 0;
     right: 0;
     bottom: 0;
+    animation: bgmoving 50s 1 linear;
 }
 
 .mountain,
@@ -62,4 +63,14 @@
 
 .mountain-cap-3 {
     left: 5px;
+}
+
+
+@keyframes bgmoving {
+    0%{
+        transform: translateX(0px);
+    }
+    100%{
+        transform: translateX(-270px);
+    }
 }

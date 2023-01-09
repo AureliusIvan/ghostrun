@@ -134,20 +134,24 @@
     /* border-radius: 100%; */
     z-index: 5;
     top: -7px;
-    animation: burgereyebrow 0.3s alternate infinite;
 }
 
 
 
 .burgerdevilburgereyebrow.left {
+    pointer-events: none;
     left: 50px;
     transform: rotate(25deg);
+    animation: burgereyebrowleft 0.5s alternate infinite;
 }
 
 .burgerdevilburgereyebrow.right {
+    pointer-events: none;
+    
     left: 78px;
-
     transform: rotate(-25deg);
+    animation: burgereyebrowright 0.5s alternate infinite;
+
 }
 
 .burgerdevilburgereye::after {
@@ -204,7 +208,7 @@
     justify-content: space-between;
     align-items: center;
     width: 200px;
-    transform: scale(0.3) translateX(-250px) translateY(-270px);
+    transform: scale(0.3) translateX(-245px) translateY(-140px);
     -webkit-filter: drop-shadow(10px 10px 0 rgb(255, 255, 255)) drop-shadow(-10px -10px 0 rgb(255, 255, 255));
     filter: drop-shadow(10px 2px 0 rgb(255, 255, 255)) drop-shadow(-10px -2px 0 rgb(255, 255, 255));
 }
@@ -214,156 +218,70 @@
     width: 180px;
     border-radius: 100px 100px 0 0;
     background: #f04141;
+    z-index: 9 !important;
 }
 
 .burgerdevil .burgerdevilbun.bottom {
+    pointer-events: none;
     border-radius: 0 0 100px 100px;
+    transform: translateY(80px);
     height: 40px;
+    z-index: 9 !important;
 }
 
 .burgerdevilmouth {
+    pointer-events: none;
+    transform: translateY(80px);
     background-color: #000000;
-    height: 100%;
-    width: 100%;
+    width: 180px;
     border: 10px solid #f04141;
     background: #000000;
     padding: 0;
+
 }
 
-.burgerdevil .burgerdevilteeth {
-    height: 100%;
-    width: 100%;
-    background-color: hsl(0, 0%, 0%);
+.burgerdevilteeth {
+    pointer-events: none;
+    height: 20px;
+    /* width: 100%; */
     display: flex;
-    animation: burgerdevilmouth2 1.3s infinite;
+    z-index: 10;
 }
 
-.burgerdevil .burgerdevilteeth2 {
-    height: 100%;
-    width: 100%;
-    background-color: hsl(0, 0%, 0%);
-    display: flex;
-    animation: burgerdevilmouth 1.3s infinite;
+.burgerdevilteeth2 {
+    pointer-events: none;
+    animation: burgerdevilmouth 0.5s infinite;
+    z-index: 10 !important;
+    transform: rotate(180deg) translateY(0px);
 }
 
-.burgerdevil .burgerdeviltooth {
-    height: 40px;
+.burgerdeviltooth {
+    pointer-events: none;
+    /* height: 20px; */
     border-left: 25px solid transparent;
     border-right: 25px solid transparent;
     border-top: 40px solid rgb(255, 255, 255);
 
 }
 
-.burgerdevil .burgerdevilcosmic-fill {
-    height: 70px;
-    width: 100%;
-    overflow: hidden;
-    background: url(https://res.cloudinary.com/ddbxzcb7k/image/upload/v1564751401/fill-01_vgkaj7.svg);
-    background-repeat: round;
+@keyframes burgereyebrowleft {
+    from{
+        transform: translateY(0px);
+
+    }to{
+        transform: translateY(15px);
+
+    }
+    
 }
 
-@keyframes burgerdevilmouth {
-    1% {
-        /* margin-top: 20px; */
-        transform: rotate(180deg) translateY(-20px);
-    }
-
-    10% {
-        /* margin-top: 20px; */
-        transform: rotate(180deg) translateY(10px);
-    }
-
-    20% {
-        /* margin-top: 20px; */
-        transform: rotate(180deg) translateY(-20px);
-    }
-
-    30% {
-        /* margin-top: 20px; */
-        transform: rotate(180deg) translateY(10px);
-    }
-
-    40% {
-        /* margin-top: 20px; */
-        transform: rotate(180deg) translateY(-20px);
-    }
-
-    50% {
-        /* margin-top: 20px; */
-        transform: rotate(180deg) translateY(10px);
-    }
-
-    60% {
-        /* margin-top: 20px; */
-        transform: rotate(180deg) translateY(-20px);
-    }
-
-    70% {
-        /* margin-top: 20px; */
-        transform: rotate(180deg) translateY(10px);
-    }
-
-    80% {
-        /* margin-top: 20px; */
-        transform: rotate(180deg) translateY(-20px);
-    }
-
-    99% {
-        /* margin-top: 0px; */
-        transform: rotate(180deg) translateY(10px);
-
-    }
-}
-
-@keyframes burgerdevilmouth2 {
-    1% {
-        /* margin-top: 20px; */
+@keyframes burgereyebrowright {
+    from{
         transform: translateY(0px);
-    }
 
-    10% {
-        /* margin-top: 20px; */
-        transform: translateY(10px);
-    }
-
-    20% {
-        /* margin-top: 20px; */
-        transform: translateY(0px);
-    }
-
-    30% {
-        /* margin-top: 20px; */
-        transform: translateY(20px);
-    }
-
-    40% {
-        /* margin-top: 20px; */
-        transform: translateY(0px);
-    }
-
-    50% {
-        /* margin-top: 20px; */
-        transform: translateY(20px);
-    }
-
-    60% {
-        /* margin-top: 20px; */
-        transform: translateY(0px);
-    }
-
-    70% {
-        /* margin-top: 20px; */
-        transform: translateY(20px);
-    }
-
-    80% {
-        /* margin-top: 20px; */
-        transform: translateY(0px);
-    }
-
-    99% {
-        /* margin-top: 0px; */
-        transform: translateY(20px);
+    }to{
+        transform: translateY(15px);
 
     }
+    
 }

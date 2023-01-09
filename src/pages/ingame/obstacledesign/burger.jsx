@@ -1,5 +1,5 @@
 import "./burger.css"
-import { Box } from "@chakra-ui/react"
+import { Box, Center } from "@chakra-ui/react"
 
 export function Burger() {
     return (<>
@@ -26,6 +26,25 @@ export function Burger() {
 
 
 
+
+function BurgerDevilMouth() {
+    return (
+        <div className="burgerdevilmouth">
+            <Box className="burgerdevilteeth">
+                <Box className="burgerdeviltooth tooth1" />
+                <Box className="burgerdeviltooth tooth2" />
+                <Box className="burgerdeviltooth tooth3" />
+            </Box>
+
+            <div className="burgerdevilteeth2">
+                <Center>
+                    <Box className="burgerdeviltooth tooth1" />
+                    <Box className="burgerdeviltooth tooth2" />
+                </Center>
+            </div>
+        </div>)
+}
+
 export function BurgerDevil() {
     return (<>
         <div className="burgerdevil">
@@ -36,27 +55,10 @@ export function BurgerDevil() {
                     <div className="burgerdevilburgereye left"></div>
                     <div className="burgerdevilburgereye right"></div>
                 </div>
-
+                <BurgerDevilMouth />
                 <div className="burgerdevilsesame-seed one"></div>
                 <div className="burgerdevilsesame-seed two"></div>
                 <div className="burgerdevilsesame-seed three"></div>
-            </div>
-            {/* <div className="burgerdevilcosmic-fill">
-            </div> */}
-            <div className="burgerdevilmouth">
-                <Box className="burgerdevilteeth">
-                    <Box className="burgerdeviltooth tooth1" />
-                    <Box className="burgerdeviltooth tooth2" />
-                    <Box className="burgerdeviltooth tooth3" />
-                    <Box className="burgerdeviltooth tooth4" />
-                </Box>
-
-                <div className="burgerdevilteeth2">
-                    <Box className="burgerdeviltooth tooth1" />
-                    <Box className="burgerdeviltooth tooth2" />
-                    <Box className="burgerdeviltooth tooth3" />
-                    <Box className="burgerdeviltooth tooth4" />
-                </div>
             </div>
             <div className="burgerdevilbun bottom"></div>
         </div>

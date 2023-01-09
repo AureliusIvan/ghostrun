@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import "./Game.css";
-import { Ghost, Mixue } from "../../character/Ghost";
+import { Ghost } from "../../character/Ghost";
 import {
     Modal,
     ModalOverlay,
@@ -14,11 +14,12 @@ import {
     Button,
     ModalHeader
 } from '@chakra-ui/react';
+import { useInterval } from "../utils/UseInterval";
 import { AllContext } from "../../Value/AllContext";
 import useSound from 'use-sound';
 import jumpsound from '../../asset/sound/jump.mp3'
 import crashsound from '../../asset/sound/crash.mp3'
-import poinsound from '../../asset/sound/poin.mp3'
+// import poinsound from '../../asset/sound/poin.mp3'
 import restartsound from '../../asset/sound/restart.mp3'
 // asset
 import { Cloud } from "./cloud";
@@ -28,42 +29,31 @@ import { Customtext } from "../utils/Customtext";
 import { useCookies } from 'react-cookie';
 import Obstacle from "./object";
 import { Mountain } from "../../bg/Mountain";
+import React from "react";
 
 
-function useInterval(callback, delay) {
-    const savedCallback = useRef();
-    // Remember the latest callback.
-    useEffect(() => {
-        savedCallback.current = callback;
-    }, [callback]);
-
-    // Set up the interval.
-    useEffect(() => {
-        let id = setInterval(() => {
-            savedCallback.current();
-        }, delay);
-        return () => clearInterval(id);
-    }, [delay]);
+function elementsColliding(el1, el2) {
+    const a = el1.current.getBoundingClientRect();
+    const b = el2.current.getBoundingClientRect();
+    if ((
+        ((b.right) > (a.right)) &&
+        a.top < b.bottom &&
+        (b.left) <= (a.right + 10) &&
+        a.bottom > b.top
+    )
+    ) {
+        return true;
+    }
+    return false;
 }
 
+
 function Ingame(props) {
-    const [cookies, setCookie] = useCookies(['user']);
-    const { highScore, SethighScore } = useContext(AllContext);
-    const { Setlevellenght } = useContext(AllContext);
-
-    const fetchnama = async () => {
-        const { } = await supabase
-            .from('Leaderboard')
-            .update({ name: cookies.Name, score: highScore + 1 })
-            .eq('id', cookies.id)
-    }
-
     // score
     const [newscore, Setnewscore] = useState(false);
     // all sound
     const [playjumpsound] = useSound(jumpsound);
     const [playcrashsound] = useSound(crashsound);
-    // const [playpoinsound] = useSound(poinsound);
     const [playrestartsound] = useSound(restartsound, {
         sprite: {
             sound: [300, 3000]
@@ -78,28 +68,23 @@ function Ingame(props) {
     //cek nabrak 
     const [nabrak, setNabrak] = useState(false);
     const [suaranabrak, Setsuaranabrak] = useState(0);
-    // const [mouseDown, setMouseDown] = useState(false);
     const [animate, Setanimate] = useState(false);
+    // const cookies
+    const [cookies, setCookie] = useCookies(['user']);
+    const { highScore, SethighScore } = useContext(AllContext);
+    // character
+    const character = useRef(null);
+    const obstacle = useRef(null);
 
-    function elementsColliding(el1, el2) {
-        const a = el1.getBoundingClientRect("");
-        const b = el2.getBoundingClientRect("");
-        if ((
-            ((b.right) > (a.right)) &&
-            a.top < b.bottom &&
-            (b.left) <= (a.right + 10) &&
-            a.bottom > b.top
-        )
-        ) {
-            return true;
-        }
-        return false;
+    // fetchnama async
+    const fetchnama = async () => {
+        const { } = await supabase
+            .from('Leaderboard')
+            .update({ name: cookies.Name, score: highScore + 1 })
+            .eq('id', cookies.id)
     }
 
 
-    // character
-    let character = document.getElementById("character");
-    let obstacle = document.getElementById("obstacle");
     // intervall
     useInterval(() => {
         if (nabrak === false) {
@@ -113,25 +98,21 @@ function Ingame(props) {
             if (counter % 1000 > 500) {
                 SetDay(false);
                 SetScene("rgb(21, 36, 48)");
-                // SetScene("linear-gradient(to bottom, #94c5f8 1%,#a6e6ff 70%,#b1b5ea 100%)");
             }
             else {
                 SetDay(true);
                 SetScene("#94c5f8")
-                // SetScene("linear-gradient(to bottom, #94c5f8 1%,#a6e6ff 70%,#b1b5ea 100%)");
             }
 
         }
-        if (
-            elementsColliding(character, obstacle) === true
-        ) {
+        if (elementsColliding(character, obstacle) === true) {
             setNabrak(true);
             if (suaranabrak === (0)) {
                 playcrashsound();
                 Setsuaranabrak(1);
             }
             onOpen();
-            obstacle.style.animationPlayState = 'paused';
+            obstacle.current.style.animationPlayState = 'paused';
             return;
         }
     }, 100);
@@ -158,11 +139,8 @@ function Ingame(props) {
     return (<Box
         w={'100%'}
         h='100%'
-        // transition={'0.5s'}
         transitionDuration="2s"
-        // background={Mountain}
         background={Scene}
-        // bgColor={Scene}
         onMouseDownCapture={OnMouseDown}
         onTouchStart={OnMouseDown}
         className='prevent-select'
@@ -199,7 +177,6 @@ function Ingame(props) {
                                 props.handleClick('start')
                                 playrestartsound({ id: 'sound' });
                                 Setsuaranabrak(0);
-                                Setlevellenght(0);
                                 setCookie('highScore', highScore, { path: '/' });
                                 fetchnama();
                             }}
@@ -215,6 +192,7 @@ function Ingame(props) {
         </Modal>
         <br />
         <Center>
+            {/* main content */}
             <Flex
                 borderBottom={Day ? "2px solid black" : "2px solid white"}
                 alignContent='baseline'
@@ -228,13 +206,15 @@ function Ingame(props) {
                 height="200px"
 
             >
-                <Ghost jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
-                <Obstacle id="obstacle" />
+                <Ghost refghost={character} jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
+                <Obstacle refobstacle={obstacle} id="obstacle" />
+
             </Flex>
+            {/* main content */}
         </Center>
         <br />
         <Customtext content={newscore ? "NEW HIGH SCORE!" : ""} />
-        {tap === false && <Customtext content={"TAP or Click to Jump!"} />}
+        {tap === false && <Customtext content={"TAP or Click to Jump and avoid monster!"} />}
         <Mountain />
     </Box >);
 }

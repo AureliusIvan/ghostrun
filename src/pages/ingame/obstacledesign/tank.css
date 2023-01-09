@@ -1,0 +1,84 @@
+#tank {
+    cursor: pointer;
+    -webkit-filter: drop-shadow(10px 10px 0 rgb(255, 255, 255)) drop-shadow(-10px -10px 0 rgb(255, 255, 255));
+    filter: drop-shadow(10px 2px 0 rgb(255, 255, 255)) drop-shadow(-10px -2px 0 rgb(255, 255, 255));
+}
+
+.cls-1,
+.cls-13 {
+    fill: rgb(0, 0, 0);
+}
+
+
+/* warna kuping kucing nya */
+.cls-12 {
+    fill: #30381b
+}
+
+
+
+/* warna tank */
+.cls-10 {
+    fill: rgb(0, 0, 0)
+}
+
+.cls-3 {
+    fill: rgb(4, 86, 49)
+}
+
+.cls-8 {
+    fill: rgb(0, 104, 57)
+}
+
+
+/* warna outline tank */
+.cls-3,
+.cls-8 {
+    stroke: #000000
+}
+
+.cls-13,
+.cls-3,
+.cls-8 {
+    stroke-linejoin: round
+}
+
+.cls-3 {
+    stroke-width: .82px
+}
+
+.cls-13 {
+    stroke-linecap: round
+}
+
+.cls-12,
+.cls-14,
+.cls-5 {
+    fill-rule: evenodd
+}
+
+
+
+/* warna kucing nya  */
+.cls-5 {
+    fill: #c08219;
+}
+
+/* warna tank nya (2) */
+.cls-9 {
+    fill: #000000
+}
+
+/* warna topi kucing nya */
+.cls-14,
+.cls-7 {
+    fill: #555780
+}
+
+
+
+/* warna outline muka kucing nya */
+.cls-13 {
+    stroke: #80556c;
+    stroke-width: .84px
+}

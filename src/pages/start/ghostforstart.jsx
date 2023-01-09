@@ -8,7 +8,6 @@ function Ghostforstart(props) {
         >
             <div
                 className="head1"
-                onAnimationEnd={props.AnimationEnd}
             >
                 <div className="face1">
                     <div className="eye1-shadow1" id="left1">

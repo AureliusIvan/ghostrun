@@ -1,7 +1,8 @@
 import "./Mountain.css"
+import { Box } from "@chakra-ui/react"
 
 export function Mountain() {
-    return (<>
+    return (<Box zIndex={-100} className="bgWrapper">
         <div className="mountainbg">
             <div className="mountain">
                 <div className="mountain-top">
@@ -25,5 +26,5 @@ export function Mountain() {
                 </div>
             </div>
         </div>
-    </>)
+    </Box>)
 }

@@ -3,7 +3,7 @@ import { useCookies } from 'react-cookie';
 import './App.css';
 import { AllContext } from './Value/AllContext';
 // chakra
-import { ChakraProvider, theme } from '@chakra-ui/react';
+import { ChakraProvider, Circle, theme } from '@chakra-ui/react';
 // pages
 import Start from './pages/start/Start';
 import Ingame from './pages/ingame/Game';
@@ -14,12 +14,15 @@ import { Ghost } from './character/Ghost';
 import { CookiesProvider } from "react-cookie";
 // testing
 import { Rocket } from './pages/ingame/obstacledesign/rocket';
-import { MonsterB, MonsterC } from './pages/ingame/obstacledesign/monster';
+import { MonsterA, MonsterB, MonsterC, MonsterD } from './pages/ingame/obstacledesign/monster';
 import { LayoutGroup } from 'framer-motion';
 import { IceCream, Meteor } from './pages/ingame/obstacledesign/meteor';
 import { Mountain } from './bg/Mountain';
 import { Burger, BurgerDevil } from './pages/ingame/obstacledesign/burger';
 import { Lolipop } from './pages/ingame/obstacledesign/lolipop';
+import { Firefly } from './pages/ingame/obstacledesign/firefly';
+import { Tank } from './pages/ingame/obstacledesign/tank';
+import { Testcircle } from './testcircle/circle';
 
 function App() {
   const [game, setGame] = useState('start');
@@ -31,7 +34,7 @@ function App() {
   const [size, Setsize] = useState(1);
   const [playername, Setplayername] = useState("");
   const [playerid, Setplayerid] = useState(0);
-  const [levellenght, Setlevellenght] = useState(0);
+  const [level, Setlevel] = useState(0);
   const [cookies, setCookie] = useCookies(['user']);
 
 
@@ -56,8 +59,8 @@ function App() {
             Setplayername,
             playerid,
             Setplayerid,
-            levellenght,
-            Setlevellenght
+            level,
+            Setlevel
           }}>
           <Box className="App" h={'100vh'} pos='relative' overflow={'hidden'} scroll="no">
             {(() => {
@@ -70,10 +73,8 @@ function App() {
                   // return <IceCream/>;
                   // return <Meteor/>;
                   // return <Leaderboard handleClick={handleClick} />;
-                  return <MonsterC />;
-                // return <Lolipop/>
-                // return <BurgerDevil/>;
-                // return <Burger/>
+                  // return <MonsterD/>;
+                  return <Testcircle/>;
                 default:
                   return null;
               }
@@ -84,5 +85,6 @@ function App() {
     </CookiesProvider>
   );
 }
+
 
 export default App;

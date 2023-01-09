@@ -92,3 +92,30 @@ export function MonsterC() {
 
     </>)
 }
+
+
+export function MonsterD() {
+    return (<>
+        <div class="MonsterCcontainer">
+            <div class="MonsterCmonster">
+                <div class="MonsterDball">
+                    <div class="MonsterDbelly"></div>
+                </div>
+                <div class="MonsterDleft-arm"></div>
+                <div class="MonsterDright-arm"></div>
+                <div class="MonsterDleft-foot"></div>
+                <div class="MonsterDright-foot"></div>
+                <div class="MonsterDleft-eye eye">
+                    <div class="MonsterDiris MonsterDiris-small"></div>
+                </div>
+                <div class="MonsterDright-eye MonsterCeye">
+                    <div class="MonsterDiris MonsterDiris-small"></div>
+                </div>
+                <div class="MonsterCmouth">
+                    <div class="MonsterCtongue"></div>
+                </div>
+            </div>
+        </div>
+
+    </>)
+}
