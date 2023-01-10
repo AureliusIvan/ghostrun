@@ -9,19 +9,9 @@ import Start from './pages/start/Start';
 import Ingame from './pages/ingame/Game';
 import { Box } from '@chakra-ui/react';
 import Leaderboard from './pages/form/Leaderboard';
-import { Ghost } from './character/Ghost';
 // cookies
 import { CookiesProvider } from "react-cookie";
 // testing
-import { Rocket } from './pages/ingame/obstacledesign/rocket';
-import { MonsterA, MonsterB, MonsterC, MonsterD } from './pages/ingame/obstacledesign/monster';
-import { LayoutGroup } from 'framer-motion';
-import { IceCream, Meteor } from './pages/ingame/obstacledesign/meteor';
-import { Mountain } from './bg/Mountain';
-import { Burger, BurgerDevil } from './pages/ingame/obstacledesign/burger';
-import { Lolipop } from './pages/ingame/obstacledesign/lolipop';
-import { Firefly } from './pages/ingame/obstacledesign/firefly';
-import { Tank } from './pages/ingame/obstacledesign/tank';
 import { Testcircle } from './testcircle/circle';
 
 function App() {
@@ -70,10 +60,6 @@ function App() {
                 case 'ingame':
                   return <Ingame handleClick={handleClick} />;
                 case 'leaderboard':
-                  // return <IceCream/>;
-                  // return <Meteor/>;
-                  // return <Leaderboard handleClick={handleClick} />;
-                  // return <MonsterD/>;
                   return <Testcircle/>;
                 default:
                   return null;
