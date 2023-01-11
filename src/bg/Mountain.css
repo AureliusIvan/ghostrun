@@ -1,5 +1,5 @@
 .mountainbg {
-    overflow: hidden;
+    /* overflow: hidden; */
     /* background: #b4ddf0; */
     position: absolute;
     top: 0;
@@ -10,14 +10,25 @@
 }
 
 .mountain,
+.mountain2,
 .mountain-two,
-.mountain-three {
+.mountain-three,
+.mountain-four,
+.mountain-five,
+.mountain-six {
     position: absolute;
     bottom: 0;
     border-left: 150px solid transparent;
     border-right: 150px solid transparent;
     border-bottom: 180px solid #7ac1e4;
     z-index: 1;
+}
+
+.mountain2 {
+    left: 120px;
+    bottom: -20px;
+    opacity: 1;
+    z-index: 0;
 }
 
 .mountain-two {
@@ -33,6 +44,29 @@
     opacity: .5;
     z-index: 0;
 }
+
+.mountain-four {
+    left: -120px;
+    bottom: -10px;
+    opacity: .5;
+    z-index: 0;
+}
+
+.mountain-five {
+    left: -220px;
+    bottom: -10px;
+    opacity: .5;
+    z-index: 0;
+}
+
+.mountain-six {
+    left: -320px;
+    bottom: -10px;
+    opacity: .5;
+    z-index: 0;
+}
+
+
 
 .mountain-top {
     position: absolute;

@@ -1,6 +1,6 @@
 .Leaderboardpage{
     /* overflow-y: scroll !important; */
     overflow: scroll !important;
-    background: #000;
+    background: rgb(36, 171, 255);
     height: 100% !important;
 }

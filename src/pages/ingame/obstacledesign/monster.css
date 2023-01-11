@@ -70,7 +70,6 @@ span {
     background: black;
     position: relative;
     top: 30px;
-    /* transform: translateX(31px); */
     left: 60px;
     border-radius: 70% 70% 0% 0% / 140% 140% 0% 0%;
     -webkit-transition: all 0.1s ease-in-out;
@@ -258,7 +257,6 @@ span {
     border: 25px solid #ffc333;
     border-radius: 100px;
     background-color: #810332;
-    animation: mouth 1.75s infinite;
 }
 
 .monsterBmonster__mouth::before {
@@ -279,7 +277,6 @@ span {
     border-bottom-right-radius: 10px;
     background-color: #fff;
     z-index: 100;
-    animation: t 1.75s infinite;
 }
 
 .monsterBmonster__bottom {
@@ -291,7 +288,6 @@ span {
     border-top-right-radius: 10px;
     background-color: #fff;
     z-index: 100;
-    animation: b 1.75s infinite;
 }
 
 
@@ -305,7 +301,6 @@ span {
     position: relative;
     margin: auto;
     width: 250px;
-    animation: float 3s infinite;
 }
 
 .MonsterCball {
@@ -530,7 +525,6 @@ span {
     width: 80px;
     border-radius: 30% 30% 50% 50%;
     background-color: #973462;
-    animation: mouth 6s infinite;
 }
 
 .MonsterCtongue {

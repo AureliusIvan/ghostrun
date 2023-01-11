@@ -12,46 +12,52 @@ import {
     Center,
     Text,
     Button,
-    ModalHeader
+    ModalHeader,
+    Image
 } from '@chakra-ui/react';
-import { useInterval } from "../utils/UseInterval";
+import { LevelTitle } from "../../utils/LevelTitle";
+import { elementsColliding } from "../../utils/Colide";
+import { useInterval } from "../../utils/UseInterval";
 import { AllContext } from "../../Value/AllContext";
-import useSound from 'use-sound';
-import jumpsound from '../../asset/sound/jump.mp3'
-import crashsound from '../../asset/sound/crash.mp3'
-// import poinsound from '../../asset/sound/poin.mp3'
-import restartsound from '../../asset/sound/restart.mp3'
-// asset
-import { Cloud } from "./cloud";
-// context
 import supabase from "../../supabaseconfig/supabaseClient";
-import { Customtext } from "../utils/Customtext";
+import { Customtext } from "../../utils/Customtext";
 import { useCookies } from 'react-cookie';
 import Obstacle from "./object";
 import { Mountain } from "../../bg/Mountain";
 import React from "react";
-
-
-function elementsColliding(el1, el2) {
-    const a = el1.current.getBoundingClientRect();
-    const b = el2.current.getBoundingClientRect();
-    if ((
-        ((b.right) > (a.right)) &&
-        a.top < b.bottom &&
-        (b.left) <= (a.right + 10) &&
-        a.bottom > b.top
-    )
-    ) {
-        return true;
-    }
-    return false;
-}
-
+import useSound from 'use-sound';
+// asset
+import jumpsound from '../../asset/sound/jump.mp3'
+import crashsound from '../../asset/sound/crash.mp3'
+import restartsound from '../../asset/sound/restart.mp3'
+import { Cloud } from "./cloud";
+import OST from "./../../asset/sound/pvz.mp3"
+import candybg from "./../../asset/image/bg.png"
+import candybg2 from "./../../asset/image/bg2.png"
+import candybg3 from "./../../asset/image/bg3.png"
 
 function Ingame(props) {
+    // level design
+    const [level, Setlevel] = useState("Level 1: Junk Food Island");
     // score
     const [newscore, Setnewscore] = useState(false);
     // all sound
+    const [isPlaying, setIsPlaying] = React.useState(false);
+
+    const [playBoop, { pause }] = useSound(OST, {
+        onplay: () => setIsPlaying(true),
+        onend: () => setIsPlaying(false),
+    });
+
+    const togglePlay = () => {
+        if (isPlaying) {
+            pause();
+        } else {
+            playBoop();
+        }
+        setIsPlaying(!isPlaying);
+    }
+    const [playost, stopOST] = useSound(OST);
     const [playjumpsound] = useSound(jumpsound);
     const [playcrashsound] = useSound(crashsound);
     const [playrestartsound] = useSound(restartsound, {
@@ -113,6 +119,7 @@ function Ingame(props) {
             }
             onOpen();
             obstacle.current.style.animationPlayState = 'paused';
+            pause();
             return;
         }
     }, 100);
@@ -141,17 +148,16 @@ function Ingame(props) {
         h='100%'
         transitionDuration="2s"
         background={Scene}
-        onMouseDownCapture={OnMouseDown}
+
+        // backgroundPosition=""
+        onMouseDownCapture={() => {
+            OnMouseDown();
+        }}
         onTouchStart={OnMouseDown}
         className='prevent-select'
     >
         <Center>
-            <Cloud
-                transform={["scale(0.1) translateY(1400px) translateX(-700px)", "scale(0.2) translateY(600px) translateX(-700px)"]}
-            />
-            <Cloud
-                transform={["scale(0.1) translateY(1200px) translateX(-0px)", "scale(0.2) translateY(700px) translateX(-0px)"]}
-            />
+            <Cloud />
         </Center>
         <br />
         <Text
@@ -191,21 +197,48 @@ function Ingame(props) {
             </ModalContent>
         </Modal>
         <br />
-        <Center>
+        <Center
+        >
             {/* main content */}
             <Flex
-                borderBottom={Day ? "2px solid black" : "2px solid white"}
+                borderBottom={Day ? "1px solid black" : "2px solid white"}
                 alignContent='baseline'
                 alignItems={'end'}
-                w='500px'
-                h={'200px'}
                 overflow="hidden"
-                transform={['scale(0.7)', 'scale(1)', 'scale(1.5)']}
+                transform={['scale(0.85)', 'scale(1)', 'scale(1.5)']}
                 pos="relative"
                 width="500px"
                 height="200px"
-
             >
+                <Image
+                    onAnimationStart={togglePlay}
+                    src={candybg}
+                    position="absolute"
+                    objectFit={"cover"}
+                    backgroundSize="100%"
+                    bgPosition={"bottom"}
+                    zIndex={-1}
+                    className="gameplayBox"
+
+                />
+                <Image src={candybg2}
+                    position="absolute"
+                    objectFit={"cover"}
+                    backgroundSize="100%"
+                    bgPosition={"bottom"}
+                    zIndex={-1}
+                    className="gameplayBox2"
+
+                />
+                <Image src={candybg3}
+                    position="absolute"
+                    objectFit={"cover"}
+                    backgroundSize="100%"
+                    bgPosition={"bottom"}
+                    zIndex={-1}
+                    className="gameplayBox3"
+                />
+
                 <Ghost refghost={character} jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
                 <Obstacle refobstacle={obstacle} id="obstacle" />
 
@@ -215,6 +248,7 @@ function Ingame(props) {
         <br />
         <Customtext content={newscore ? "NEW HIGH SCORE!" : ""} />
         {tap === false && <Customtext content={"TAP or Click to Jump and avoid monster!"} />}
+        <LevelTitle content={level} />
         <Mountain />
     </Box >);
 }

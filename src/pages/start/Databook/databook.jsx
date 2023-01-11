@@ -13,7 +13,7 @@ import {
     Text
 } from '@chakra-ui/react'
 import { Fragment, useEffect, useState } from 'react';
-import { Customtext } from '../../utils/Customtext';
+import { Customtext } from '../../../../utils/Customtext';
 // import AchievmentData from './Achievment';
 import Cross from "../../../asset/image/cross.svg";
 import Check from "../../../asset/image/check.svg";

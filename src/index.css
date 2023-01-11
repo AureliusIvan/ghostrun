@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'NineTsuki';
   src: local('NineTsuki'), url(./asset/font/NineTsukiRegular.ttf) format('truetype');
 }
@@ -11,7 +11,7 @@
 @font-face {
   font-family: 'Wonder-Night';
   src: local('Wonder-Night'), url(./asset/font/Wonder\ Night.ttf) format('truetype');
-}
+} */
 
 @import url('https://fonts.googleapis.com/css2?family=Titan+One&display=swap');
 

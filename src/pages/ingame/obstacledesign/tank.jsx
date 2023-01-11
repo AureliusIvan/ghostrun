@@ -1,29 +1,12 @@
+import { Box } from "@chakra-ui/react"
 import "./tank.css"
 
 export function Tank() {
     return (<>
-        <div class="box">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 801 600.5">
-                <defs>
-                    <clipPath id="clip-path">
-                        <path d="M414.3 243.6s21 33.6-1.2 43.2c-14.7 6.4-23-4.4-23-24 0-12.9 2.3-12.9 4.6-17.7s19.6-1.5 19.6-1.5z" class="cls-1" />
-                    </clipPath>
-                    <clipPath id="clip-path-2">
-                        <path d="M396.6 220.8c10 0 18 6.8 18 15s-3 15-18 15-18.1-6.7-18.1-15 8.1-15 18-15z" class="cls-1" />
-                    </clipPath>
-                    <clipPath id="clip-path-3">
-                        <circle cx="400" cy="288.6" r="28.5" class="cls-1" />
-                    </clipPath>
-                    <clipPath id="clip-path-4">
-                        <path d="M360.3 269.8h80.3a5.5 5.5 0 015.5 5.5v40.5h-91.3v-40.5a5.5 5.5 0 015.5-5.5z" class="cls-1" />
-                    </clipPath>
-                    <clipPath id="clip-path-5">
-                        <path d="M374.8 250.5h51.3a5.5 5.5 0 015.5 5.5v13.8h-62.3V256a5.5 5.5 0 015.5-5.5z" class="cls-1" />
-                    </clipPath>
-                </defs>
+        <Box transform={"scale(5) translateY(0px)"}>
+            <svg backgroundColor="black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 801 600.5">
                 <g id="Layer_2" data-name="Layer 2">
                     <g id="Layer_1-2" data-name="Layer 1">
-                        <path fill="#d7edee" d="M0 0h800v600H0z" />
                         <g id="tank">
                             <path id="tank-back-rect" d="M438.5 278.4h14a3.7 3.7 0 013.8 3.7v22.6a3.7 3.7 0 01-3.7 3.7h-14.1v-30z" class="cls-3" />
                             <g id="door">
@@ -134,10 +117,10 @@ export function Tank() {
                             </g>
 
                         </g>
- 
+
                     </g>
                 </g>
             </svg>
-        </div>
+        </Box>
     </>)
 }

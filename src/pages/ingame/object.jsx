@@ -1,13 +1,13 @@
 import Level from "./Level";
-import { getRandomInt } from "../utils/ramdom";
+import { getRandomInt } from "../../utils/randomMath";
 import { useState, useRef, useEffect } from "react";
-import woodbox from "../../asset/image/box.jpg"
 import { Box, Image } from "@chakra-ui/react";
 import "./object.css";
 import { Rocket } from "./obstacledesign/rocket";
 import { MonsterA, MonsterB, MonsterC, MonsterD } from "./obstacledesign/monster";
 import { IceCream, Meteor } from "./obstacledesign/meteor";
-import { Burger, BurgerDevil } from "./obstacledesign/burger";
+import { Burger, BurgerDevil } from "./obstacledesign/Level1_Junk_food/burger";
+import { Tank } from "./obstacledesign/tank";
 
 function Obstacle({ refobstacle }) {
     const [attr, Setattr] = useState({
@@ -34,7 +34,7 @@ function Obstacle({ refobstacle }) {
             Setobjstate(true);
         }, delay);
         const value = getRandomInt(9);
-        // const value = 8;
+        // const value = 1;
         Setattr({
             id: Level[value].id,
             width: Level[value].width,
@@ -60,6 +60,8 @@ function Obstacle({ refobstacle }) {
                 return Setname("MonsterCMove");
             case 8:
                 return Setname("burgerdevilmove");
+            case 9:
+                return Setname("tankmove");
             default:
                 break;
         }
@@ -74,7 +76,7 @@ function Obstacle({ refobstacle }) {
             height={attr.height}
             objectFit='cover'
             overflow={'hidden'}
-            animationPlayState={objstate ? "running" : "paused"}
+            animationplaystate={objstate ? "running" : "paused"}
             onAnimationIterationCapture={onIterationend}
 
         >
@@ -102,6 +104,8 @@ function Obstacle({ refobstacle }) {
                             return <MonsterC />;
                         case 8:
                             return <BurgerDevil />
+                        case 9:
+                            return <Tank />;
                         default:
                             return null;
                     }

@@ -56,38 +56,38 @@ export function MonsterB() {
 
 export function MonsterC() {
     return (<>
-        <div class="MonsterCcontainer">
-            <div class="MonsterCmonster">
-                <div class="MonsterCball">
-                    <div class="MonsterCbelly"></div>
+        <div className="MonsterCcontainer">
+            <div className="MonsterCmonster">
+                <div className="MonsterCball">
+                    <div className="MonsterCbelly"></div>
                 </div>
-                <div class="MonsterCleft-arm"></div>
-                <div class="MonsterCright-arm"></div>
-                <div class="MonsterCleft-foot"></div>
-                <div class="MonsterCright-foot"></div>
-                <div class="MonsterCmiddle-eye eye">
-                    <div class="MonsterCiris"></div>
+                <div className="MonsterCleft-arm"></div>
+                <div className="MonsterCright-arm"></div>
+                <div className="MonsterCleft-foot"></div>
+                <div className="MonsterCright-foot"></div>
+                <div className="MonsterCmiddle-eye MonsterCeye">
+                    <div className="MonsterCiris"></div>
                 </div>
-                <div class="MonsterCleft-eye eye">
-                    <div class="MonsterCiris MonsterCiris-small"></div>
+                <div className="MonsterCleft-eye MonsterCeye">
+                    <div className="MonsterCiris MonsterCiris-small"></div>
                 </div>
-                <div class="MonsterCright-eye MonsterCeye">
-                    <div class="MonsterCiris MonsterCiris-small"></div>
+                <div className="MonsterCright-eye MonsterCeye">
+                    <div className="MonsterCiris MonsterCiris-small"></div>
                 </div>
-                <div class="MonsterCmouth">
-                    <div class="MonsterCteeth"></div>
-                    <div class="MonsterCtongue"></div>
+                <div className="MonsterCmouth">
+                    <div className="MonsterCteeth"></div>
+                    <div className="MonsterCtongue"></div>
                 </div>
-                <div class="MonsterCleft-ears">
-                    <div class="MonsterClarge"></div>
-                    <div class="MonsterCsmall"></div>
+                <div className="MonsterCleft-ears">
+                    <div className="MonsterClarge"></div>
+                    <div className="MonsterCsmall"></div>
                 </div>
-                <div class="MonsterCright-ears">
-                    <div class="MonsterClarge"></div>
-                    <div class="MonsterCsmall"></div>
+                <div className="MonsterCright-ears">
+                    <div className="MonsterClarge"></div>
+                    <div className="MonsterCsmall"></div>
                 </div>
             </div>
-            <div class="MonsterCshadow"></div>
+            <div className="MonsterCshadow"></div>
         </div>
 
     </>)
@@ -96,23 +96,23 @@ export function MonsterC() {
 
 export function MonsterD() {
     return (<>
-        <div class="MonsterCcontainer">
-            <div class="MonsterCmonster">
-                <div class="MonsterDball">
-                    <div class="MonsterDbelly"></div>
+        <div className="MonsterCcontainer">
+            <div className="MonsterCmonster">
+                <div className="MonsterDball">
+                    <div className="MonsterDbelly"></div>
                 </div>
-                <div class="MonsterDleft-arm"></div>
-                <div class="MonsterDright-arm"></div>
-                <div class="MonsterDleft-foot"></div>
-                <div class="MonsterDright-foot"></div>
-                <div class="MonsterDleft-eye eye">
-                    <div class="MonsterDiris MonsterDiris-small"></div>
+                <div className="MonsterDleft-arm"></div>
+                <div className="MonsterDright-arm"></div>
+                <div className="MonsterDleft-foot"></div>
+                <div className="MonsterDright-foot"></div>
+                <div className="MonsterDleft-eye MonsterDeye">
+                    <div className="MonsterDiris MonsterDiris-small"></div>
                 </div>
-                <div class="MonsterDright-eye MonsterCeye">
-                    <div class="MonsterDiris MonsterDiris-small"></div>
+                <div className="MonsterDright-eye MonsterCeye">
+                    <div className="MonsterDiris MonsterDiris-small"></div>
                 </div>
-                <div class="MonsterCmouth">
-                    <div class="MonsterCtongue"></div>
+                <div className="MonsterCmouth">
+                    <div className="MonsterCtongue"></div>
                 </div>
             </div>
         </div>

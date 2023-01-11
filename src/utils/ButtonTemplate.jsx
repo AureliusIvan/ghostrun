@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import { Button } from "@chakra-ui/react";
+import { Button, Box } from "@chakra-ui/react";
 
-export function ButtonTemplate1(props) {
+export function ButtonTemplate(props) {
     return (<Fragment>
         <Button
             marginInline={"5px"}
@@ -11,7 +11,7 @@ export function ButtonTemplate1(props) {
             pointerEvents="all"
             transition="0.5s"
             _hover={{
-                transform:'skeWX(0) scale(0.9)',
+                transform: 'skeWX(0) scale(0.9)',
             }}
             zIndex="100"
             borderRadius={props.borderRadius}
@@ -24,7 +24,13 @@ export function ButtonTemplate1(props) {
             borderTop={"5px solid orange"}
             borderBottom={"2px solid black"}
         >
-            {props.content}
+            <Box
+                className={props.className}
+                bgColor={props.bgColor}
+
+            >
+                {props.content}
+            </Box>
         </Button>
     </Fragment>)
 

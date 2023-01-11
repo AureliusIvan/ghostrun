@@ -15,8 +15,14 @@
     margin: 0;
     position: relative;
     will-change: transfrom;
-    border: 2px solid black;
+    /* border: 2px solid black; */
     overflow: visible !important;
+}
+
+
+#obstacle.tankmove {
+    animation: tankmove infinite linear;
+    animation-duration: 3s;
 }
 
 #obstacle.rocket {
@@ -98,6 +104,16 @@
 
 
 @keyframes block {
+    0% {
+        transform: translateX(550px);
+    }
+
+    100% {
+        transform: translateX(-70px);
+    }
+}
+
+@keyframes tankmove {
     0% {
         transform: translateX(550px);
     }

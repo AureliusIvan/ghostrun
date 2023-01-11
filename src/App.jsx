@@ -9,16 +9,19 @@ import Start from './pages/start/Start';
 import Ingame from './pages/ingame/Game';
 import { Box } from '@chakra-ui/react';
 import Leaderboard from './pages/form/Leaderboard';
+import useSound from 'use-sound';
 // cookies
 import { CookiesProvider } from "react-cookie";
-// testing
-import { Testcircle } from './testcircle/circle';
+import OST from "./asset/sound/pvz.mp3"
+
 
 function App() {
   const [game, setGame] = useState('start');
   const handleClick = gameState => {
     setGame(gameState);
   };
+  const [playost] = useSound(OST);
+
   // high-score
   const [highScore, SethighScore] = useState(0);
   const [size, Setsize] = useState(1);
@@ -26,7 +29,11 @@ function App() {
   const [playerid, Setplayerid] = useState(0);
   const [level, Setlevel] = useState(0);
   const [cookies, setCookie] = useCookies(['user']);
+  const [play, SetPlayed] = useState(false);
 
+  const handleOST = oststate =>{
+    // playost(oststate);
+  };
 
   useEffect(() => {
     if (cookies.Name !== null) {
@@ -34,7 +41,7 @@ function App() {
     } else {
       Setplayername("player");
     }
-  })
+  }, [])
 
   return (
     <CookiesProvider>
@@ -50,17 +57,19 @@ function App() {
             playerid,
             Setplayerid,
             level,
-            Setlevel
+            Setlevel,
+            play,
+            SetPlayed
           }}>
           <Box className="App" h={'100vh'} pos='relative' overflow={'hidden'} scroll="no">
             {(() => {
               switch (game) {
                 case 'start':
-                  return <Start handleClick={handleClick} />;
+                  return <Start handleClick={handleClick} handleOST={handleOST} />;
                 case 'ingame':
                   return <Ingame handleClick={handleClick} />;
                 case 'leaderboard':
-                  return <Testcircle/>;
+                  return <Leaderboard handleClick={handleClick} />
                 default:
                   return null;
               }

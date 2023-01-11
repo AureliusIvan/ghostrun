@@ -25,6 +25,34 @@ export function Mountain() {
                     <div className="mountain-cap-3"></div>
                 </div>
             </div>
+            <div className="mountain-four">
+                <div className="mountain-top">
+                    <div className="mountain-cap-1"></div>
+                    <div className="mountain-cap-2"></div>
+                    <div className="mountain-cap-3"></div>
+                </div>
+            </div>
+            <div className="mountain-five">
+                <div className="mountain-top">
+                    <div className="mountain-cap-1"></div>
+                    <div className="mountain-cap-2"></div>
+                    <div className="mountain-cap-3"></div>
+                </div>
+            </div>
+            <div className="mountain-six">
+                <div className="mountain-top">
+                    <div className="mountain-cap-1"></div>
+                    <div className="mountain-cap-2"></div>
+                    <div className="mountain-cap-3"></div>
+                </div>
+            </div>
+            <div className="mountain2">
+                <div className="mountain-top">
+                    <div className="mountain-cap-1"></div>
+                    <div className="mountain-cap-2"></div>
+                    <div className="mountain-cap-3"></div>
+                </div>
+            </div>
         </div>
     </Box>)
 }

@@ -1,7 +1,7 @@
 #tank {
     cursor: pointer;
-    -webkit-filter: drop-shadow(10px 10px 0 rgb(255, 255, 255)) drop-shadow(-10px -10px 0 rgb(255, 255, 255));
-    filter: drop-shadow(10px 2px 0 rgb(255, 255, 255)) drop-shadow(-10px -2px 0 rgb(255, 255, 255));
+    -webkit-filter: drop-shadow(5px 5px 0 rgb(255, 255, 255)) drop-shadow(-5px -5px 0 rgb(255, 255, 255));
+    filter: drop-shadow(5px 2px 0 rgb(255, 255, 255)) drop-shadow(-5px -2px 0 rgb(255, 255, 255));
 }
 
 .cls-1,

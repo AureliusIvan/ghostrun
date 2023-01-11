@@ -1,5 +1,4 @@
 import { GridItem, Flex } from "@chakra-ui/layout";
-import "./Star.css"
 
 function Leaderboardcard(props) {
     return (<>
