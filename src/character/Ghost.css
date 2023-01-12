@@ -1,13 +1,9 @@
 .wrapper {
-    position: absolute;
     left: 0;
     bottom: -7px;
     margin: auto;
-    display: table-cell;
-    vertical-align: middle;
-    position: relative;
     position: absolute;
-    transform: scale(0.15);
+    transform: scale(0.12);
     transition: 0.5s;
 
 }
@@ -28,7 +24,7 @@
     top: 50%;
     left: 50%;
     margin-top: -210px;
-    margin-left: -98px;
+    margin-left: -128px;
     transform-origin: bottom;
     will-change: top;
     transition: 0.7s;
@@ -190,6 +186,7 @@
         height: 33px;
 
     }
+
     100% {
         height: 33px;
 

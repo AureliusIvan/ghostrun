@@ -1,18 +1,9 @@
-import meteor from "../../../asset/image/meteor.png"
 import { Image, Box } from "@chakra-ui/react"
 import "./meteor.css"
 
-export function Meteor() {
-    return (<>
-        <Image rel="preload"
-            transform={"translateX(10px) translateY(-50px) scale(1.7)"}
-            src={meteor} />
-    </>)
-}
-
 export function IceCream() {
     return (<>
-        <Box transform={"scale(0.10) translate(180px, -3500px)"}>
+        <Box transform={"scale(0.07) translate(0px, -5100px)"}>
             <div className="icecreamcontainer">
                 <div className="ice-cream">
                     <div className="icecreamglare"></div>

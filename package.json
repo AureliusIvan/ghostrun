@@ -25,6 +25,7 @@
     "react-scripts": "5.0.1",
     "react-track": "^0.4.4",
     "react-use-cookie": "^1.4.0",
+    "scss": "^0.2.4",
     "use-sound": "^4.0.1",
     "web-vitals": "^2.1.4"
   },

@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useContext } from "react";
+import { KeyboardEvent } from "react";
 import "./Game.css";
 import { Ghost } from "../../character/Ghost";
 import {
@@ -13,7 +14,8 @@ import {
     Text,
     Button,
     ModalHeader,
-    Image
+    Image,
+    Kbd
 } from '@chakra-ui/react';
 import { LevelTitle } from "../../utils/LevelTitle";
 import { elementsColliding } from "../../utils/Colide";
@@ -23,7 +25,6 @@ import supabase from "../../supabaseconfig/supabaseClient";
 import { Customtext } from "../../utils/Customtext";
 import { useCookies } from 'react-cookie';
 import Obstacle from "./object";
-import { Mountain } from "../../bg/Mountain";
 import React from "react";
 import useSound from 'use-sound';
 // asset
@@ -32,13 +33,29 @@ import crashsound from '../../asset/sound/crash.mp3'
 import restartsound from '../../asset/sound/restart.mp3'
 import { Cloud } from "./cloud";
 import OST from "./../../asset/sound/pvz.mp3"
+// background 1
 import candybg from "./../../asset/image/bg.png"
 import candybg2 from "./../../asset/image/bg2.png"
 import candybg3 from "./../../asset/image/bg3.png"
+// background 2
+import foodbg from "./../../asset/image/bg4.png"
+import foodbg2 from "./../../asset/image/bg5.png"
+import foodbg3 from "./../../asset/image/bg6.png"
+// background 3
+import swampbg from "./../../asset/image/bg7.png"
+import swampbg2 from "./../../asset/image/bg8.png"
+import swampbg3 from "./../../asset/image/bg9.png"
 
 function Ingame(props) {
     // level design
-    const [level, Setlevel] = useState("Level 1: Junk Food Island");
+    const { level, Setlevel } = useContext(AllContext);
+    // background
+    const [bg, setbg] = useState({
+        bg1: candybg,
+        bg2: candybg2,
+        bg3: candybg3,
+        bgcolor: "#94c5f8"
+    });
     // score
     const [newscore, Setnewscore] = useState(false);
     // all sound
@@ -101,9 +118,28 @@ function Ingame(props) {
                 Setnewscore(true);
             }
             // 
-            if (counter % 1000 > 500) {
-                SetDay(false);
-                SetScene("rgb(21, 36, 48)");
+            if (counter % 1000 > 100 && counter % 1000 <= 200) {
+                // junkfood
+                // SetDay(false);
+                // SetScene("rgb(21, 36, 48)");
+                setbg({
+                    bg1: foodbg,
+                    bg2: foodbg2,
+                    bg3: foodbg3,
+                    bgcolor: "#ffb3e8"
+                })
+                Setlevel(2);
+            } else if (counter % 1000 > 200 && counter % 1000 <= 300) {
+                // swamp
+                // SetDay(false);
+                // SetScene("rgb(21, 36, 48)");
+                setbg({
+                    bg1: swampbg,
+                    bg2: swampbg2,
+                    bg3: swampbg3,
+                    bgcolor: "#1d8239"
+                })
+                Setlevel(2);
             }
             else {
                 SetDay(true);
@@ -141,18 +177,21 @@ function Ingame(props) {
         }
     };
 
+    function onKeyDownhandle(e) {
+        console.log(e);
+    }
 
     //return
     return (<Box
         w={'100%'}
         h='100%'
         transitionDuration="2s"
-        background={Scene}
-
+        background={bg.bgcolor}
         // backgroundPosition=""
         onMouseDownCapture={() => {
             OnMouseDown();
         }}
+        onKeyDown={onKeyDownhandle }
         onTouchStart={OnMouseDown}
         className='prevent-select'
     >
@@ -205,38 +244,41 @@ function Ingame(props) {
                 alignContent='baseline'
                 alignItems={'end'}
                 overflow="hidden"
-                transform={['scale(0.85)', 'scale(1)', 'scale(1.5)']}
+                transform={['scale(1)', 'scale(1)', 'scale(3.7)']}
                 pos="relative"
-                width="500px"
-                height="200px"
+                width="100vh"
+                maxW={"400px"}
+                height="250px"
+                transition={"3s"}
+                transitionDuration={"3s"}
             >
                 <Image
                     onAnimationStart={togglePlay}
-                    src={candybg}
+                    src={bg.bg1}
                     position="absolute"
                     objectFit={"cover"}
                     backgroundSize="100%"
                     bgPosition={"bottom"}
                     zIndex={-1}
-                    className="gameplayBox"
+                    className="gameplayBox prevent-drag"
 
                 />
-                <Image src={candybg2}
+                <Image src={bg.bg2}
                     position="absolute"
                     objectFit={"cover"}
                     backgroundSize="100%"
                     bgPosition={"bottom"}
                     zIndex={-1}
-                    className="gameplayBox2"
+                    className="gameplayBox2 prevent-drag"
 
                 />
-                <Image src={candybg3}
+                <Image src={bg.bg3}
                     position="absolute"
                     objectFit={"cover"}
                     backgroundSize="100%"
                     bgPosition={"bottom"}
                     zIndex={-1}
-                    className="gameplayBox3"
+                    className="gameplayBox3 prevent-drag"
                 />
 
                 <Ghost refghost={character} jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
@@ -247,9 +289,9 @@ function Ingame(props) {
         </Center>
         <br />
         <Customtext content={newscore ? "NEW HIGH SCORE!" : ""} />
-        {tap === false && <Customtext content={"TAP or Click to Jump and avoid monster!"} />}
+        {tap === false && <><Customtext content={["TAP or Click to Jump or Click"]} /><Kbd>enter</Kbd></>}
         <LevelTitle content={level} />
-        <Mountain />
+        {/* <Mountain /> */}
     </Box >);
 }
 

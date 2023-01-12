@@ -13,10 +13,10 @@
 #obstacle {
     border-radius: 0px;
     margin: 0;
-    position: relative;
+    position: absolute;
     will-change: transfrom;
-    /* border: 2px solid black; */
     overflow: visible !important;
+    /* border: 2px solid black; */
 }
 
 
@@ -36,6 +36,7 @@
 }
 
 #obstacle.block {
+    position: absolute;
     animation: block infinite linear;
     animation-duration: 2s;
 }
@@ -105,11 +106,11 @@
 
 @keyframes block {
     0% {
-        transform: translateX(550px);
+        transform: translateX(400px);
     }
 
     100% {
-        transform: translateX(-70px);
+        transform: translateX(-40px);
     }
 }
 
@@ -129,22 +130,24 @@
         transform: translate(550px, 0px);
     }
 
-    25% {
-        transform: translate(450px,-40px);
+    20% {
+        transform: translate(500px, -40px);
     }
 
     40% {
-        transform: translate(350px,0px);
+        transform: translate(350px, 0px);
     }
 
-    55% {
-        transform: translate(250px,-40px);
+    60% {
+        transform: translate(250px, -40px);
     }
-    75% {
-        transform: translate(0px,0px);
+
+    80% {
+        transform: translate(0px, 0px);
     }
+
     100% {
-        transform: translate(-50px,-30px);
+        transform: translate(-50px, -30px);
     }
 }
 

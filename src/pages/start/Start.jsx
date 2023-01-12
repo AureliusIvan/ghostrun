@@ -21,6 +21,7 @@ import { AllContext } from '../../Value/AllContext';
 
 
 function Start(props) {
+    const {level, Setlevel} = useContext(AllContext);
     const { played, Setplayed } = useContext(AllContext);
     const [playername, Setplayername] = useState('');
     const [cookies, setCookie] = useCookies(['user']);
@@ -46,6 +47,7 @@ function Start(props) {
     }
 
     useEffect(() => {
+        Setlevel(1);
         Setplayername(cookies.Name);
         if (!cookies.id) {
             fetchnama();

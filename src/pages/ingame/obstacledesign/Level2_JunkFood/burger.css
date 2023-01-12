@@ -1,3 +1,15 @@
+.burger {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 210px;
+    transform: scale(0.19) translateX(-460px) translateY(-400px);
+    -webkit-filter: drop-shadow(10px 10px 0 rgb(255, 255, 255)) drop-shadow(-10px -10px 0 rgb(255, 255, 255));
+    filter: drop-shadow(10px 2px 0 rgb(255, 255, 255)) drop-shadow(-10px -2px 0 rgb(255, 255, 255));
+}
+
 .burgereye {
     position: absolute;
     background: #ffffff;
@@ -79,17 +91,7 @@
     top: 10px;
 }
 
-.burger {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    width: 200px;
-    transform: scale(0.3) translateX(-250px) translateY(-240px);
-    -webkit-filter: drop-shadow(10px 10px 0 rgb(255, 255, 255)) drop-shadow(-10px -10px 0 rgb(255, 255, 255));
-    filter: drop-shadow(10px 2px 0 rgb(255, 255, 255)) drop-shadow(-10px -2px 0 rgb(255, 255, 255));
-}
+
 
 .burger .bun {
     height: 80px;

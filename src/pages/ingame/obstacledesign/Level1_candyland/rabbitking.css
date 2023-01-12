@@ -1,0 +1,314 @@
+.rabbit-3 {
+    width: 800px;
+    height: 800px;
+    position: relative;
+    transform: scaleX(-0.15) scaleY(0.15) translate(2850px, -2100px);
+    -webkit-filter: drop-shadow(2px 2px 0 rgb(255, 255, 255)) drop-shadow(-2px -2px 0 rgb(255, 255, 255));
+    filter: drop-shadow(2px 2px 0 rgb(255, 255, 255)) drop-shadow(-2px -2px 0 rgb(255, 255, 255));
+}
+
+.rabbit-3 *,
+.rabbit-3 *::before,
+.rabbit-3 *::after {
+    content: '';
+    position: absolute;
+}
+
+
+.rabbit-3__body {
+    top: -59px;
+    left: 12px;
+    width: 215px;
+    height: 215px;
+    background: #ffe065;
+    border-radius: 50%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.rabbit-3__body:before {
+    top: 31px;
+    left: 128px;
+    width: 172px;
+    height: 172px;
+    /* background: #ffdf5e; */
+    background: #fff1b9;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.rabbit-3__arm2 {
+    top: -1px;
+    left: 83px;
+    width: 27px;
+    height: 24px;
+    /* background: #ffde5b; */
+    background: #c0a53c;
+    border-radius: 50% 6px 6px 50%;
+    transform-origin: left center;
+    transform: rotate(24deg);
+    z-index: 2;
+}
+
+.rabbit-3__arm2:before {
+    top: 0px;
+    left: 19px;
+    width: 42px;
+    height: 24px;
+    background-image: linear-gradient(-209deg, #c0a53c 67%, transparent 67%);
+    border-radius: 4px 71% 0 4px;
+    z-index: 1;
+}
+
+.rabbit-3__arm2:after {
+    top: 0px;
+    left: 19px;
+    width: 40px;
+    height: 24px;
+    background-image: linear-gradient(17deg, #ffea97 71%, transparent 71%);
+    border-radius: 4px 0 76% 4px;
+}
+
+.rabbit-3__head {
+    top: -112px;
+    left: 24px;
+    width: 111px;
+    height: 122px;
+
+    background: #ffe065;
+    border-radius: 94px 17px 0px 0px / 102px 32px 0 0;
+    transform-origin: bottom left;
+    z-index: 1;
+}
+
+.rabbit-3__head:before {
+    top: 0px;
+    left: 80px;
+    width: 96px;
+    height: 100px;
+    border-radius: 10px 74px 10px 0;
+    background: #ffdd57;
+}
+
+.rabbit-3__ear1 {
+    top: -46px;
+    left: 86px;
+    width: 20px;
+    height: 53px;
+    background: #cb4c35;
+    border-radius: 50% 50% 0 0;
+    box-shadow: inset 9px 2px #caad38;
+    transform-origin: bottom center;
+    transform: rotate(13deg);
+    z-index: -1;
+}
+
+.rabbit-3__ear1>div {
+    bottom: 35px;
+    right: 1px;
+    height: 84px;
+    width: 20px;
+    background: #e66750;
+    border-radius: 100% 100% 0 70%;
+    box-shadow: inset 116px 22px 0 -100px #e1c554;
+    transform-origin: 10px 77px;
+    transform: rotate(31deg);
+    overflow: hidden;
+}
+
+.rabbit-3__ear1>div:before {
+    top: 13px;
+    left: 11px;
+    width: 20px;
+    height: 80px;
+    background: #eda294;
+    border-radius: 0 0 0 100%;
+    transform: rotate(13deg);
+}
+
+.rabbit-3__ear2 {
+    top: -38px;
+    left: 130px;
+    width: 20px;
+    height: 64px;
+    background: #eda294;
+    border-radius: 50% 10px 0 50%;
+    box-shadow: inset 9px 5px #ece1b4;
+    transform-origin: bottom center;
+    transform: rotate(36deg);
+    z-index: -1;
+}
+
+.rabbit-3__ear2:before {
+    top: -66px;
+    left: 3px;
+    width: 20px;
+    height: 76px;
+    background: #ece0b1;
+    border-radius: 100% 100% 0% 100%;
+    transform-origin: 10px 70px;
+    transform: rotate(106deg);
+}
+
+.rabbit-3__mouth {
+    top: 71px;
+    left: 120px;
+    transform-origin: top center;
+    transform: rotate(6deg) translate(0px, 0px);
+    z-index: 2;
+}
+
+.rabbit-3__mouth:before {
+    top: 0px;
+    left: 7px;
+    width: 11px;
+    height: 7px;
+    background: #555458;
+    border-radius: 0 0 3px 3px;
+    box-shadow: inset 55px 50px 0 -50px #fffff8, inset -55px 50px 0 -50px #fffff8;
+    z-index: 1;
+}
+
+.rabbit-3__mouth:after {
+    top: -7px;
+    left: -9px;
+    width: 41px;
+    height: 7px;
+    background: #ebe2b3;
+    border-radius: 50%;
+    transform: scale(0.7, 3.5) translate(0px, -2px);
+
+}
+
+.rabbit-3__mouth>div {
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 23px;
+    background: #555458;
+    border-radius: 4px 4px 10px 12px;
+    overflow: hidden;
+    transform: translate(0px, -17px) scaleY(0.8);
+}
+
+.rabbit-3__mouth>div:before {
+    top: 9px;
+    left: 0px;
+    width: 15px;
+    height: 20px;
+    border-radius: 50%;
+    background: #e16858;
+    transform: rotate(0deg) translate(-1px, 1px);
+}
+
+.rabbit-3__eye1 {
+    top: 40px;
+    left: 104px;
+    width: 6px;
+    height: 12px;
+    background: #555458;
+    border-radius: 50%;
+    transform-origin: bottom center;
+    transform: rotate(5deg);
+    z-index: 2;
+}
+
+.rabbit-3__eye1:before {
+    top: -14px;
+    left: -3px;
+    width: 14px;
+    height: 7px;
+    border-radius: 50%;
+    box-shadow: inset -1px 2px 0 0 #555458;
+    transform: rotate(-32deg);
+}
+
+.rabbit-3__eye1:after {
+    top: -7px;
+    left: -5px;
+    width: 14px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ebe2b3;
+    transform: rotate(-9deg);
+}
+
+.rabbit-3__eye2 {
+    top: 44px;
+    left: 157px;
+    width: 6px;
+    height: 12px;
+    background: #151516;
+    border-radius: 50%;
+    transform-origin: bottom center;
+    transform: rotate(3deg);
+    z-index: 2;
+}
+
+.rabbit-3__eye2:before {
+    top: -18px;
+    left: -2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    box-shadow: inset -1px 8px 0 -5px #555458;
+    transform: rotate(11deg);
+}
+
+.rabbit-3__eye2:after {
+    top: -7px;
+    left: -5px;
+    width: 14px;
+    height: 7px;
+    border-radius: 50%;
+    background: #ebe2b3;
+    transform: rotate(-9deg);
+}
+
+.rabbit-3__nose {
+    top: 50px;
+    left: 127px;
+    width: 17px;
+    height: 6px;
+    background: #ad3b38;
+    border-radius: 50%;
+    transform: rotate(3deg);
+    animation: rabbit2Nose var(--animation);
+    z-index: 2;
+}
+
+.rabbit-3__nose:before {
+    top: -4px;
+    left: 1px;
+    width: 14px;
+    height: 14px;
+    background-image: linear-gradient(-45deg, #ff908c 50%, transparent 50%);
+    border-radius: 4px;
+    transform: rotate(45deg);
+}
+
+
+
+.rabbit-1__leg {
+    transform: scaleX(-1) rotate(-90deg);
+    top: 20px;
+    left: -30px;
+    width: 110px;
+    height: 75px;
+    background: #ece1b4;
+    border-radius: 54% 100% 38% 54%;
+    transform-origin: bottom right;
+    z-index: 2;
+
+}
+
+.rabbit-1__leg:before {
+    top: -10px;
+    left: -2px;
+    width: 20px;
+    height: 80px;
+    background: #fbf0c2;
+    border-radius: 70% 130% 10% 30px;
+    transform-origin: bottom right;
+    transform: rotate(-9deg);
+}
