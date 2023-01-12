@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/ghostrun/static/css/main.a8ea813f.css",
-    "main.js": "/ghostrun/static/js/main.a9dced67.js",
+    "main.css": "/ghostrun/static/css/main.ca9ba98c.css",
+    "main.js": "/ghostrun/static/js/main.26e7450a.js",
     "static/js/845.c97ad5eb.chunk.js": "/ghostrun/static/js/845.c97ad5eb.chunk.js",
     "static/js/787.02a092e3.chunk.js": "/ghostrun/static/js/787.02a092e3.chunk.js",
     "static/media/pvz.mp3": "/ghostrun/static/media/pvz.cfcac549cbae0bcf8177.mp3",
@@ -20,13 +20,13 @@
     "static/media/check.svg": "/ghostrun/static/media/check.ca0b3827ffb9872bebbfe03c40b4747d.svg",
     "index.html": "/ghostrun/index.html",
     "static/media/cross.svg": "/ghostrun/static/media/cross.3d5ccb3c06264dd8a878a5a42f52d09e.svg",
-    "main.a8ea813f.css.map": "/ghostrun/static/css/main.a8ea813f.css.map",
-    "main.a9dced67.js.map": "/ghostrun/static/js/main.a9dced67.js.map",
+    "main.ca9ba98c.css.map": "/ghostrun/static/css/main.ca9ba98c.css.map",
+    "main.26e7450a.js.map": "/ghostrun/static/js/main.26e7450a.js.map",
     "845.c97ad5eb.chunk.js.map": "/ghostrun/static/js/845.c97ad5eb.chunk.js.map",
     "787.02a092e3.chunk.js.map": "/ghostrun/static/js/787.02a092e3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a8ea813f.css",
-    "static/js/main.a9dced67.js"
+    "static/css/main.ca9ba98c.css",
+    "static/js/main.26e7450a.js"
   ]
 }
