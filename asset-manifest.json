@@ -1,10 +1,13 @@
 {
   "files": {
     "main.css": "/ghostrun/static/css/main.b7bd0bbf.css",
-    "main.js": "/ghostrun/static/js/main.2ece0da1.js",
+    "main.js": "/ghostrun/static/js/main.9833a483.js",
     "static/js/845.c97ad5eb.chunk.js": "/ghostrun/static/js/845.c97ad5eb.chunk.js",
     "static/media/pvz.mp3": "/ghostrun/static/media/pvz.cfcac549cbae0bcf8177.mp3",
+    "static/media/bg7.webp": "/ghostrun/static/media/bg7.33aaece048e1d7e28b8c.webp",
     "static/media/Wonder Night.ttf": "/ghostrun/static/media/Wonder Night.9e6862cf63b1a063d0ff.ttf",
+    "static/media/bg9.webp": "/ghostrun/static/media/bg9.00b356c2e54888c87a74.webp",
+    "static/media/bg8.webp": "/ghostrun/static/media/bg8.27434acbddc169d6d271.webp",
     "static/media/bg.webp": "/ghostrun/static/media/bg.f74edbb1dfbe94bcff7f.webp",
     "static/media/bg6.webp": "/ghostrun/static/media/bg6.d1103c452f3b6bb0fa6d.webp",
     "static/media/bg3.webp": "/ghostrun/static/media/bg3.9f923a797014b444652b.webp",
@@ -20,11 +23,11 @@
     "index.html": "/ghostrun/index.html",
     "static/media/cross.svg": "/ghostrun/static/media/cross.3d5ccb3c06264dd8a878a5a42f52d09e.svg",
     "main.b7bd0bbf.css.map": "/ghostrun/static/css/main.b7bd0bbf.css.map",
-    "main.2ece0da1.js.map": "/ghostrun/static/js/main.2ece0da1.js.map",
+    "main.9833a483.js.map": "/ghostrun/static/js/main.9833a483.js.map",
     "845.c97ad5eb.chunk.js.map": "/ghostrun/static/js/845.c97ad5eb.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.b7bd0bbf.css",
-    "static/js/main.2ece0da1.js"
+    "static/js/main.9833a483.js"
   ]
 }
