@@ -1,27 +1,30 @@
 {
   "files": {
-    "main.css": "/ghostrun/static/css/main.d3898fa8.css",
-    "main.js": "/ghostrun/static/js/main.7adb7f81.js",
+    "main.css": "/ghostrun/static/css/main.b7bd0bbf.css",
+    "main.js": "/ghostrun/static/js/main.2ece0da1.js",
     "static/js/845.c97ad5eb.chunk.js": "/ghostrun/static/js/845.c97ad5eb.chunk.js",
     "static/media/pvz.mp3": "/ghostrun/static/media/pvz.cfcac549cbae0bcf8177.mp3",
-    "static/media/bg.png": "/ghostrun/static/media/bg.7181490ef1d30689d6f5.png",
-    "static/media/bg6.png": "/ghostrun/static/media/bg6.5f28def842a6f3e8d0f1.png",
-    "static/media/bg4.png": "/ghostrun/static/media/bg4.7aa1b74478933511d2b8.png",
-    "static/media/bg5.png": "/ghostrun/static/media/bg5.239cae075648ada17090.png",
-    "static/media/bg3.png": "/ghostrun/static/media/bg3.31f4d895bf9d2d051178.png",
-    "static/media/bg2.png": "/ghostrun/static/media/bg2.0a320c1cf637e6f593ec.png",
+    "static/media/Wonder Night.ttf": "/ghostrun/static/media/Wonder Night.9e6862cf63b1a063d0ff.ttf",
+    "static/media/bg.webp": "/ghostrun/static/media/bg.f74edbb1dfbe94bcff7f.webp",
+    "static/media/bg6.webp": "/ghostrun/static/media/bg6.d1103c452f3b6bb0fa6d.webp",
+    "static/media/bg3.webp": "/ghostrun/static/media/bg3.9f923a797014b444652b.webp",
+    "static/media/bg4.webp": "/ghostrun/static/media/bg4.a107131bc4d9b24130dc.webp",
+    "static/media/bg5.webp": "/ghostrun/static/media/bg5.418f189447b50ac08b7b.webp",
+    "static/media/bg2.webp": "/ghostrun/static/media/bg2.31786d254039eede3c29.webp",
     "static/media/jump.mp3": "/ghostrun/static/media/jump.a2774fd0d75bdfeed2da.mp3",
+    "static/media/Guava Candy.ttf": "/ghostrun/static/media/Guava Candy.c31f55823c28185ee4ff.ttf",
     "static/media/restart.mp3": "/ghostrun/static/media/restart.778c3b691aa2aabd399d.mp3",
     "static/media/crash.mp3": "/ghostrun/static/media/crash.108eb864ed4a21c97387.mp3",
+    "static/media/NineTsukiRegular.ttf": "/ghostrun/static/media/NineTsukiRegular.9f39748805c15ef054ea.ttf",
     "static/media/check.svg": "/ghostrun/static/media/check.ca0b3827ffb9872bebbfe03c40b4747d.svg",
     "index.html": "/ghostrun/index.html",
     "static/media/cross.svg": "/ghostrun/static/media/cross.3d5ccb3c06264dd8a878a5a42f52d09e.svg",
-    "main.d3898fa8.css.map": "/ghostrun/static/css/main.d3898fa8.css.map",
-    "main.7adb7f81.js.map": "/ghostrun/static/js/main.7adb7f81.js.map",
+    "main.b7bd0bbf.css.map": "/ghostrun/static/css/main.b7bd0bbf.css.map",
+    "main.2ece0da1.js.map": "/ghostrun/static/js/main.2ece0da1.js.map",
     "845.c97ad5eb.chunk.js.map": "/ghostrun/static/js/845.c97ad5eb.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d3898fa8.css",
-    "static/js/main.7adb7f81.js"
+    "static/css/main.b7bd0bbf.css",
+    "static/js/main.2ece0da1.js"
   ]
 }
