@@ -13,19 +13,19 @@ import {
 } from '@chakra-ui/react'
 import { Fragment } from 'react';
 import { Customtext } from "../../utils/Customtext";
-import { ButtonTemplate } from '../../utils/ButtonTemplate';
+import { ButtonTemplate as Button } from '../../utils/ButtonTemplate';
 
 function Credit() {
     const { isOpen, onOpen, onClose } = useDisclosure()
     return (
         <Fragment>
-            <ButtonTemplate
-                height="60px"
-                width="100px"
+            <Button
                 bgColor="gray.700"
                 content="Credit"
                 onClick={onOpen}
-            />
+            >
+                Credit
+            </Button>
             <Modal isOpen={isOpen} onClose={onClose}>
                 <ModalOverlay />
                 <ModalContent width={"300px"}>
@@ -49,7 +49,7 @@ function Credit() {
                         <Card>
                             <CardBody>
                                 <Text>* Soundtrack:
-                                    Plant VS Zombie (Roof Stage)
+                                    Plant VS Zombie (Mini Games Stage)
                                 </Text>
                             </CardBody>
                         </Card>

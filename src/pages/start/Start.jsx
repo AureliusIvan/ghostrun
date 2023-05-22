@@ -1,71 +1,30 @@
 import {
-    Box,
     Center,
-    Text,
     Grid,
     GridItem,
-    Input,
 } from '@chakra-ui/react';
-import { useContext, useEffect, useState } from 'react';
-import './Start.css';
+import './Start.scss';
 import Ghostforstart from './GhostForStart/ghostforstart'
-import { ButtonTemplate } from '../../utils/ButtonTemplate';
-import { useCookies } from 'react-cookie';
-import supabase from '../../supabaseconfig/supabaseClient';
-import Credit from './credit';
+import Credit from './Credit';
 import Achievment from './achievment/Achievment';
-import { Customtext } from '../../utils/Customtext';
-import useSound from 'use-sound';
-import { AllContext } from '../../Value/AllContext';
+import { getCookie } from 'react-use-cookie';
+import { Button } from '../../Component/StyledComponent/CustomButton/CustomButton';
 
 
+function Banner() {
+    const highScore = getCookie('highScore');
+    return (
+        <div className='Banner'>
+            BEST : {highScore ? highScore : 0}!
+        </div>
+    );
+}
 
 function Start(props) {
-    const {level, Setlevel} = useContext(AllContext);
-    const { played, Setplayed } = useContext(AllContext);
-    const [playername, Setplayername] = useState('');
-    const [cookies, setCookie] = useCookies(['user']);
-
-    function namehandler() {
-        setCookie('Name', playername, { path: '/' });
-    }
-    const createnama = async () => {
-        const { data, error } = await supabase
-            .from('Leaderboard')
-            .insert({ name: null })
-    }
-    const fetchnama = async () => {
-        const { data, error } = await supabase
-            .from('Leaderboard')
-            .select('id')
-            .order('id', { ascending: false })
-            .limit(1)
-        if (data) {
-            setCookie('id', data[0].id, { path: '/' });
-
-        }
-    }
-
-    useEffect(() => {
-        Setlevel(1);
-        Setplayername(cookies.Name);
-        if (!cookies.id) {
-            fetchnama();
-            createnama();
-        }
-    }, [])
-
-
+    const startgame = () => { props.handleClick('ingame') }
     return (
-        <Box
-            draggable="false"
-            background="linear-gradient(to bottom, #94c5f8 1%,#a6e6ff 70%,#b1b5ea 100%)"
-            bgPos="center"
-            width="100%"
-            height="100vh"
-            id='startbody'
-            overflow={"hidden"}
-        >
+        <div className="Start">
+            <Banner />
             <Grid
                 className="Grid"
                 h="100%"
@@ -80,39 +39,21 @@ function Start(props) {
                     </Center>
                 </GridItem>
                 <GridItem rowSpan={1} colSpan={3}>
-                    <Customtext content="Masukin Nama Kamu" />
-                    <Input htmlSize={4} width='240px' zIndex={100} variant='filled' placeholder='INPUT PLAYER NAME' defaultValue={playername} onInputCapture={e => {
-                        Setplayername(e.target.value);
-                    }} />
                 </GridItem>
                 <GridItem className="gridItems" rowSpan={1} colSpan={3}>
-                    <ButtonTemplate
-                        height="60px"
-                        width="240px"
+                    <Button
                         fontSize="20px"
                         bgColor="yellow.400"
-                        content="START RUNNING!"
-                        onClick={function () {
-                            props.handleClick('ingame');
-                            props.handleOST(true);
-                            namehandler();
-                        }}
-                    />
+                        onClick={startgame}
+                    >
+                        START RUNNING!
+                    </Button>
                 </GridItem>
                 <GridItem className="gridItems" rowSpan={1} colSpan={3}>
-                    <ButtonTemplate
-                        height="60px"
-                        width="125px"
-                        bgColor="gray.700"
-                        content="Leaderboard"
-                        onClick={() => {
-                            props.handleClick('leaderboard');
-                        }}
-                    />
                     <Credit />
                 </GridItem>
             </Grid>
-        </Box>
+        </div>
     );
 }
 

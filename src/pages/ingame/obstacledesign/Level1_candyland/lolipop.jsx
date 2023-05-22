@@ -1,10 +1,10 @@
 import { Box } from "@chakra-ui/react";
 import { useEffect, useRef } from "react";
-import "./lolipop.css"
+import "./lolipop.scss"
 
 function Pop() {
     return (<>
-        <div className="pop">
+        <div className="pop rotating">
             <div className="lip"></div>
             <div className="Lolipopeyes">
                 <div className="Lolipopeye left">
@@ -24,7 +24,7 @@ function Pop() {
 
 
 export function Lolipop() {
-    return (<Box>
+    return (<Box className="LolipopMonster">
         <main>
             <div className="fadeIn">
                 <div className="bounce">

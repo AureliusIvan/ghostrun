@@ -1,9 +1,8 @@
-import { Fragment } from "react";
-import { Button, Box } from "@chakra-ui/react";
+import { Button as B, Box } from "@chakra-ui/react";
 
-export function ButtonTemplate(props) {
-    return (<Fragment>
-        <Button
+export function Button(props) {
+    return (
+        <B
             marginInline={"5px"}
             width={props.width ? props.width : "240px"}
             height={props.height ? props.height : "60px"}
@@ -31,7 +30,7 @@ export function ButtonTemplate(props) {
             >
                 {props.children}
             </Box>
-        </Button>
-    </Fragment>)
+        </B>
+    )
 
 }

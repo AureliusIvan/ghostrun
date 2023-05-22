@@ -1,11 +1,9 @@
-import "./Ghost.css"
-import { useRef } from "react";
+import "./Ghost.scss"
 import { Box } from "@chakra-ui/react";
-
 
 export function Ghost({ refghost, jump, AnimationEnd, frown }) {
     return (<>
-        <Box className="wrapper">
+        <Box className="Ghostwrapper">
             <div
                 ref={refghost}
                 id="character"

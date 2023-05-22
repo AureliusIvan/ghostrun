@@ -16,34 +16,52 @@
     position: absolute;
     will-change: transfrom;
     overflow: visible !important;
-    /* border: 2px solid black; */
+}
+
+#obstaclenotmove {
+    border-radius: 0px;
+    margin: 0;
+    position: absolute;
+    will-change: transfrom;
+    overflow: visible !important;
+    transform: translateX(400px);
 }
 
 
 #obstacle.tankmove {
     animation: tankmove infinite linear;
     animation-duration: 3s;
+    will-change: transform;
+
 }
 
 #obstacle.rocket {
     animation: rocket infinite linear;
     animation-duration: 1.5s;
+    will-change: transform;
+
 }
 
 #obstacle.hyperrocket {
     animation: hyperrocket infinite linear;
     animation-duration: 2s;
+    will-change: transform;
+
 }
 
 #obstacle.block {
     position: absolute;
     animation: block infinite linear;
     animation-duration: 2s;
+    will-change: transform;
+
 }
 
 #obstacle.MonsterCMove {
     animation: MonsterC infinite linear;
     animation-duration: 3s;
+    will-change: transform;
+
 }
 
 #obstacle.monsterb {
@@ -59,6 +77,7 @@
 #obstacle.burgerdevilmove {
     animation: burgerdevilmove infinite linear;
     animation-duration: 1.4s;
+    will-change: transform;
 }
 
 

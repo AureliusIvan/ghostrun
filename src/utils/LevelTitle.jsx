@@ -4,6 +4,8 @@ export function LevelTitle(props) {
     return (
         <Text
             position={"absolute"}
+            backgroundColor={"brown"}
+            // height={"90px"}
             bottom="0"
             left={"0"}
             right="0"
@@ -14,7 +16,7 @@ export function LevelTitle(props) {
             textShadow={"1px 3px 1px black, 0 0 1px black, 0 0 1px black"}
             zIndex={10}
         >
-            {props.content}
+            Level {props.content}
         </Text>
     );
 }

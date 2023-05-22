@@ -1,7 +1,7 @@
-import { useState, useEffect, useRef, useContext } from "react";
-import { KeyboardEvent } from "react";
-import "./Game.css";
-import { Ghost } from "../../character/Ghost";
+// all import start here
+import { useState, useEffect, useRef, useContext, Fragment } from "react";
+import "./Game.scss";
+import { Ghost } from "../../Character/Ghost";
 import {
     Modal,
     ModalOverlay,
@@ -9,24 +9,22 @@ import {
     ModalBody,
     useDisclosure,
     Flex,
-    Box,
     Center,
     Text,
     Button,
     ModalHeader,
     Image,
-    Kbd
 } from '@chakra-ui/react';
 import { LevelTitle } from "../../utils/LevelTitle";
 import { elementsColliding } from "../../utils/Colide";
 import { useInterval } from "../../utils/UseInterval";
 import { AllContext } from "../../Value/AllContext";
-import supabase from "../../supabaseconfig/supabaseClient";
 import { Customtext } from "../../utils/Customtext";
 import { useCookies } from 'react-cookie';
-import Obstacle from "./object";
+import Obstacle from "./obstacledesign/object";
 import React from "react";
 import useSound from 'use-sound';
+import { useSelector, useDispatch } from "react-redux";
 // asset
 import jumpsound from '../../asset/sound/jump.mp3'
 import crashsound from '../../asset/sound/crash.mp3'
@@ -34,32 +32,64 @@ import restartsound from '../../asset/sound/restart.mp3'
 import { Cloud } from "./cloud";
 import OST from "./../../asset/sound/pvz.mp3"
 // background 1
-import candybg from "./../../asset/image/bg.png"
-import candybg2 from "./../../asset/image/bg2.png"
-import candybg3 from "./../../asset/image/bg3.png"
-// background 2
-import foodbg from "./../../asset/image/bg4.png"
-import foodbg2 from "./../../asset/image/bg5.png"
-import foodbg3 from "./../../asset/image/bg6.png"
-// background 3
-import swampbg from "./../../asset/image/bg7.png"
-import swampbg2 from "./../../asset/image/bg8.png"
-import swampbg3 from "./../../asset/image/bg9.png"
+import { resetBg, selectBackground } from "../../Redux/Feature/background/backgroundSlice";
+import { changeBg } from "../../Redux/Feature/background/backgroundSlice";
+// loading
+import { loaded } from "../../Redux/Feature/gameState/gameStateSlice";
+import { selectGameState } from "../../Redux/Feature/gameState/gameStateSlice";
+// 
+// 
+// 
+// main func start here
 
-function Ingame(props) {
-    // level design
+function ModalPop(props) {
+    return (
+        <Modal closeOnOverlayClick={false} isOpen={props.isOpen}>
+            <ModalOverlay />
+            <ModalContent>
+                <ModalHeader bgColor={"gray.700"}>
+                    <Customtext>
+                        Nabrak Cuy!
+                    </Customtext>
+                </ModalHeader>
+                <ModalBody>
+                    <Customtext content={"Your Score : " + props.counter} />
+                    <br />
+                    <Center className="prevent-select">
+                        <Button
+                            onClick={props.onClick}
+                            border="5px solid white"
+                            colorScheme='blue'
+                            mr={3}
+                            className="prevent-select"
+                        >
+                            <Customtext>
+                                Restart!
+                            </Customtext>
+                        </Button>
+                    </Center>
+                </ModalBody>
+            </ModalContent>
+        </Modal>
+    )
+}
+
+
+export default function Game(props) {
+    const loadingbg = useSelector(selectGameState).isLoaded;
+    function loadingHandler() {
+        if (loadingbg.bg1 === true && loadingbg.bg2 === true && loadingbg.bg3 === true) {
+        }
+    };
+    // 
     const { level, Setlevel } = useContext(AllContext);
     // background
-    const [bg, setbg] = useState({
-        bg1: candybg,
-        bg2: candybg2,
-        bg3: candybg3,
-        bgcolor: "#94c5f8"
-    });
+    const dispatch = useDispatch();
+    const background = useSelector(selectBackground);
     // score
     const [newscore, Setnewscore] = useState(false);
     // all sound
-    const [isPlaying, setIsPlaying] = React.useState(false);
+    const [isPlaying, setIsPlaying] = useState(false);
 
     const [playBoop, { pause }] = useSound(OST, {
         onplay: () => setIsPlaying(true),
@@ -74,7 +104,6 @@ function Ingame(props) {
         }
         setIsPlaying(!isPlaying);
     }
-    const [playost, stopOST] = useSound(OST);
     const [playjumpsound] = useSound(jumpsound);
     const [playcrashsound] = useSound(crashsound);
     const [playrestartsound] = useSound(restartsound, {
@@ -99,15 +128,6 @@ function Ingame(props) {
     const character = useRef(null);
     const obstacle = useRef(null);
 
-    // fetchnama async
-    const fetchnama = async () => {
-        const { } = await supabase
-            .from('Leaderboard')
-            .update({ name: cookies.Name, score: highScore + 1 })
-            .eq('id', cookies.id)
-    }
-
-
     // intervall
     useInterval(() => {
         if (nabrak === false) {
@@ -120,26 +140,12 @@ function Ingame(props) {
             // 
             if (counter % 1000 > 100 && counter % 1000 <= 200) {
                 // junkfood
-                // SetDay(false);
-                // SetScene("rgb(21, 36, 48)");
-                setbg({
-                    bg1: foodbg,
-                    bg2: foodbg2,
-                    bg3: foodbg3,
-                    bgcolor: "#ffb3e8"
-                })
+                dispatch(changeBg('food'));
                 Setlevel(2);
             } else if (counter % 1000 > 200 && counter % 1000 <= 300) {
                 // swamp
-                // SetDay(false);
-                // SetScene("rgb(21, 36, 48)");
-                setbg({
-                    bg1: swampbg,
-                    bg2: swampbg2,
-                    bg3: swampbg3,
-                    bgcolor: "#1d8239"
-                })
-                Setlevel(2);
+                dispatch(changeBg('swamp'));
+                Setlevel(3);
             }
             else {
                 SetDay(true);
@@ -152,6 +158,7 @@ function Ingame(props) {
             if (suaranabrak === (0)) {
                 playcrashsound();
                 Setsuaranabrak(1);
+                dispatch(resetBg());
             }
             onOpen();
             obstacle.current.style.animationPlayState = 'paused';
@@ -160,6 +167,7 @@ function Ingame(props) {
         }
     }, 100);
 
+    // Jump function
     const [mouseup, setmouseup] = useState(false);
     const [tap, setTap] = useState(false);
     function OnMouseDown() {
@@ -177,24 +185,21 @@ function Ingame(props) {
         }
     };
 
-    function onKeyDownhandle(e) {
-        console.log(e);
+    const Restart = () => {
+        props.handleClick('start')
+        playrestartsound({ id: 'sound' });
+        Setsuaranabrak(0);
+        setCookie('highScore', highScore, { path: '/' });
     }
 
     //return
-    return (<Box
-        w={'100%'}
-        h='100%'
-        transitionDuration="2s"
-        background={bg.bgcolor}
-        // backgroundPosition=""
-        onMouseDownCapture={() => {
-            OnMouseDown();
+    return (<div
+        style={{
+            background: background.bgColor,
         }}
-        onKeyDown={onKeyDownhandle }
-        onTouchStart={OnMouseDown}
-        className='prevent-select'
-    >
+        onMouseDown={OnMouseDown}
+        onTouchStartCapture={OnMouseDown}
+        className='prevent-select Game'>
         <Center>
             <Cloud />
         </Center>
@@ -202,42 +207,17 @@ function Ingame(props) {
         <Text
             color={Day ? "black" : "white"}
             className="prevent-select"
+            background={Day ? "white" : "black"}
+            position="absolute"
+            top="0"
+            width={"100%"}
         >
             SCORE : {counter}
         </Text>
         {/* modal */}
-        <Modal closeOnOverlayClick={false} isOpen={isOpen}>
-            <ModalOverlay />
-            <ModalContent>
-                <ModalHeader bgColor={"gray.700"}>
-                    <Customtext content="Nabrak Cuy!" />
-                </ModalHeader>
-                <ModalBody bgColor={"gray.500"}>
-                    <Customtext content={"Your Score : " + counter} />
-                    <br />
-                    <br />
-                    <Center className="prevent-select">
-                        <Button
-                            onClick={() => {
-                                props.handleClick('start')
-                                playrestartsound({ id: 'sound' });
-                                Setsuaranabrak(0);
-                                setCookie('highScore', highScore, { path: '/' });
-                                fetchnama();
-                            }}
-                            border="5px solid white"
-                            colorScheme='blue' mr={3}
-                            className="prevent-select"
-                        >
-                            <Customtext content="Restart!" />
-                        </Button>
-                    </Center>
-                </ModalBody>
-            </ModalContent>
-        </Modal>
+        <ModalPop onClick={Restart} isOpen={isOpen} counter={counter} />
         <br />
-        <Center
-        >
+        <Center>
             {/* main content */}
             <Flex
                 borderBottom={Day ? "1px solid black" : "2px solid white"}
@@ -254,45 +234,55 @@ function Ingame(props) {
             >
                 <Image
                     onAnimationStart={togglePlay}
-                    src={bg.bg1}
+                    src={background.bg1}
                     position="absolute"
                     objectFit={"cover"}
                     backgroundSize="100%"
                     bgPosition={"bottom"}
                     zIndex={-1}
                     className="gameplayBox prevent-drag"
-
+                    onLoad={() => {
+                        dispatch(loaded());
+                        loadingHandler();
+                    }}
                 />
-                <Image src={bg.bg2}
+                <Image src={background.bg2}
                     position="absolute"
                     objectFit={"cover"}
                     backgroundSize="100%"
                     bgPosition={"bottom"}
                     zIndex={-1}
                     className="gameplayBox2 prevent-drag"
+                    onLoad={() => {
+                        dispatch(loaded());
+                        loadingHandler();
 
+                    }}
                 />
-                <Image src={bg.bg3}
+                <Image src={background.bg3}
                     position="absolute"
                     objectFit={"cover"}
                     backgroundSize="100%"
                     bgPosition={"bottom"}
                     zIndex={-1}
                     className="gameplayBox3 prevent-drag"
+                    onLoad={() => {
+                        dispatch(loaded());
+                        loadingHandler();
+                    }}
                 />
+                {loadingbg.bg1 === true && loadingbg.bg2 === true && loadingbg.bg3 === true ? (
+                    <>
+                        <Ghost refghost={character} jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
+                        <Obstacle refobstacle={obstacle} id="obstacle" />
 
-                <Ghost refghost={character} jump={animate ? "animate head" : "notanimated head"} frown={nabrak} />
-                <Obstacle refobstacle={obstacle} id="obstacle" />
+                    </>
+                ) :
+                    "Loading..."}
 
             </Flex>
             {/* main content */}
         </Center>
-        <br />
-        <Customtext content={newscore ? "NEW HIGH SCORE!" : ""} />
-        {tap === false && <><Customtext content={["TAP or Click to Jump or Click"]} /><Kbd>enter</Kbd></>}
         <LevelTitle content={level} />
-        {/* <Mountain /> */}
-    </Box >);
+    </div>);
 }
-
-export default Ingame;

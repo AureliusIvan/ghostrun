@@ -10,7 +10,7 @@ export function Customtext(props) {
             textShadow={"1px 3px 1px black, 0 0 1px black, 0 0 1px black"}
             zIndex={10}
         >
-            {props.content}
+            {props.children}
         </Text>
     );
 }
