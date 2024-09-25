@@ -1,11 +1,11 @@
-import { Box } from "@chakra-ui/react"
+import {Box} from "@chakra-ui/react"
 
 export function Cloud(props) {
-    return (<>
+  return (<>
         <Box
             className="cloud"
             position="absolute"
         ></Box>
-    </>
-    )
+      </>
+  )
 }

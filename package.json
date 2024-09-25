@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://aureliusivan.ghostrun.my.id/",
   "dependencies": {
+    "@chakra-ui/layout": "^2.3.1",
     "@chakra-ui/react": "^2.4.6",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
@@ -18,7 +19,7 @@
     "gh-pages": "^4.0.0",
     "google-spreadsheet": "^3.3.0",
     "jquery": "^3.6.3",
-    "node-sass": "^8.0.0",
+    "node-sass": "^9.0.0",
     "react": "^18.2.0",
     "react-ajax-form": "^1.0.2",
     "react-animated-cursor": "^2.5.2",
