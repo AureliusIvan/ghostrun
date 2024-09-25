@@ -1,61 +1,55 @@
 .icecream {
-  /* margin: 50px 25px 100px; */
-  float: left;
-  transform: scale(0.3) translate(-300px, -220px);
+    /* margin: 50px 25px 100px; */
+    float: left;
+    transform: scale(0.3) translate(-300px, -220px);
 }
 
 .fancy_stick:after {
-  background: none repeat scroll 0 0 #c4ad78;
-  border-bottom: 30px solid #c4ad78;
-  border-radius: 0 50px 50px 0 / 90px 110px 60px 20px;
-  content: "";
-  height: 50px;
-  left: 25px;
-  position: absolute;
-  width: 25px;
-  z-index: 99999;
+    background: none repeat scroll 0 0 #c4ad78;
+    border-bottom: 30px solid #c4ad78;
+    border-radius: 0 50px 50px 0 / 90px 110px 60px 20px;
+    content: "";
+    height: 50px;
+    left: 25px;
+    position: absolute;
+    width: 25px;
+    z-index: 99999;
 }
 
 .fancy_stick {
-  background: none repeat scroll 0 0 #decba0;
-  border-bottom: 30px solid #decba0;
-  border-radius: 50px 0 0 50px / 110px 90px 20px 60px;
-  height: 50px;
-  left: 37px;
-  position: absolute;
-  top: 201px;
-  transform: rotate(0deg) skewX(4deg);
-  -webkit-transform: rotate(0deg) skewX(4deg);
-  ;
-  -moz-transform: rotate(0deg) skewX(4deg);
-  ;
-  -ms-transform: rotate(0deg) skewX(4deg);
-  ;
-  -o-transform: rotate(0deg) skewX(4deg);
-  ;
-  width: 25px;
-  z-index: 99999;
+    background: none repeat scroll 0 0 #decba0;
+    border-bottom: 30px solid #decba0;
+    border-radius: 50px 0 0 50px / 110px 90px 20px 60px;
+    height: 50px;
+    left: 37px;
+    position: absolute;
+    top: 201px;
+    transform: rotate(0deg) skewX(4deg);
+    -webkit-transform: rotate(0deg) skewX(4deg);;
+    -moz-transform: rotate(0deg) skewX(4deg);;
+    -ms-transform: rotate(0deg) skewX(4deg);;
+    -o-transform: rotate(0deg) skewX(4deg);;
+    width: 25px;
+    z-index: 99999;
 }
 
 .Things1,
 .Stuff1,
 .Stuff2 {
-  position: absolute;
-  border-radius: 50%;
-  z-index: 9999;
+    position: absolute;
+    border-radius: 50%;
+    z-index: 9999;
 }
 
 .Things1 {
-  height: 4px;
-  width: 4px;
-  /*yellow fff109  red d32600 dark 480900*/
-  box-shadow:
-    49px 3px 0 #dadada, 50px 21px 0 #dadada,
+    height: 4px;
+    width: 4px;
+    /*yellow fff109  red d32600 dark 480900*/
+    box-shadow: 49px 3px 0 #dadada, 50px 21px 0 #dadada,
     72px 42px 0 #dadada, 4px 26px 0 #fff,
     26px 32px 0 #fff, 17px 12px 0 #fff,
     4px 51px 0 #fff, 78px 11px 0 #dadada,
     31px 53px 0 #fff,
-
     28px 10px 0 #d32600, 65px 48px 0 #d32600,
     36px 33px 0 #d32600, -2px 58px 0 #d32600,
     95px 38px 0 #d32600, 75px 53px 0 #d32600,
@@ -69,7 +63,6 @@
     15px 40px 0 #d32600, 12px 16px 0 #d32600,
     4px 37px 0 #d32600, 45px 36px 0 #d32600,
     45px 8px 0 #d32600, 15px 28px 0 #d32600,
-
     55px 28px 0 #dbcf07, 48px 45px 0 #fff109,
     82px 43px 0 #dbcf07, 2px 46px 0 #fff109,
     28px 38px 0 #fff109, 58px -1px 0 #dbcf07,
@@ -79,7 +72,6 @@
     26px 5px 0 #fff109, 15px 19px 0 #fff109,
     87px 68px 0 #dbcf07, 35px 8px 0 #fff109,
     59px 40px 0 #dbcf07, -2px 28px 0 #fff109,
-
     18px 48px 0 #480900, 41px 47px 0 #480900,
     80px 67px 0 #480900, 19px 57px 0 #480900,
     9px 46px 0 #480900, 19px 36px 0 #480900,
@@ -106,9 +98,9 @@
 }
 
 .Stuff1 {
-  width: 4px;
-  height: 4px;
-  box-shadow: 20px -2px 0 #e5b977, 20px 1px 0 #562e0b,
+    width: 4px;
+    height: 4px;
+    box-shadow: 20px -2px 0 #e5b977, 20px 1px 0 #562e0b,
     -2px 18px 0 #e5b977, 0px 19px 0 #562e0b,
     14px 22px 0 #e5b977, 15px 25px 0 #562e0b,
     40px 0px 0 #b6915b, 34px 14px 0 #e5b977,
@@ -129,9 +121,9 @@
 }
 
 .Stuff2 {
-  width: 5px;
-  height: 5px;
-  box-shadow: 43px 144px 0 #b6915b, 30px 152px 0 #e5b977,
+    width: 5px;
+    height: 5px;
+    box-shadow: 43px 144px 0 #b6915b, 30px 152px 0 #e5b977,
     40px 169px 0 #b6915b, 44px 122px 0 #b6915b,
     26px 112px 0 #e5b977, 18px 11px 0 #e5b977,
     19px 13px 0 #562e0b, 36px 79px 0 #b6915b,
@@ -145,480 +137,480 @@
 
 /*--------------------------------------------------*/
 .velvet:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
-  content: "";
-  height: 111px;
-  left: 49px;
-  margin: auto;
-  position: absolute;
-  top: 168px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
+    content: "";
+    height: 111px;
+    left: 49px;
+    margin: auto;
+    position: absolute;
+    top: 168px;
+    width: 20px;
+    z-index: -666;
 }
 
 .velvet:after {
-  background: none repeat scroll 0 0 #e60000;
-  border-radius: 70px 0 0 15px;
-  content: "";
-  float: right;
-  height: 167px;
-  position: absolute;
-  width: 58px;
+    background: none repeat scroll 0 0 #e60000;
+    border-radius: 70px 0 0 15px;
+    content: "";
+    float: right;
+    height: 167px;
+    position: absolute;
+    width: 58px;
 }
 
 .velvet {
-  background: none repeat scroll 0 0 #c30e0a;
-  border-radius: 70px 70px 15px 15px;
-  box-shadow: 0 6px 0 #c30e0a;
-  height: 167px;
-  position: relative;
-  width: 120px;
+    background: none repeat scroll 0 0 #c30e0a;
+    border-radius: 70px 70px 15px 15px;
+    box-shadow: 0 6px 0 #c30e0a;
+    height: 167px;
+    position: relative;
+    width: 120px;
 }
 
 /*--------------------------------------------------*/
 .threeInOne1:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
-  content: "";
-  height: 98px;
-  left: 41px;
-  margin: auto;
-  position: absolute;
-  top: 120px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
+    content: "";
+    height: 98px;
+    left: 41px;
+    margin: auto;
+    position: absolute;
+    top: 120px;
+    width: 20px;
+    z-index: -666;
 }
 
 .threeInOne1:after {
-  background: none repeat scroll 0 0 #dce9d7;
-  border-bottom: 59px solid #e3775d;
-  border-radius: 15px 0 0 15px;
-  border-top: 59px solid #f1d700;
-  content: "";
-  float: right;
-  height: 59px;
-  position: absolute;
-  top: -59px;
-  width: 50px;
+    background: none repeat scroll 0 0 #dce9d7;
+    border-bottom: 59px solid #e3775d;
+    border-radius: 15px 0 0 15px;
+    border-top: 59px solid #f1d700;
+    content: "";
+    float: right;
+    height: 59px;
+    position: absolute;
+    top: -59px;
+    width: 50px;
 }
 
 .threeInOne1 {
-  background: none repeat scroll 0 0 #acdb9a;
-  border-bottom: 59px solid #da4825;
-  border-radius: 15px;
-  border-top: 59px solid #f1b600;
-  box-shadow: 0 6px 0 #da4825, 50px 0 0 #dce9d7 inset;
-  height: 59px;
-  position: relative;
-  width: 100px;
-  margin-left: 35px;
-  margin-right: 35px;
+    background: none repeat scroll 0 0 #acdb9a;
+    border-bottom: 59px solid #da4825;
+    border-radius: 15px;
+    border-top: 59px solid #f1b600;
+    box-shadow: 0 6px 0 #da4825, 50px 0 0 #dce9d7 inset;
+    height: 59px;
+    position: relative;
+    width: 100px;
+    margin-left: 35px;
+    margin-right: 35px;
 }
 
 /*--------------------------------------------------*/
 .chocolate:before {
-  background: none repeat scroll 0 0 #65230e;
-  border-radius: 22px 41px 52px 3px;
-  box-shadow: 0 6px 0 #65230e, 6px 0 0 #8c3c22 inset;
-  content: "";
-  float: right;
-  height: 169px;
-  left: 45px;
-  position: absolute;
-  transform: rotate(0deg) skewX(8deg);
-  -webkit-transform: rotate(0deg) skewX(8deg);
-  -moz-transform: rotate(0deg) skewX(8deg);
-  -ms-transform: rotate(0deg) skewX(8deg);
-  -o-transform: rotate(0deg) skewX(8deg);
+    background: none repeat scroll 0 0 #65230e;
+    border-radius: 22px 41px 52px 3px;
+    box-shadow: 0 6px 0 #65230e, 6px 0 0 #8c3c22 inset;
+    content: "";
+    float: right;
+    height: 169px;
+    left: 45px;
+    position: absolute;
+    transform: rotate(0deg) skewX(8deg);
+    -webkit-transform: rotate(0deg) skewX(8deg);
+    -moz-transform: rotate(0deg) skewX(8deg);
+    -ms-transform: rotate(0deg) skewX(8deg);
+    -o-transform: rotate(0deg) skewX(8deg);
 
-  width: 60px;
+    width: 60px;
 }
 
 .chocolate:after {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: 0 8px 0 #65230e inset, -10px 9px 0 #c4ad78 inset, 10px -107px 0 #65230e, 10px -174px 0 #65230e, -10px -113px 0 #8c3c22, -10px -173px 0 #8c3c22;
-  content: "";
-  height: 107px;
-  left: 51px;
-  margin: auto;
-  position: absolute;
-  top: 175px;
-  transform: rotate(0deg) skewX(4deg);
-  -webkit-transform: rotate(0deg) skewX(4deg);
-  -moz-transform: rotate(0deg) skewX(4deg);
-  -ms-transform: rotate(0deg) skewX(4deg);
-  -o-transform: rotate(0deg) skewX(4deg);
-  width: 20px;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 8px 0 #65230e inset, -10px 9px 0 #c4ad78 inset, 10px -107px 0 #65230e, 10px -174px 0 #65230e, -10px -113px 0 #8c3c22, -10px -173px 0 #8c3c22;
+    content: "";
+    height: 107px;
+    left: 51px;
+    margin: auto;
+    position: absolute;
+    top: 175px;
+    transform: rotate(0deg) skewX(4deg);
+    -webkit-transform: rotate(0deg) skewX(4deg);
+    -moz-transform: rotate(0deg) skewX(4deg);
+    -ms-transform: rotate(0deg) skewX(4deg);
+    -o-transform: rotate(0deg) skewX(4deg);
+    width: 20px;
 }
 
 .chocolate {
-  background: none repeat scroll 0 0 #8c3c22;
-  border-radius: 39px 5px 0 50px;
-  box-shadow: 0 6px 0 #65230e;
-  content: "";
-  height: 169px;
-  left: -20px;
-  margin-left: 55px;
-  margin-right: 85px;
-  position: relative;
-  transform: rotate(0deg) skewX(-4deg);
-  -webkit-transform: rotate(0deg) skewX(-4deg);
-  -moz-transform: rotate(0deg) skewX(-4deg);
-  -ms-transform: rotate(0deg) skewX(-4deg);
-  -o-transform: rotate(0deg) skewX(-4deg);
-  transform: rotate(0deg) skewX(-4deg);
-  width: 60px;
-  z-index: 666;
+    background: none repeat scroll 0 0 #8c3c22;
+    border-radius: 39px 5px 0 50px;
+    box-shadow: 0 6px 0 #65230e;
+    content: "";
+    height: 169px;
+    left: -20px;
+    margin-left: 55px;
+    margin-right: 85px;
+    position: relative;
+    transform: rotate(0deg) skewX(-4deg);
+    -webkit-transform: rotate(0deg) skewX(-4deg);
+    -moz-transform: rotate(0deg) skewX(-4deg);
+    -ms-transform: rotate(0deg) skewX(-4deg);
+    -o-transform: rotate(0deg) skewX(-4deg);
+    transform: rotate(0deg) skewX(-4deg);
+    width: 60px;
+    z-index: 666;
 }
 
 /*--------------------------------------------------*/
 .threeInOne2:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
-  content: "";
-  height: 98px;
-  left: -10px;
-  margin: auto;
-  position: absolute;
-  top: 121px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
+    content: "";
+    height: 98px;
+    left: -10px;
+    margin: auto;
+    position: absolute;
+    top: 121px;
+    width: 20px;
+    z-index: -666;
 }
 
 .threeInOne2:after {
-  background: none repeat scroll 0 0 #ab7f90;
-  border-bottom: 59px solid #fec95d;
-  border-radius: 58px 0 0 58px;
-  border-top: 59px solid #d7de9b;
-  box-shadow: 0 6px 0 #d07c46;
-  content: "";
-  float: right;
-  height: 59px;
-  left: -60px;
-  position: absolute;
-  top: -59px;
-  width: 60px;
+    background: none repeat scroll 0 0 #ab7f90;
+    border-bottom: 59px solid #fec95d;
+    border-radius: 58px 0 0 58px;
+    border-top: 59px solid #d7de9b;
+    box-shadow: 0 6px 0 #d07c46;
+    content: "";
+    float: right;
+    height: 59px;
+    left: -60px;
+    position: absolute;
+    top: -59px;
+    width: 60px;
 }
 
 .threeInOne2 {
-  background: none repeat scroll 0 0 #724858;
-  border-bottom: 59px solid #d07c46;
-  border-radius: 0 58px 58px 0;
-  border-top: 59px solid #b8c06f;
-  box-shadow: 0 6px 0 #d07c46;
-  height: 59px;
-  left: 41px;
-  margin-right: 75px;
-  position: relative;
-  width: 60px;
+    background: none repeat scroll 0 0 #724858;
+    border-bottom: 59px solid #d07c46;
+    border-radius: 0 58px 58px 0;
+    border-top: 59px solid #b8c06f;
+    box-shadow: 0 6px 0 #d07c46;
+    height: 59px;
+    left: 41px;
+    margin-right: 75px;
+    position: relative;
+    width: 60px;
 }
 
 /*--------------------------------------------------*/
 .chocolateWithStuff1:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: 0 9px 0 #4a2200 inset, -10px 9px 0 #c4ad78 inset;
-  content: "";
-  height: 98px;
-  left: 18px;
-  margin: auto;
-  position: absolute;
-  top: 182px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 9px 0 #4a2200 inset, -10px 9px 0 #c4ad78 inset;
+    content: "";
+    height: 98px;
+    left: 18px;
+    margin: auto;
+    position: absolute;
+    top: 182px;
+    width: 20px;
+    z-index: -666;
 }
 
 .chocolateWithStuff1:after {
-  background: none repeat scroll 0 0 #734d30;
-  border-radius: 13px 0 0 13px;
-  content: "";
-  float: right;
-  height: 177px;
-  position: absolute;
-  width: 28px;
+    background: none repeat scroll 0 0 #734d30;
+    border-radius: 13px 0 0 13px;
+    content: "";
+    float: right;
+    height: 177px;
+    position: absolute;
+    width: 28px;
 }
 
 .chocolateWithStuff1 {
-  background: none repeat scroll 0 0 #4a2200;
-  border-radius: 13px;
-  box-shadow: 0 6px 0 #4a2200;
-  height: 177px;
-  position: relative;
-  width: 56px;
-  margin-left: 54px;
+    background: none repeat scroll 0 0 #4a2200;
+    border-radius: 13px;
+    box-shadow: 0 6px 0 #4a2200;
+    height: 177px;
+    position: relative;
+    width: 56px;
+    margin-left: 54px;
 }
 
 /*--------------------------------------------------*/
 .lemon:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
-  content: "";
-  height: 98px;
-  left: 26px;
-  margin: auto;
-  position: absolute;
-  top: 177px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
+    content: "";
+    height: 98px;
+    left: 26px;
+    margin: auto;
+    position: absolute;
+    top: 177px;
+    width: 20px;
+    z-index: -666;
 }
 
 .lemon:after {
-  background: none repeat scroll 0 0 #f0d879;
-  border-radius: 50px 0 0 25px;
-  content: "";
-  float: right;
-  height: 177px;
-  position: absolute;
-  width: 35px;
+    background: none repeat scroll 0 0 #f0d879;
+    border-radius: 50px 0 0 25px;
+    content: "";
+    float: right;
+    height: 177px;
+    position: absolute;
+    width: 35px;
 }
 
 .lemon {
-  background: none repeat scroll 0 0 #ecc62e;
-  border-radius: 50px 50px 25px 25px;
-  box-shadow: 0 6px 0 #ecc62e;
-  height: 177px;
-  position: relative;
-  margin-left: 91px;
-  width: 70px;
+    background: none repeat scroll 0 0 #ecc62e;
+    border-radius: 50px 50px 25px 25px;
+    box-shadow: 0 6px 0 #ecc62e;
+    height: 177px;
+    position: relative;
+    margin-left: 91px;
+    width: 70px;
 }
 
 /*--------------------------------------------------*/
 .watermelon:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
-  content: "";
-  height: 98px;
-  left: 49px;
-  margin: auto;
-  position: absolute;
-  top: 177px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
+    content: "";
+    height: 98px;
+    left: 49px;
+    margin: auto;
+    position: absolute;
+    top: 177px;
+    width: 20px;
+    z-index: -666;
 }
 
 .watermelon:after {
-  background: none repeat scroll 0 0 #d7de9b;
-  border-radius: 100% 0 0 100% / 50%;
-  content: "";
-  float: right;
-  height: 177px;
-  position: absolute;
-  width: 60px;
+    background: none repeat scroll 0 0 #d7de9b;
+    border-radius: 100% 0 0 100% / 50%;
+    content: "";
+    float: right;
+    height: 177px;
+    position: absolute;
+    width: 60px;
 }
 
 .watermelon {
-  background: none repeat scroll 0 0 #b8c06f;
-  border-radius: 50%;
-  box-shadow: 0 6px 0 #b8c06f;
-  height: 177px;
-  position: relative;
-  width: 120px;
-  clear: both;
+    background: none repeat scroll 0 0 #b8c06f;
+    border-radius: 50%;
+    box-shadow: 0 6px 0 #b8c06f;
+    height: 177px;
+    position: relative;
+    width: 120px;
+    clear: both;
 }
 
 /*--------------------------------------------------*/
 .isThatPink:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: -10px 9px 0 #c4ad78 inset;
-  content: "";
-  height: 98px;
-  left: 18px;
-  margin: auto;
-  position: absolute;
-  top: 182px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -10px 9px 0 #c4ad78 inset;
+    content: "";
+    height: 98px;
+    left: 18px;
+    margin: auto;
+    position: absolute;
+    top: 182px;
+    width: 20px;
+    z-index: -666;
 
 }
 
 .isThatPink:after {
-  background: none repeat scroll 0 0 #ff9ccd;
-  border-radius: 13px 0 0 13px;
-  content: "";
-  float: right;
-  height: 177px;
-  position: absolute;
-  width: 28px;
+    background: none repeat scroll 0 0 #ff9ccd;
+    border-radius: 13px 0 0 13px;
+    content: "";
+    float: right;
+    height: 177px;
+    position: absolute;
+    width: 28px;
 }
 
 .isThatPink {
-  background: none repeat scroll 0 0 #ff66b2;
-  border-radius: 13px;
-  box-shadow: 0 6px 0 #ff66b2;
-  height: 177px;
-  margin-left: 57px;
-  position: relative;
-  width: 56px;
+    background: none repeat scroll 0 0 #ff66b2;
+    border-radius: 13px;
+    box-shadow: 0 6px 0 #ff66b2;
+    height: 177px;
+    margin-left: 57px;
+    position: relative;
+    width: 56px;
 }
 
 /*--------------------------------------------------*/
 .PINK:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
-  content: "";
-  height: 98px;
-  left: 26px;
-  margin: auto;
-  position: absolute;
-  top: 177px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
+    content: "";
+    height: 98px;
+    left: 26px;
+    margin: auto;
+    position: absolute;
+    top: 177px;
+    width: 20px;
+    z-index: -666;
 }
 
 .PINK:after {
-  background: none repeat scroll 0 0 #f08f90;
-  border-radius: 50px 0 0 25px;
-  content: "";
-  float: right;
-  height: 177px;
-  position: absolute;
-  width: 35px;
+    background: none repeat scroll 0 0 #f08f90;
+    border-radius: 50px 0 0 25px;
+    content: "";
+    float: right;
+    height: 177px;
+    position: absolute;
+    width: 35px;
 }
 
 .PINK {
-  background: none repeat scroll 0 0 #fa7480;
-  border-radius: 50px 50px 25px 25px;
-  box-shadow: 0 6px 0 #fa7480;
-  height: 177px;
-  position: relative;
-  width: 70px;
-  margin-left: 82px;
+    background: none repeat scroll 0 0 #fa7480;
+    border-radius: 50px 50px 25px 25px;
+    box-shadow: 0 6px 0 #fa7480;
+    height: 177px;
+    position: relative;
+    width: 70px;
+    margin-left: 82px;
 }
 
 /*--------------------------------------------------*/
 .threeInOne3:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
-  content: "";
-  height: 98px;
-  left: 41px;
-  margin: auto;
-  position: absolute;
-  top: 120px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
+    content: "";
+    height: 98px;
+    left: 41px;
+    margin: auto;
+    position: absolute;
+    top: 120px;
+    width: 20px;
+    z-index: -666;
 }
 
 .threeInOne3:after {
-  background: none repeat scroll 0 0 #fefac4;
-  border-bottom: 59px solid #c6f5f0;
-  border-radius: 15px 0 0 15px;
-  border-top: 59px solid #f1d700;
-  content: "";
-  float: right;
-  height: 59px;
-  position: absolute;
-  top: -59px;
-  width: 50px;
+    background: none repeat scroll 0 0 #fefac4;
+    border-bottom: 59px solid #c6f5f0;
+    border-radius: 15px 0 0 15px;
+    border-top: 59px solid #f1d700;
+    content: "";
+    float: right;
+    height: 59px;
+    position: absolute;
+    top: -59px;
+    width: 50px;
 }
 
 .threeInOne3 {
-  background: none repeat scroll 0 0 #f0e397;
-  border-bottom: 59px solid #9ff0e8;
-  border-radius: 15px;
-  border-top: 59px solid #f1b600;
-  box-shadow: 0 6px 0 #9ff0e8, 50px 0 0 #dce9d7 inset;
-  height: 59px;
-  margin-left: 71px;
-  position: relative;
-  width: 100px;
+    background: none repeat scroll 0 0 #f0e397;
+    border-bottom: 59px solid #9ff0e8;
+    border-radius: 15px;
+    border-top: 59px solid #f1b600;
+    box-shadow: 0 6px 0 #9ff0e8, 50px 0 0 #dce9d7 inset;
+    height: 59px;
+    margin-left: 71px;
+    position: relative;
+    width: 100px;
 }
 
 /*--------------------------------------------------*/
 .chocolateWithStuff2:before {
-  background: none repeat scroll 0 0 #b26f4b;
-  border-radius: 22px 41px 52px 3px;
-  box-shadow: 0 6px 0 #b26f4b, 6px 0 0 #b26f4b inset;
-  content: "";
-  float: right;
-  height: 169px;
-  left: 45px;
-  position: absolute;
-  transform: rotate(0deg) skewX(8deg);
-  -webkit-transform: rotate(0deg) skewX(8deg);
-  -moz-transform: rotate(0deg) skewX(8deg);
-  -ms-transform: rotate(0deg) skewX(8deg);
-  -o-transform: rotate(0deg) skewX(8deg);
-  width: 60px;
+    background: none repeat scroll 0 0 #b26f4b;
+    border-radius: 22px 41px 52px 3px;
+    box-shadow: 0 6px 0 #b26f4b, 6px 0 0 #b26f4b inset;
+    content: "";
+    float: right;
+    height: 169px;
+    left: 45px;
+    position: absolute;
+    transform: rotate(0deg) skewX(8deg);
+    -webkit-transform: rotate(0deg) skewX(8deg);
+    -moz-transform: rotate(0deg) skewX(8deg);
+    -ms-transform: rotate(0deg) skewX(8deg);
+    -o-transform: rotate(0deg) skewX(8deg);
+    width: 60px;
 }
 
 .chocolateWithStuff2:after {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: 0 8px 0 #b26f4b inset, -10px 9px 0 #c4ad78 inset, 10px -107px 0 #b26f4b, 10px -174px 0 #b26f4b, -10px -113px 0 #d08358, -10px -173px 0 #d08358;
-  content: "";
-  height: 107px;
-  left: 51px;
-  margin: auto;
-  position: absolute;
-  top: 175px;
-  transform: rotate(0deg) skewX(4deg);
-  -webkit-transform: rotate(0deg) skewX(4deg);
-  -moz-transform: rotate(0deg) skewX(4deg);
-  -ms-transform: rotate(0deg) skewX(4deg);
-  -o-transform: rotate(0deg) skewX(4deg);
-  width: 20px;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: 0 8px 0 #b26f4b inset, -10px 9px 0 #c4ad78 inset, 10px -107px 0 #b26f4b, 10px -174px 0 #b26f4b, -10px -113px 0 #d08358, -10px -173px 0 #d08358;
+    content: "";
+    height: 107px;
+    left: 51px;
+    margin: auto;
+    position: absolute;
+    top: 175px;
+    transform: rotate(0deg) skewX(4deg);
+    -webkit-transform: rotate(0deg) skewX(4deg);
+    -moz-transform: rotate(0deg) skewX(4deg);
+    -ms-transform: rotate(0deg) skewX(4deg);
+    -o-transform: rotate(0deg) skewX(4deg);
+    width: 20px;
 }
 
 .chocolateWithStuff2 {
-  background: none repeat scroll 0 0 #d08358;
-  border-radius: 39px 5px 0 50px;
-  box-shadow: 0 6px 0 #b26f4b;
-  content: "";
-  height: 169px;
-  left: -20px;
-  margin-left: 70px;
-  position: relative;
-  transform: rotate(0deg) skewX(-4deg);
-  -webkit-transform: rotate(0deg) skewX(-4deg);
-  -moz-transform: rotate(0deg) skewX(-4deg);
-  -ms-transform: rotate(0deg) skewX(-4deg);
-  -o-transform: rotate(0deg) skewX(-4deg);
-  width: 60px;
-  z-index: 666;
+    background: none repeat scroll 0 0 #d08358;
+    border-radius: 39px 5px 0 50px;
+    box-shadow: 0 6px 0 #b26f4b;
+    content: "";
+    height: 169px;
+    left: -20px;
+    margin-left: 70px;
+    position: relative;
+    transform: rotate(0deg) skewX(-4deg);
+    -webkit-transform: rotate(0deg) skewX(-4deg);
+    -moz-transform: rotate(0deg) skewX(-4deg);
+    -ms-transform: rotate(0deg) skewX(-4deg);
+    -o-transform: rotate(0deg) skewX(-4deg);
+    width: 60px;
+    z-index: 666;
 }
 
 /*--------------------------------------------------*/
 .poison:before {
-  background: none repeat scroll 0 0 #decba0;
-  border-radius: 0 0 50px 50px;
-  box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
-  content: "";
-  height: 111px;
-  left: 49px;
-  margin: auto;
-  position: absolute;
-  top: 168px;
-  width: 20px;
-  z-index: -666;
+    background: none repeat scroll 0 0 #decba0;
+    border-radius: 0 0 50px 50px;
+    box-shadow: -10px 9px 0 #c4ad78 inset, 0 12px 0 #c4ad78 inset;
+    content: "";
+    height: 111px;
+    left: 49px;
+    margin: auto;
+    position: absolute;
+    top: 168px;
+    width: 20px;
+    z-index: -666;
 }
 
 .poison:after {
-  background: none repeat scroll 0 0 #bffee0;
-  border-radius: 70px 0 0 15px;
-  content: "";
-  float: right;
-  height: 167px;
-  position: absolute;
-  width: 58px;
+    background: none repeat scroll 0 0 #bffee0;
+    border-radius: 70px 0 0 15px;
+    content: "";
+    float: right;
+    height: 167px;
+    position: absolute;
+    width: 58px;
 }
 
 .poison {
-  background: none repeat scroll 0 0 #9cf4ca;
-  border-radius: 70px 70px 15px 15px;
-  box-shadow: 0 6px 0 #9cf4ca;
-  height: 167px;
-  position: relative;
-  width: 120px;
-  margin-left: 70px;
+    background: none repeat scroll 0 0 #9cf4ca;
+    border-radius: 70px 70px 15px 15px;
+    box-shadow: 0 6px 0 #9cf4ca;
+    height: 167px;
+    position: relative;
+    width: 120px;
+    margin-left: 70px;
 }

@@ -103,7 +103,7 @@
     z-index: -1;
 }
 
-.rabbit-3__ear1>div {
+.rabbit-3__ear1 > div {
     bottom: 35px;
     right: 1px;
     height: 84px;
@@ -116,7 +116,7 @@
     overflow: hidden;
 }
 
-.rabbit-3__ear1>div:before {
+.rabbit-3__ear1 > div:before {
     top: 13px;
     left: 11px;
     width: 20px;
@@ -180,7 +180,7 @@
 
 }
 
-.rabbit-3__mouth>div {
+.rabbit-3__mouth > div {
     top: 0;
     left: 0;
     width: 22px;
@@ -191,7 +191,7 @@
     transform: translate(0px, -17px) scaleY(0.8);
 }
 
-.rabbit-3__mouth>div:before {
+.rabbit-3__mouth > div:before {
     top: 9px;
     left: 0px;
     width: 15px;
@@ -286,7 +286,6 @@
     border-radius: 4px;
     transform: rotate(45deg);
 }
-
 
 
 .rabbit-1__leg {

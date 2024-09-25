@@ -15,7 +15,7 @@
 
 .face1 {
     width: 180px;
-    height: 0px;
+    height: 0;
     border-radius: 48px 48px 0 0;
     background: #a10f0f;
     position: absolute;
@@ -27,7 +27,6 @@
     -webkit-animation-fill-mode: forwards;
     z-index: 3;
 }
-
 
 
 .mouth1 {
@@ -58,7 +57,6 @@
     margin-left: -33px;
     -webkit-transform: scale(1);
     transform: scale(1);
-    /* animation: mouthhh 1s; */
     animation-timing-function: ease;
     animation-iteration-count: 1;
 }

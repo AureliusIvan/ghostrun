@@ -1,155 +1,153 @@
 .prevent-drag {
-    pointer-events: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -o-user-select: none;
-    user-select: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
 }
 
 
 .Game {
-    transition-duration: 2s;
-    height: 100vh;
-    width: 100vw;
+  transition-duration: 2s;
+  height: 100vh;
+  width: 100vw;
 }
 
 .game {
-    width: 500px;
-    height: 200px;
-    border: 10px solid black;
-    margin: auto;
-    overflow: hidden;
-    background-color: aqua;
+  width: 500px;
+  height: 200px;
+  border: 10px solid black;
+  margin: auto;
+  overflow: hidden;
+  background-color: aqua;
 }
 
 .gameplayBox {
-    animation: bgMove 15s infinite linear;
-    animation-delay: -7.5s;
-    background-repeat: repeat-x;
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
+  animation: bgMove 15s infinite linear;
+  animation-delay: -7.5s;
+  background-repeat: repeat-x;
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 
 }
 
 @keyframes bgMove {
-    0% {
-        transform: translate3d(100%, 0, 0);
-    }
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
 
-    100% {
-        transform: translate3d(-100%, 0, 0);
-    }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
 
 .gameplayBox2 {
-    animation: bgMove2 15s infinite linear;
-    /* animation-delay: 7.5s; */
-    background-repeat: repeat-x;
-    transform: translate3d(500px, 0, 0);
-    -webkit-transition: opacity 1s ease-in-out;
-    -moz-transition: opacity 1s ease-in-out;
-    -o-transition: opacity 1s ease-in-out;
-    transition: opacity 1s ease-in-out;
+  animation: bgMove2 15s infinite linear;
+  /* animation-delay: 7.5s; */
+  background-repeat: repeat-x;
+  transform: translate3d(500px, 0, 0);
+  -webkit-transition: opacity 1s ease-in-out;
+  -moz-transition: opacity 1s ease-in-out;
+  -o-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
 
 }
 
 @keyframes bgMove2 {
-    0% {
-        transform: translate3d(100%, 0, 0);
-    }
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
 
-    100% {
-        transform: translate3d(-100%, 0, 0);
-    }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
 
 .gameplayBox3 {
-    animation: bgMove3 15s infinite linear;
-    animation-delay: -15s;
-    transition: 3s;
-    -webkit-transition: background-image 0.2s ease-in-out;
-    transition: background-image 0.2s ease-in-out;
+  animation: bgMove3 15s infinite linear;
+  animation-delay: -15s;
+  -webkit-transition: background-image 0.2s ease-in-out;
+  transition: background-image 0.2s ease-in-out;
 }
 
 @keyframes bgMove3 {
-    0% {
-        transform: translate3d(100%, 0, 0);
-    }
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
 
-    100% {
-        transform: translate3d(-100%, 0, 0);
-    }
+  100% {
+    transform: translate3d(-100%, 0, 0);
+  }
 }
 
 
 #character {
-    position: relative;
-    will-change: transform;
-    transition: 450ms;
+  position: relative;
+  will-change: transform;
+  transition: 450ms;
 }
 
 .animate {
-    will-change: transform;
-    transform: translateY(-700px);
-    -webkit-transform: translateY(-700px);
-    -moz-transform: translateY(-700px);
-    -o-transform: translateY(-700px);
-    -ms-transform: translateY(-700px);
+  will-change: transform;
+  transform: translateY(-700px);
+  -webkit-transform: translateY(-700px);
+  -moz-transform: translateY(-700px);
+  -o-transform: translateY(-700px);
+  -ms-transform: translateY(-700px);
 }
 
 .notanimate {
-    will-change: transform;
-    transform: translateY(0px);
-    -webkit-transform: translateY(0px);
-    -moz-transform: translateY(0px);
-    -o-transform: translateY(0px);
-    -ms-transform: translateY(0px);
+  will-change: transform;
+  transform: translateY(0px);
+  -webkit-transform: translateY(0px);
+  -moz-transform: translateY(0px);
+  -o-transform: translateY(0px);
+  -ms-transform: translateY(0px);
 }
 
 
 /* cloud */
 
 .cloud {
-    background: rgb(255, 255, 255);
-    width: 300px;
-    height: 100px;
-    border-radius: 150px;
-    box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
-    animation: cloud 20s infinite alternate;
+  background: rgb(255, 255, 255);
+  width: 300px;
+  height: 100px;
+  border-radius: 150px;
+  box-shadow: 10px 10px rgba(0, 0, 0, 0.2);
+  animation: cloud 20s infinite alternate;
 }
 
 .cloud:after {
-    content: '';
-    background: rgb(255, 255, 255);
-    position: absolute;
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
+  content: '';
+  background: rgb(255, 255, 255);
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
 
 .cloud:before {
-    content: '';
-    background: rgb(255, 255, 255);
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    transform: translate(-90px, -60px);
+  content: '';
+  background: rgb(255, 255, 255);
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  transform: translate(-90px, -60px);
 }
 
 
-
 @keyframes cloud {
-    0% {
-        transform: translateX(0) scale(0.2) translateY(400px);
-    }
+  0% {
+    transform: translateX(0) scale(0.2) translateY(400px);
+  }
 
-    100% {
-        transform: translateX(-100px) scale(0.2) translateY(400px);
-    }
+  100% {
+    transform: translateX(-100px) scale(0.2) translateY(400px);
+  }
 }
