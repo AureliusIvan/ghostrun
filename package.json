@@ -25,7 +25,7 @@
     "react-animated-cursor": "^2.5.2",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
-    "react-redux": "^8.0.5",
+    "react-redux": "^9.0.0",
     "react-scripts": "5.0.1",
     "react-track": "^0.4.4",
     "react-use-cookie": "^1.4.0",
