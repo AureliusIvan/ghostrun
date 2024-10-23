@@ -5,7 +5,7 @@
   "homepage": "https://aureliusivan.ghostrun.my.id/",
   "dependencies": {
     "@chakra-ui/layout": "^2.3.1",
-    "@chakra-ui/react": "^2.4.6",
+    "@chakra-ui/react": "^3.0.0",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@reduxjs/toolkit": "^1.9.1",
